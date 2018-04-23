@@ -2,10 +2,19 @@
 
 body {
   margin: 0;
+  font-family: 'Roboto', sans-serif;
 }
 
 mat-card {
   margin: 8px;
+}
+
+img {
+  width: 100%;
+}
+
+.fixedwidth, pre {
+  font-family: 'Roboto Mono', monospace;
 }
 
 #container {

@@ -1,0 +1,11 @@
+.code-wrapper {
+  background-color: #000;
+  color: #fff;
+  padding: 24px;
+  border-radius: 2px;
+  margin: 16px 0;
+}
+
+code.block {
+  white-space: pre-line;
+}
