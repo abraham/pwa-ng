@@ -1,0 +1,322 @@
+
+<pwa-step title="Install">
+  Install Angular CLI v6+:
+
+  <code-block command="npm install --global @angular/cli@next">
+    {{'
+...
++ @angular/cli@6.0.0-rc.5
+added 263 packages from 166 contributors in 16.241s'}}
+  </code-block>
+
+  If you prefer to user Yarn:
+
+  <code-block command="yarn global add @angular/cli@next">
+    {{'
+yarn global v1.6.0
+[1/4] 🔍  Resolving packages...
+[2/4] 🚚  Fetching packages...
+[3/4] 🔗  Linking dependencies...
+[4/4] 📃  Building fresh packages...
+success Installed "@angular/cli@6.0.0-rc.5" with binaries:
+    - ng
+✨  Done in 7.67s.'}}
+  </code-block>
+
+  <em>Note: Angular 6 is not yet stable at the time of writing.</em>
+
+  You should now have the Angular CLI installed.
+  <code-block command="ng --version">
+    <!-- TODO: Fix ascii logo -->
+    {{'
+...
+Angular CLI: 6.0.0-rc.5
+Node: 9.11.1
+OS: darwin x64
+Angular:
+...
+
+Package                      Version
+------------------------------------------------------
+@angular-devkit/architect    0.5.7
+@angular-devkit/core         0.5.7
+@angular-devkit/schematics   0.5.7
+@ngtools/json-schema         1.1.0
+@schematics/angular          0.5.7
+@schematics/update           0.5.7
+rxjs                         6.0.0-uncanny-rc.7
+typescript                   2.7.2
+...'}}
+  </code-block>
+</pwa-step>
+
+<pwa-step title="Generate">
+  Let's generate a new Angular app with the `ng new` command. The main argument we'll be needing right now is the name of the app.
+
+  <code-block command="ng new awesome-sauce">
+    {{'
+...
+added 1295 packages from 1267 contributors in 41.03s
+  Successfully initialized git.
+CREATE awesome-sauce/README.md (1034 bytes)
+CREATE awesome-sauce/angular.json (3951 bytes)
+CREATE awesome-sauce/package.json (1402 bytes)
+CREATE awesome-sauce/tsconfig.json (384 bytes)
+CREATE awesome-sauce/tslint.json (2805 bytes)
+CREATE awesome-sauce/.editorconfig (245 bytes)
+CREATE awesome-sauce/.gitignore (503 bytes)
+CREATE awesome-sauce/src/environments/environment.prod.ts (51 bytes)
+CREATE awesome-sauce/src/environments/environment.ts (743 bytes)
+CREATE awesome-sauce/src/favicon.ico (5430 bytes)
+CREATE awesome-sauce/src/index.html (299 bytes)
+CREATE awesome-sauce/src/main.ts (370 bytes)
+CREATE awesome-sauce/src/polyfills.ts (3114 bytes)
+CREATE awesome-sauce/src/test.ts (642 bytes)
+CREATE awesome-sauce/src/assets/.gitkeep (0 bytes)
+CREATE awesome-sauce/src/styles.css (80 bytes)
+CREATE awesome-sauce/src/browserslist (51 bytes)
+CREATE awesome-sauce/src/karma.conf.js (961 bytes)
+CREATE awesome-sauce/src/tsconfig.app.json (194 bytes)
+CREATE awesome-sauce/src/tsconfig.spec.json (282 bytes)
+CREATE awesome-sauce/src/tslint.json (314 bytes)
+CREATE awesome-sauce/src/app/app.module.ts (314 bytes)
+CREATE awesome-sauce/src/app/app.component.css (0 bytes)
+CREATE awesome-sauce/src/app/app.component.html (1141 bytes)
+CREATE awesome-sauce/src/app/app.component.spec.ts (986 bytes)
+CREATE awesome-sauce/src/app/app.component.ts (207 bytes)
+CREATE awesome-sauce/e2e/protractor.conf.js (752 bytes)
+CREATE awesome-sauce/e2e/src/app.e2e-spec.ts (299 bytes)
+CREATE awesome-sauce/e2e/src/app.po.ts (208 bytes)
+CREATE awesome-sauce/e2e/tsconfig.e2e.json (213 bytes)'}}
+  </code-block>
+
+  That created a new Angular app in the `awesome-sauce` directory. Let's go there now.
+
+  <code-block command="cd awesome-sauce"></code-block>
+</pwa-step>
+
+<pwa-step title="Add PWA">
+  Now that we've got a shiny new Angular app, let's add a Service Worker using Angular's new `ng add` command. This will use a Schematic to add the needed packages and modify our code. `--project` takes the same app name we defined earlier.
+
+  <code-block command="ng add @angular/pwa --project awesome-sauce">
+    {{'
+Installing packages for tooling via npm.
++ @angular/pwa@0.5.7
+updated 1 package in 8.935s
+Installed packages for tooling via npm.
+CREATE ngsw-config.json (463 bytes)
+CREATE src/assets/icons/icon-128x128.png (1253 bytes)
+CREATE src/assets/icons/icon-144x144.png (1394 bytes)
+CREATE src/assets/icons/icon-152x152.png (1427 bytes)
+CREATE src/assets/icons/icon-192x192.png (1790 bytes)
+CREATE src/assets/icons/icon-384x384.png (3557 bytes)
+CREATE src/assets/icons/icon-512x512.png (5008 bytes)
+CREATE src/assets/icons/icon-72x72.png (792 bytes)
+CREATE src/assets/icons/icon-96x96.png (958 bytes)
+CREATE src/assets/manifest.json (1078 bytes)
+UPDATE angular.json (3988 bytes)
+UPDATE package.json (1448 bytes)
+UPDATE src/app/app.module.ts (526 bytes)
+UPDATE src/index.html (450 bytes)'}}
+  </code-block>
+
+  If you have a look at the version control you can see several new and modified files.
+
+  <code-block command="git status">
+    {{'
+On branch master
+Changes not staged for commit:
+(use "git add file>..." to update what will be committed)
+(use "git checkout -- &lt;file&gt;..." to discard changes in working directory)
+
+      modified:   angular.json
+      modified:   package.json
+      modified:   src/app/app.module.ts
+      modified:   src/index.html
+
+Untracked files:
+(use "git add &lt;file&gt;..." to include in what will be committed)
+
+      ngsw-config.json
+      src/assets/icons/
+      src/assets/manifest.json
+
+no changes added to commit (use "git add" and/or "git commit -a")'}}
+  </code-block>
+
+  <mat-list role="list">
+    <mat-list-item role="listitem">`ngsw-config.json` is where to tell Angular CLI how to handle various assets for caching</mat-list-item>
+    <mat-list-item role="listitem">`manifest.json` is a bit of metadata that describes your site and enables some PWA features in browsers</mat-list-item>
+    <mat-list-item role="listitem">`icons` is were you should put your logo in various sizes</mat-list-item>
+  </mat-list>
+
+  Let's also take a look at the changes to the existing files.
+
+  <code-block command="git diff angular.json">
+    {{'
+diff --git a/angular.json b/angular.json
+index af576d8..9f94a21 100644
+--- a/angular.json
++++ b/angular.json
+@@ -49,7 +49,8 @@
+             "aot": true,
+             "extractLicenses": true,
+             "vendorChunk": false,
+-              "buildOptimizer": true
++              "buildOptimizer": true,
++              "serviceWorker": true
+           }
+         }
+       },'}}
+   </code-block>
+
+   `angular.json` is the file used to configure the Angular CLI. Here we are telling it to build a Service Worker.
+
+ <code-block command="git diff package.json">
+   {{'
+diff --git a/package.json b/package.json
+index ea65b84..5185314 100644
+--- a/package.json
++++ b/package.json
+@@ -23,7 +23,8 @@
+  "@angular/router": "^6.0.0-rc.1",
+  "core-js": "^2.5.4",
+  "rxjs": "^6.0.0-rc.0",
+-    "zone.js": "^0.8.24"
++    "zone.js": "^0.8.24",
++    "@angular/service-worker": "^6.0.0-rc.1"
+},
+"devDependencies": {
+  "@angular/compiler-cli": "^6.0.0-rc.1",'}}
+  </code-block>
+
+  `package.json` is including a new `@angular/service-worker` dependancy. We should make sure it's installed.
+
+  <code-block command="npm install">
+    {{'
+added 1 package from 1 contributor and removed 2 packages in 10.6s'}}
+  </code-block>
+
+  <code-block command="git diff src/app/app.module.ts">
+    {{"
+diff --git a/src/app/app.module.ts b/src/app/app.module.ts
+index f657163..2f5db8d 100644
+--- a/src/app/app.module.ts
++++ b/src/app/app.module.ts
+@@ -2,13 +2,16 @@ import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+
+import { AppComponent } from './app.component';
++import { ServiceWorkerModule } from '@angular/service-worker';
++import { environment } from '../environments/environment';
+
+@NgModule({
+ declarations: [
+   AppComponent
+ ],
+ imports: [
+-    BrowserModule
++    BrowserModule,
++    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
+ ],
+ providers: [],
+ bootstrap: [AppComponent]"}}
+  </code-block>
+
+  Here we see a new `ServiceWorkerModule` that's imported and is being told to register a Service Worker if the app is being built for production.
+
+  <code-block command="git diff src/index.html">
+    {{'
+diff --git a/src/index.html b/src/index.html
+index 75e1aff..5733a3d 100644
+--- a/src/index.html
++++ b/src/index.html
+@@ -7,6 +7,9 @@
+
+ &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+ &lt;link rel="icon" type="image/x-icon" href="favicon.ico"&gt;
++  &lt;link rel="manifest" href="./manifest.json"&gt;
++  &lt;meta name="Description" content="Angular Application"&gt;
++  &lt;meta name="theme-color" content="#FFFFFF"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+ &lt;app-root&gt;&lt;/app-root&gt;'}}
+  </code-block>
+
+  The last change we need to look it is `index.html` telling browsers about the `manifest.json` file and setting a couple of meta tags.
+</pwa-step>
+
+<pwa-step title="Commit">
+   It's a good idea to commit the changes to Git.
+
+  <code-block command="git add ."></code-block>
+
+  <code-block command="git commit -m 'Add PWA'">
+    {{'
+[master 719e6ef] Add PWA
+15 files changed, 98 insertions(+), 3 deletions(-)
+create mode 100644 ngsw-config.json
+create mode 100644 src/assets/icons/icon-128x128.png
+create mode 100644 src/assets/icons/icon-144x144.png
+create mode 100644 src/assets/icons/icon-152x152.png
+create mode 100644 src/assets/icons/icon-192x192.png
+create mode 100644 src/assets/icons/icon-384x384.png
+create mode 100644 src/assets/icons/icon-512x512.png
+create mode 100644 src/assets/icons/icon-72x72.png
+create mode 100644 src/assets/icons/icon-96x96.png
+create mode 100644 src/assets/manifest.json'}}
+  </code-block>
+</pwa-step>
+
+<pwa-step title="Run it">
+  As we saw earlier the Service Worker only get's registered if we build the app in production mode.
+
+  <code-block command="npm run build -- --prod">
+    {{'
+> awesome-sauce@0.0.0 build /Users/abraham/dev/sandbox/awesome-sauce
+> ng build "--prod"
+
+
+Date: 2018-04-23T04:43:51.982Z
+Hash: e80feff3fa05ad5f0421
+Time: 20745ms
+chunk {0} runtime.5f9d33fb31487f0fdbf1.js (runtime) 1.05 kB [entry] [rendered]
+chunk {1} styles.34c57ab7888ec1573f9c.css (styles) 0 bytes [initial] [rendered]
+chunk {2} polyfills.2d976f42c1abc2acac30.js (polyfills) 59.4 kB [initial] [rendered]
+chunk {3} main.4a0f7da437b5e6c0460a.js (main) 164 kB [initial] [rendered]'}}
+  </code-block>
+
+  The `-- --prod` looks a little odd but `--prod` will tell the Angular CLI to build in production mode, and the first `--` tells `npm` to pass it to Angular.
+
+  Now we'll want to jump into the `dist/awesome-sauce` directory.
+
+  <code-block command="cd dist/awesome-sauce"></code-block>
+
+  Now we can serve the built app with the Service Worker enabled.
+
+  <code-block command="http-server">
+    {{'
+Starting up http-server, serving ./
+Available on:
+http://127.0.0.1:8080
+http://192.168.86.23:8080
+Hit CTRL-C to stop the server'}}
+  </code-block>
+
+  If you don't have `http-server`, it's a handly little utility for quickly spinning up a local server. It can be intalled like this:
+
+  <code-block command="npm install --global http-server"></code-block>
+
+  If you go to `http://localhost:8080` in a browser you should see the following:
+
+  <img src="assets/images/http-server.png" alt="App running in a browser">
+
+  Now open the Chrome DevTools to the Application tab and you should see a Service Worker installed from localhost.
+
+  <img src="assets/images/service-worker.png" alt="Installed Service Worker">
+
+  Toggle the Network to "offline" and refesh. Everything will still render.
+
+  <img src="assets/images/offline.png" alt="App working offline">
+
+</pwa-step>

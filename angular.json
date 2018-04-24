@@ -6,7 +6,7 @@
     "ng-pwa": {
       "root": "",
       "projectType": "application",
-      "prefix": "app",
+      "prefix": "pwa",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
