@@ -23,3 +23,8 @@ img {
   margin: 0 auto;
   padding: 0 8px;
 }
+
+node-package {
+  margin: 16px 8px;
+  width: calc(100% - 16px);
+}
