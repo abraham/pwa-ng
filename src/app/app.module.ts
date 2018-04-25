@@ -1,14 +1,14 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule, MatCardModule, MatListModule, MatTabsModule, MatToolbarModule } from '@angular/material';
-import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserModule } from '@angular/platform-browser';
+import { CodeBlockComponent } from './code-block/code-block.component';
+import { NgModule } from '@angular/core';
+import { PwaInstallComponent } from './pwa-install/pwa-install.component';
+import { PwaStepComponent } from './pwa-step/pwa-step.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
-import { CodeBlockComponent } from './code-block/code-block.component';
-import { PwaStepComponent } from './pwa-step/pwa-step.component';
-import { PwaInstallComponent } from './pwa-install/pwa-install.component';
 
 @NgModule({
   declarations: [
