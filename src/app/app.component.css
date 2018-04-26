@@ -1,0 +1,8 @@
+mat-toolbar {
+  background-color: #fff;
+  color: #E53935;
+}
+
+/deep/  .mat-tab-label {
+  color: #E53935 !important;
+}

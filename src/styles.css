@@ -1,9 +1,12 @@
-@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 
 body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
   background-color: #fff;
+}
+
+h1, h2 {
+  color: #D32F2F;
 }
 
 mat-card {
@@ -18,6 +21,12 @@ img {
   font-family: 'Roboto Mono', monospace;
 }
 
+mat-toolbar-row {
+  max-width: 960px;
+  margin: 0 auto;
+  padding-left: 0 !important;
+}
+
 #container {
   max-width: 960px;
   margin: 0 auto;
@@ -27,4 +36,7 @@ img {
 node-package {
   margin: 16px 8px;
   width: calc(100% - 16px);
+  --node-package-background-color: #fff;
+  --node-package-color: #D32F2F;
+  --node-package-link-color: #B71C1C;
 }
