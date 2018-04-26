@@ -1,8 +1,8 @@
 {
   "name": "Angular Progressive Web App Guide",
   "short_name": "NG PWA",
-  "theme_color": "#673ab7",
-  "background_color": "#673ab7",
+  "theme_color": "#fff",
+  "background_color": "#fff",
   "display": "standalone",
   "scope": "/",
   "start_url": "/",
