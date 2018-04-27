@@ -14,11 +14,7 @@ mat-card {
   margin: 8px;
 }
 
-img {
-  width: 100%;
-}
-
-.fixedwidth, pre {
+.fixedwidth, pre, code {
   font-family: 'Roboto Mono', monospace;
 }
 
