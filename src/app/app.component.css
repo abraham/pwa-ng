@@ -4,5 +4,6 @@ mat-toolbar {
 }
 
 /deep/  .mat-tab-label {
-  color: #E53935 !important;
+  color: #B71C1C !important;
+  font-weight: 600;
 }
