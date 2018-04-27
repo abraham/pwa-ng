@@ -2,25 +2,23 @@
 <pwa-step title="Install">
   Install Angular CLI v6+:
 
-  <code-block command="npm install --global @angular/cli@next" lang="bsh">
-    {{'
-...
-+ @angular/cli@6.0.0-rc.5
-added 263 packages from 166 contributors in 16.241s'}}
-  </code-block>
+  <code-block lang="bsh"
+              command="npm install --global @angular/cli@next"
+              code="+ @angular/cli@6.0.0-rc.6
+added 254 packages from 178 contributors in 10.839s"></code-block>
 
   If you prefer to user Yarn:
 
-  <code-block command="yarn global add @angular/cli@next" lang="bsh">
-    {{'
-yarn global v1.6.0
+  <code-block lang="bsh"
+              command="yarn global add @angular/cli@next"
+              code='yarn global v1.6.0
 [1/4] 🔍  Resolving packages...
 [2/4] 🚚  Fetching packages...
 [3/4] 🔗  Linking dependencies...
 [4/4] 📃  Building fresh packages...
-success Installed "@angular/cli@6.0.0-rc.5" with binaries:
+success Installed "@angular/cli@6.0.0-rc.6" with binaries:
     - ng
-✨  Done in 7.67s.'}}
+✨  Done in 9.07s.'>
   </code-block>
 
   <em>Note: Angular 6 is not yet stable at the time of writing.</em>
@@ -28,40 +26,48 @@ success Installed "@angular/cli@6.0.0-rc.5" with binaries:
   <node-package name="@angular/cli"></node-package>
 
   You should now have the Angular CLI installed.
-  <code-block command="ng --version" lang="bsh">
-    <!-- TODO: Fix ascii logo -->
-    {{'
-...
-Angular CLI: 6.0.0-rc.5
-Node: 9.11.1
-OS: darwin x64
-Angular:
-...
+  <code-block lang="bsh"
+              command="ng --version"
+              code="     _                      _                 ____ _     ___
+    / \   _ __   __ _ _   _| | __ _ _ __     / ___| |   |_ _|
+   / △ \ | '_ \ / _` | | | | |/ _` | '__|   | |   | |    | |
+  / ___ \| | | | (_| | |_| | | (_| | |      | |___| |___ | |
+ /_/   \_\_| |_|\__, |\__,_|_|\__,_|_|       \____|_____|___|
+                |___/
 
-Package                      Version
-------------------------------------------------------
-@angular-devkit/architect    0.5.7
-@angular-devkit/core         0.5.7
-@angular-devkit/schematics   0.5.7
-@ngtools/json-schema         1.1.0
-@schematics/angular          0.5.7
-@schematics/update           0.5.7
-rxjs                         6.0.0-uncanny-rc.7
-typescript                   2.7.2
-...'}}
-  </code-block>
+
+Angular CLI: 6.0.0-rc.6
+Node: 8.9.0
+OS: darwin x64
+Angular: 6.0.0-rc.5
+... animations, common, compiler, compiler-cli, core, forms
+... http, language-service, platform-browser
+... platform-browser-dynamic, router, service-worker
+
+Package                           Version
+-----------------------------------------------------------
+@angular-devkit/architect         0.5.9
+@angular-devkit/build-angular     0.5.9
+@angular-devkit/build-optimizer   0.5.9
+@angular-devkit/core              0.5.9
+@angular-devkit/schematics        0.5.8
+@angular/cli                      6.0.0-rc.6
+@ngtools/json-schema              1.1.0
+@ngtools/webpack                  6.0.0-rc.7
+@schematics/angular               0.5.8
+@schematics/update                0.5.8
+rxjs                              6.0.0
+typescript                        2.7.2
+webpack                           4.6.0"></code-block>
 </pwa-step>
 
 <pwa-step title="Generate">
   Let's generate a new Angular app with the `ng new` command. The main argument we'll be needing right now is the name of the app.
 
-  <code-block command="ng new awesome-sauce" lang="bsh">
-    {{'
-...
-added 1295 packages from 1267 contributors in 41.03s
-  Successfully initialized git.
-CREATE awesome-sauce/README.md (1034 bytes)
-CREATE awesome-sauce/angular.json (3951 bytes)
+  <code-block lang="bsh"
+              command="ng new awesome-sauce"
+              code="CREATE awesome-sauce/README.md (1034 bytes)
+CREATE awesome-sauce/angular.json (3856 bytes)
 CREATE awesome-sauce/package.json (1402 bytes)
 CREATE awesome-sauce/tsconfig.json (384 bytes)
 CREATE awesome-sauce/tslint.json (2805 bytes)
@@ -89,22 +95,23 @@ CREATE awesome-sauce/src/app/app.component.ts (207 bytes)
 CREATE awesome-sauce/e2e/protractor.conf.js (752 bytes)
 CREATE awesome-sauce/e2e/src/app.e2e-spec.ts (299 bytes)
 CREATE awesome-sauce/e2e/src/app.po.ts (208 bytes)
-CREATE awesome-sauce/e2e/tsconfig.e2e.json (213 bytes)'}}
-  </code-block>
+CREATE awesome-sauce/e2e/tsconfig.e2e.json (213 bytes)
+added 1249 packages from 1269 contributors in 44.136s
+Successfully initialized git."></code-block>
 
   That created a new Angular app in the `awesome-sauce` directory. Let's go there now.
 
-  <code-block command="cd awesome-sauce" lang="bsh"></code-block>
+  <code-block lang="bsh" command="cd awesome-sauce"></code-block>
 </pwa-step>
 
 <pwa-step title="Add PWA">
   Now that we've got a shiny new Angular app, let's add a Service Worker using Angular's new `ng add` command. This will use a Schematic to add the needed packages and modify our code. `--project` takes the same app name we defined earlier.
 
-  <code-block command="ng add @angular/pwa --project awesome-sauce" lang="bsh">
-    {{'
-Installing packages for tooling via npm.
-+ @angular/pwa@0.5.7
-updated 1 package in 8.935s
+  <code-block lang="bsh"
+              command="ng add @angular/pwa --project awesome-sauce"
+              code="Installing packages for tooling via npm.
++ @angular/pwa@0.5.9
+added 4 packages from 2 contributors in 9.988s
 Installed packages for tooling via npm.
 CREATE ngsw-config.json (463 bytes)
 CREATE src/assets/icons/icon-128x128.png (1253 bytes)
@@ -115,37 +122,38 @@ CREATE src/assets/icons/icon-384x384.png (3557 bytes)
 CREATE src/assets/icons/icon-512x512.png (5008 bytes)
 CREATE src/assets/icons/icon-72x72.png (792 bytes)
 CREATE src/assets/icons/icon-96x96.png (958 bytes)
-CREATE src/assets/manifest.json (1078 bytes)
-UPDATE angular.json (3988 bytes)
+CREATE src/assets/manifest.json (1112 bytes)
+UPDATE angular.json (3893 bytes)
 UPDATE package.json (1448 bytes)
 UPDATE src/app/app.module.ts (526 bytes)
-UPDATE src/index.html (450 bytes)'}}
-  </code-block>
+UPDATE src/index.html (455 bytes)
+added 1 package from 1 contributor and removed 4 packages in 10.135s"></code-block>
 
   <node-package name="@angular/pwa"></node-package>
 
   If you have a look at the version control you can see several new and modified files.
 
-  <code-block command="git status" lang="bsh">
-    {{'
-On branch master
+  <code-block lang="bsh"
+              command="git status"
+              code='On branch master
 Changes not staged for commit:
-(use "git add file>..." to update what will be committed)
-(use "git checkout -- &lt;file&gt;..." to discard changes in working directory)
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
 
-      modified:   angular.json
-      modified:   package.json
-      modified:   src/app/app.module.ts
-      modified:   src/index.html
+        modified:   angular.json
+        modified:   package-lock.json
+        modified:   package.json
+        modified:   src/app/app.module.ts
+        modified:   src/index.html
 
 Untracked files:
-(use "git add &lt;file&gt;..." to include in what will be committed)
+  (use "git add <file>..." to include in what will be committed)
 
-      ngsw-config.json
-      src/assets/icons/
-      src/assets/manifest.json
+        ngsw-config.json
+        src/assets/icons/
+        src/assets/manifest.json
 
-no changes added to commit (use "git add" and/or "git commit -a")'}}
+no changes added to commit (use "git add" and/or "git commit -a")'>
   </code-block>
 
   <mat-list role="list">
@@ -156,160 +164,144 @@ no changes added to commit (use "git add" and/or "git commit -a")'}}
 
   Let's also take a look at the changes to the existing files.
 
-  <code-block command="git diff angular.json" lang="bsh">
-    {{'
-diff --git a/angular.json b/angular.json
-index af576d8..9f94a21 100644
+  <code-block lang="bsh"
+              command="git diff angular.json"
+              code='diff --git a/angular.json b/angular.json
+index 661f562..fa3ce7f 100644
 --- a/angular.json
 +++ b/angular.json
-@@ -49,7 +49,8 @@
-             "aot": true,
-             "extractLicenses": true,
-             "vendorChunk": false,
+@@ -50,7 +50,8 @@
+               "aot": true,
+               "extractLicenses": true,
+               "vendorChunk": false,
 -              "buildOptimizer": true
 +              "buildOptimizer": true,
 +              "serviceWorker": true
+             }
            }
-         }
-       },'}}
-   </code-block>
+         },'></code-block>
 
    `angular.json` is the file used to configure the Angular CLI. Here we are telling it to build a Service Worker.
 
- <code-block command="git diff package.json" lang="bsh">
-   {{'
-diff --git a/package.json b/package.json
-index ea65b84..5185314 100644
+  <code-block lang="bsh"
+             command="git diff package.json"
+             code='diff --git a/package.json b/package.json
+index 97ce98f..8068839 100644
 --- a/package.json
 +++ b/package.json
 @@ -23,7 +23,8 @@
-  "@angular/router": "^6.0.0-rc.1",
-  "core-js": "^2.5.4",
-  "rxjs": "^6.0.0-rc.0",
+     "@angular/router": "^6.0.0-rc.1",
+     "core-js": "^2.5.4",
+     "rxjs": "^6.0.0-rc.0",
 -    "zone.js": "^0.8.24"
 +    "zone.js": "^0.8.24",
 +    "@angular/service-worker": "^6.0.0-rc.1"
-},
-"devDependencies": {
-  "@angular/compiler-cli": "^6.0.0-rc.1",'}}
-  </code-block>
+   },
+   "devDependencies": {
+     "@angular/compiler-cli": "^6.0.0-rc.1",'></code-block>
 
-  `package.json` is including a new `@angular/service-worker` dependancy. We should make sure it's installed.
+  `package.json` is including a new `@angular/service-worker` dependancy.
 
-  <code-block command="npm install" lang="bsh">
-    {{'
-added 1 package from 1 contributor and removed 2 packages in 10.6s'}}
-  </code-block>
-
-  <code-block command="git diff src/app/app.module.ts">
-    {{"
-diff --git a/src/app/app.module.ts b/src/app/app.module.ts
+  <code-block lang="bsh"
+              command="git diff src/app/app.module.ts"
+              code="diff --git a/src/app/app.module.ts b/src/app/app.module.ts
 index f657163..2f5db8d 100644
 --- a/src/app/app.module.ts
 +++ b/src/app/app.module.ts
 @@ -2,13 +2,16 @@ import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+ import { NgModule } from '@angular/core';
 
-import { AppComponent } from './app.component';
+ import { AppComponent } from './app.component';
 +import { ServiceWorkerModule } from '@angular/service-worker';
 +import { environment } from '../environments/environment';
 
-@NgModule({
- declarations: [
-   AppComponent
- ],
- imports: [
+ @NgModule({
+   declarations: [
+     AppComponent
+   ],
+   imports: [
 -    BrowserModule
 +    BrowserModule,
 +    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
- ],
- providers: [],
- bootstrap: [AppComponent]"}}
-  </code-block>
+   ],
+   providers: [],
+   bootstrap: [AppComponent]"></code-block>
 
   Here we see a new `ServiceWorkerModule` that's imported and is being told to register a Service Worker if the app is being built for production.
 
-  <code-block command="git diff src/index.html" lang="bsh">
-    {{'
-diff --git a/src/index.html b/src/index.html
-index 75e1aff..5733a3d 100644
+  <code-block lang="bsh"
+              command="git diff src/index.html"
+              code='diff --git a/src/index.html b/src/index.html
+index 75e1aff..2390591 100644
 --- a/src/index.html
 +++ b/src/index.html
 @@ -7,6 +7,9 @@
 
- &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
- &lt;link rel="icon" type="image/x-icon" href="favicon.ico"&gt;
-+  &lt;link rel="manifest" href="./manifest.json"&gt;
-+  &lt;meta name="Description" content="Angular Application"&gt;
-+  &lt;meta name="theme-color" content="#FFFFFF"&gt;
-&lt;/head&gt;
-&lt;body&gt;
- &lt;app-root&gt;&lt;/app-root&gt;'}}
-  </code-block>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="icon" type="image/x-icon" href="favicon.ico">
++  <link rel="manifest" href="assets/manifest.json">
++  <meta name="Description" content="Angular Application">
++  <meta name="theme-color" content="#FFFFFF">
+ </head>
+ <body>
+   <app-root></app-root>'></code-block>
 
   The last change we need to look it is `index.html` telling browsers about the `manifest.json` file and setting a couple of meta tags.
 </pwa-step>
 
 <pwa-step title="Commit">
-   It's a good idea to commit the changes to Git.
+  It's a good idea to commit the changes to Git.
 
-  <code-block command="git add ." lang="bsh"></code-block>
+  <code-block lang="bsh" command="git add ."></code-block>
 
-  <code-block command="git commit -m 'Add PWA'" lang="bsh">
-    {{'
-[master 719e6ef] Add PWA
-15 files changed, 98 insertions(+), 3 deletions(-)
-create mode 100644 ngsw-config.json
-create mode 100644 src/assets/icons/icon-128x128.png
-create mode 100644 src/assets/icons/icon-144x144.png
-create mode 100644 src/assets/icons/icon-152x152.png
-create mode 100644 src/assets/icons/icon-192x192.png
-create mode 100644 src/assets/icons/icon-384x384.png
-create mode 100644 src/assets/icons/icon-512x512.png
-create mode 100644 src/assets/icons/icon-72x72.png
-create mode 100644 src/assets/icons/icon-96x96.png
-create mode 100644 src/assets/manifest.json'}}
-  </code-block>
+  <code-block lang="bsh"
+              command="git commit -m 'Make it so'"
+              code="[master cab2bf6] Make it so
+ 15 files changed, 98 insertions(+), 3 deletions(-)
+ create mode 100644 ngsw-config.json
+ create mode 100644 src/assets/icons/icon-128x128.png
+ create mode 100644 src/assets/icons/icon-144x144.png
+ create mode 100644 src/assets/icons/icon-152x152.png
+ create mode 100644 src/assets/icons/icon-192x192.png
+ create mode 100644 src/assets/icons/icon-384x384.png
+ create mode 100644 src/assets/icons/icon-512x512.png
+ create mode 100644 src/assets/icons/icon-72x72.png
+ create mode 100644 src/assets/icons/icon-96x96.png
+ create mode 100644 src/assets/manifest.json"></code-block>
 </pwa-step>
 
 <pwa-step title="Run it">
   As we saw earlier the Service Worker only get's registered if we build the app in production mode.
 
-  <code-block command="npm run build -- --prod" lang="bsh">
-    {{'
-> awesome-sauce@0.0.0 build /Users/abraham/dev/sandbox/awesome-sauce
+  <code-block lang="bsh"
+              command="npm run build -- --prod"
+              code='> awesome-sauce@0.0.0 build /Users/abraham/dev/sandbox/awesome-sauce
 > ng build "--prod"
 
 
-Date: 2018-04-23T04:43:51.982Z
-Hash: e80feff3fa05ad5f0421
-Time: 20745ms
-chunk {0} runtime.5f9d33fb31487f0fdbf1.js (runtime) 1.05 kB [entry] [rendered]
+Date: 2018-04-27T15:05:13.612Z
+Hash: 3434227a676a97e8ffe9
+Time: 24010ms
+chunk {0} runtime.6afe30102d8fe7337431.js (runtime) 1.05 kB [entry] [rendered]
 chunk {1} styles.34c57ab7888ec1573f9c.css (styles) 0 bytes [initial] [rendered]
 chunk {2} polyfills.2d976f42c1abc2acac30.js (polyfills) 59.4 kB [initial] [rendered]
-chunk {3} main.4a0f7da437b5e6c0460a.js (main) 164 kB [initial] [rendered]'}}
-  </code-block>
+chunk {3} main.408c9c3eb6fe7147207b.js (main) 164 kB [initial] [rendered]'></code-block>
 
   The `-- --prod` looks a little odd but `--prod` will tell the Angular CLI to build in production mode, and the first `--` tells `npm` to pass it to Angular.
 
-  Now we'll want to jump into the `dist/awesome-sauce` directory.
+  Now we can serve the built app with the Service Worker enabled from the dist directory.
 
-  <code-block command="cd dist/awesome-sauce" lang="bsh"></code-block>
-
-  Now we can serve the built app with the Service Worker enabled.
-
-  <code-block command="http-server" lang="bsh">
-    {{'
-Starting up http-server, serving ./
+  <code-block lang="bsh"
+              command="http-server dist"
+              code="Starting up http-server, serving dist/
 Available on:
-http://127.0.0.1:8080
-http://192.168.86.23:8080
-Hit CTRL-C to stop the server'}}
-  </code-block>
+  http://127.0.0.1:8080
+  http://192.168.200.8:8080
+Hit CTRL-C to stop the server"></code-block>
 
   If you don't have `http-server`, it's a handly little utility for quickly spinning up a local server. It can be intalled like this:
 
-  <code-block command="npm install --global http-server" lang="bsh"></code-block>
+  <code-block lang="bsh" command="npm install --global http-server"></code-block>
 
   <node-package name="http-server"></node-package>
 

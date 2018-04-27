@@ -16,7 +16,8 @@ declare global {
 export class CodeBlockComponent implements OnInit {
 
   @Input() command = '';
-  @Input() lang: string;
+  @Input() lang = 'js';
+  @Input() code = '';
 
   constructor() { }
 
