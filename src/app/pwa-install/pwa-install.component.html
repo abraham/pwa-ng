@@ -246,7 +246,104 @@ index 75e1aff..2390591 100644
  <body>
    <app-root></app-root>'></code-block>
 
-  The last change we need to look it is `index.html` telling browsers about the `manifest.json` file and setting a couple of meta tags.
+  <p>The last changed file we need to look it is `index.html` telling browsers about the `manifest.json` file and setting a couple of meta tags.</p>
+
+  <p>There are also two new JSON files and several new icon files.<p>
+
+  <p>Let's look at `ngsw-config.json` first. This is the main file where you will configure how and when the Servivce Worker handles assets. We'll go into more details later.</p>
+
+  <code-block lang="bsh"
+              command="cat ngsw-config.json"
+              code='{
+  "index": "/index.html",
+  "assetGroups": [{
+    "name": "app",
+    "installMode": "prefetch",
+    "resources": {
+      "files": [
+        "/favicon.ico",
+        "/index.html"
+      ],
+      "versionedFiles": [
+        "/*.bundle.css",
+        "/*.bundle.js",
+        "/*.chunk.js"
+      ]
+    }
+  }, {
+    "name": "assets",
+    "installMode": "lazy",
+    "updateMode": "prefetch",
+    "resources": {
+      "files": [
+        "/assets/**"
+      ]
+    }
+  }]
+}'></code-block>
+
+  <p>There are a number of icons added. Currently they are just the Angular loogo but you should replace them with your logo/brand.</p>
+
+  <code-block lang="bsh"
+              command="ls src/assets/icons"
+              code="icon-128x128.png  icon-144x144.png  icon-152x152.png  icon-192x192.png  icon-384x384.png  icon-512x512.png  icon-72x72.png  icon-96x96.png"></code-block>
+
+  <p>Finally there is the `manifest.json`. This is criticle for how devices will handle your PWA. Check out the Manfiest page for details.</p>
+
+  <code-block lang="bsh"
+              command="cat src/assets/manifest.json"
+              code='{
+  "name": "awesome-sauce",
+  "short_name": "awesome-sauce",
+  "theme_color": "#1976d2",
+  "background_color": "#fafafa",
+  "display": "browser",
+  "scope": "/",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "/assets/icons/icon-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/icons/icon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/icons/icon-128x128.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/icons/icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/icons/icon-152x152.png",
+      "sizes": "152x152",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/icons/icon-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "splash_pages": null
+}'></code-block>
 </pwa-step>
 
 <pwa-step title="Commit">
