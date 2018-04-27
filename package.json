@@ -28,7 +28,7 @@
     "@webcomponents/webcomponentsjs": "^1.0.1",
     "code-prettify": "github:google/code-prettify",
     "core-js": "^2.5.4",
-    "node-package": "^1.0.8",
+    "node-package": "^1.0.9",
     "rxjs": "^6.0.0",
     "zone.js": "^0.8.24"
   },
