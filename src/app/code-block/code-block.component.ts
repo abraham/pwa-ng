@@ -1,4 +1,12 @@
-import { Component, OnInit, Input } from '@angular/core';
+import 'code-prettify/loader/prettify';
+
+import { Component, Input, OnInit } from '@angular/core';
+
+declare global {
+  const PR: {
+    prettyPrint: () => {};
+  };
+}
 
 @Component({
   selector: 'code-block',
@@ -8,10 +16,15 @@ import { Component, OnInit, Input } from '@angular/core';
 export class CodeBlockComponent implements OnInit {
 
   @Input() command = '';
+  @Input() lang: string;
 
   constructor() { }
 
-  ngOnInit() {
+  get language(): string {
+    return `language-${this.lang}`;
   }
 
+  ngOnInit() {
+    PR.prettyPrint();
+  }
 }

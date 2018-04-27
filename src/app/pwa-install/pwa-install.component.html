@@ -2,7 +2,7 @@
 <pwa-step title="Install">
   Install Angular CLI v6+:
 
-  <code-block command="npm install --global @angular/cli@next">
+  <code-block command="npm install --global @angular/cli@next" lang="bsh">
     {{'
 ...
 + @angular/cli@6.0.0-rc.5
@@ -11,7 +11,7 @@ added 263 packages from 166 contributors in 16.241s'}}
 
   If you prefer to user Yarn:
 
-  <code-block command="yarn global add @angular/cli@next">
+  <code-block command="yarn global add @angular/cli@next" lang="bsh">
     {{'
 yarn global v1.6.0
 [1/4] 🔍  Resolving packages...
@@ -28,7 +28,7 @@ success Installed "@angular/cli@6.0.0-rc.5" with binaries:
   <node-package name="@angular/cli"></node-package>
 
   You should now have the Angular CLI installed.
-  <code-block command="ng --version">
+  <code-block command="ng --version" lang="bsh">
     <!-- TODO: Fix ascii logo -->
     {{'
 ...
@@ -55,7 +55,7 @@ typescript                   2.7.2
 <pwa-step title="Generate">
   Let's generate a new Angular app with the `ng new` command. The main argument we'll be needing right now is the name of the app.
 
-  <code-block command="ng new awesome-sauce">
+  <code-block command="ng new awesome-sauce" lang="bsh">
     {{'
 ...
 added 1295 packages from 1267 contributors in 41.03s
@@ -94,13 +94,13 @@ CREATE awesome-sauce/e2e/tsconfig.e2e.json (213 bytes)'}}
 
   That created a new Angular app in the `awesome-sauce` directory. Let's go there now.
 
-  <code-block command="cd awesome-sauce"></code-block>
+  <code-block command="cd awesome-sauce" lang="bsh"></code-block>
 </pwa-step>
 
 <pwa-step title="Add PWA">
   Now that we've got a shiny new Angular app, let's add a Service Worker using Angular's new `ng add` command. This will use a Schematic to add the needed packages and modify our code. `--project` takes the same app name we defined earlier.
 
-  <code-block command="ng add @angular/pwa --project awesome-sauce">
+  <code-block command="ng add @angular/pwa --project awesome-sauce" lang="bsh">
     {{'
 Installing packages for tooling via npm.
 + @angular/pwa@0.5.7
@@ -126,7 +126,7 @@ UPDATE src/index.html (450 bytes)'}}
 
   If you have a look at the version control you can see several new and modified files.
 
-  <code-block command="git status">
+  <code-block command="git status" lang="bsh">
     {{'
 On branch master
 Changes not staged for commit:
@@ -156,7 +156,7 @@ no changes added to commit (use "git add" and/or "git commit -a")'}}
 
   Let's also take a look at the changes to the existing files.
 
-  <code-block command="git diff angular.json">
+  <code-block command="git diff angular.json" lang="bsh">
     {{'
 diff --git a/angular.json b/angular.json
 index af576d8..9f94a21 100644
@@ -176,7 +176,7 @@ index af576d8..9f94a21 100644
 
    `angular.json` is the file used to configure the Angular CLI. Here we are telling it to build a Service Worker.
 
- <code-block command="git diff package.json">
+ <code-block command="git diff package.json" lang="bsh">
    {{'
 diff --git a/package.json b/package.json
 index ea65b84..5185314 100644
@@ -196,7 +196,7 @@ index ea65b84..5185314 100644
 
   `package.json` is including a new `@angular/service-worker` dependancy. We should make sure it's installed.
 
-  <code-block command="npm install">
+  <code-block command="npm install" lang="bsh">
     {{'
 added 1 package from 1 contributor and removed 2 packages in 10.6s'}}
   </code-block>
@@ -229,7 +229,7 @@ import { AppComponent } from './app.component';
 
   Here we see a new `ServiceWorkerModule` that's imported and is being told to register a Service Worker if the app is being built for production.
 
-  <code-block command="git diff src/index.html">
+  <code-block command="git diff src/index.html" lang="bsh">
     {{'
 diff --git a/src/index.html b/src/index.html
 index 75e1aff..5733a3d 100644
@@ -253,9 +253,9 @@ index 75e1aff..5733a3d 100644
 <pwa-step title="Commit">
    It's a good idea to commit the changes to Git.
 
-  <code-block command="git add ."></code-block>
+  <code-block command="git add ." lang="bsh"></code-block>
 
-  <code-block command="git commit -m 'Add PWA'">
+  <code-block command="git commit -m 'Add PWA'" lang="bsh">
     {{'
 [master 719e6ef] Add PWA
 15 files changed, 98 insertions(+), 3 deletions(-)
@@ -275,7 +275,7 @@ create mode 100644 src/assets/manifest.json'}}
 <pwa-step title="Run it">
   As we saw earlier the Service Worker only get's registered if we build the app in production mode.
 
-  <code-block command="npm run build -- --prod">
+  <code-block command="npm run build -- --prod" lang="bsh">
     {{'
 > awesome-sauce@0.0.0 build /Users/abraham/dev/sandbox/awesome-sauce
 > ng build "--prod"
@@ -294,11 +294,11 @@ chunk {3} main.4a0f7da437b5e6c0460a.js (main) 164 kB [initial] [rendered]'}}
 
   Now we'll want to jump into the `dist/awesome-sauce` directory.
 
-  <code-block command="cd dist/awesome-sauce"></code-block>
+  <code-block command="cd dist/awesome-sauce" lang="bsh"></code-block>
 
   Now we can serve the built app with the Service Worker enabled.
 
-  <code-block command="http-server">
+  <code-block command="http-server" lang="bsh">
     {{'
 Starting up http-server, serving ./
 Available on:
@@ -309,7 +309,7 @@ Hit CTRL-C to stop the server'}}
 
   If you don't have `http-server`, it's a handly little utility for quickly spinning up a local server. It can be intalled like this:
 
-  <code-block command="npm install --global http-server"></code-block>
+  <code-block command="npm install --global http-server" lang="bsh"></code-block>
 
   <node-package name="http-server"></node-package>
 

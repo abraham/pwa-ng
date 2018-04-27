@@ -1,6 +1,5 @@
 <div class="code-wrapper">
-  <code class="block fixedwidth">
-    $ {{command}}
-    <ng-content></ng-content>
-  </code>
+  <pre class="prettyprint">
+<code class="block fixedwidth" [ngClass]="language">$ {{command}}
+      <ng-content></ng-content></code></pre>
 </div>
