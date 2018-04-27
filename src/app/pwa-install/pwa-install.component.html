@@ -384,13 +384,13 @@ chunk {1} styles.34c57ab7888ec1573f9c.css (styles) 0 bytes [initial] [rendered]
 chunk {2} polyfills.2d976f42c1abc2acac30.js (polyfills) 59.4 kB [initial] [rendered]
 chunk {3} main.408c9c3eb6fe7147207b.js (main) 164 kB [initial] [rendered]'></code-block>
 
-  The `-- --prod` looks a little odd but `--prod` will tell the Angular CLI to build in production mode, and the first `--` tells `npm` to pass it to Angular.
+  <p>The `-- --prod` looks a little odd but `--prod` will tell the Angular CLI to build in production mode, and the first `--` tells `npm` to pass it to Angular.</p>
 
-  Now we can serve the built app with the Service Worker enabled from the dist directory.
+  <p>Now we can serve the built app with the Service Worker enabled from the app's dist directory.</p>
 
   <code-block lang="bsh"
-              command="http-server dist"
-              code="Starting up http-server, serving dist/
+              command="http-server dist/awesome-sauce"
+              code="Starting up http-server, serving dist/awesome-sauce
 Available on:
   http://127.0.0.1:8080
   http://192.168.200.8:8080
@@ -404,14 +404,14 @@ Hit CTRL-C to stop the server"></code-block>
 
   If you go to `http://localhost:8080` in a browser you should see the following:
 
-  <img src="assets/images/http-server.png" alt="App running in a browser">
+  <img-2 [attr.width]="imgWidth" [attr.height]="imgHeight" src="assets/images/http-server.png" src-preview="assets/images/http-server.thumb.jpg" alt="App running in a browser"></img-2>
 
   Now open the Chrome DevTools to the Application tab and you should see a Service Worker installed from localhost.
 
-  <img src="assets/images/service-worker.png" alt="Installed Service Worker">
+  <img-2 [attr.width]="imgWidth" [attr.height]="imgHeight" src="assets/images/service-worker.png" src-preview="assets/images/service-worker.thumb.jpg" alt="Installed Service Worker"></img-2>
 
   Toggle the Network to "offline" and refesh. Everything will still render.
 
-  <img src="assets/images/offline.png" alt="App working offline">
+  <img-2 [attr.width]="imgWidth" [attr.height]="imgHeight" src="assets/images/offline.png" src-preview="assets/images/offline.thumb.jpg" alt="App working offline"></img-2>
 
 </pwa-step>

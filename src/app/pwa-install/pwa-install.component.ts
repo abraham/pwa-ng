@@ -7,22 +7,23 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class PwaInstallComponent implements OnInit {
 
-  // private width = 896;
-  // private height = 571;
-  //
-  // @Input() imgWidth: number;
-  // @Input() imgHeight: number;
+  private imgRatio = 821 / 1392;
+  private defaultWidth = 960;
+  private defaultHeight = this.defaultWidth * this.imgRatio;
+
+  @Input() imgWidth: number;
+  @Input() imgHeight: number;
 
   constructor() { }
 
   ngOnInit() {
-    // requestAnimationFrame(() => {
-    //   this.imgWidth = this.containerWidth - 16;
-    //   this.imgHeight = this.imgWidth * ( this.height / this.width);
-    // });
+    requestAnimationFrame(() => {
+      this.imgWidth = this.containerWidth - 16;
+      this.imgHeight = this.imgWidth * this.imgRatio;
+    });
   }
 
-  // private get containerWidth(): number {
-  //   return (document.querySelector('#container') as HTMLDivElement).offsetWidth;
-  // }
+  private get containerWidth(): number {
+    return (document.querySelector('#container') as HTMLDivElement).offsetWidth;
+  }
 }
