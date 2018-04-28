@@ -39,7 +39,7 @@ import { environment } from '../environments/environment';
     MatListModule,
     MatTabsModule,
     MatToolbarModule,
-    RouterModule.forRoot(appRoutes, { enableTracing: true }),
+    RouterModule.forRoot(appRoutes),
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [],
