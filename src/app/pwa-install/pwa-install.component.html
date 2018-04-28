@@ -1,13 +1,13 @@
 
 <pwa-step title="Install">
-  Install Angular CLI v6+:
+  <p>Install Angular CLI v6+:</p>
 
   <code-block lang="bsh"
               command="npm install --global @angular/cli@next"
               code="+ @angular/cli@6.0.0-rc.6
 added 254 packages from 178 contributors in 10.839s"></code-block>
 
-  If you prefer to user Yarn:
+  <p>If you prefer to user Yarn:</p>
 
   <code-block lang="bsh"
               command="yarn global add @angular/cli@next"
@@ -23,7 +23,8 @@ success Installed "@angular/cli@6.0.0-rc.6" with binaries:
 
   <node-package name="@angular/cli" global></node-package>
 
-  You should now have the Angular CLI installed.
+  <p>You should now have the Angular CLI installed.</p>
+
   <code-block lang="bsh"
               command="ng --version"
               code="     _                      _                 ____ _     ___
@@ -60,7 +61,7 @@ webpack                           4.6.0"></code-block>
 </pwa-step>
 
 <pwa-step title="Generate">
-  Let's generate a new Angular app with the `ng new` command. The main argument we'll be needing right now is the name of the app.
+  <p>Let's generate a new Angular app with the `ng new` command. The main argument we'll be needing right now is the name of the app.</p>
 
   <code-block lang="bsh"
               command="ng new awesome-sauce"
@@ -97,13 +98,13 @@ CREATE awesome-sauce/e2e/tsconfig.e2e.json (213 bytes)
 added 1249 packages from 1269 contributors in 44.136s
 Successfully initialized git."></code-block>
 
-  That created a new Angular app in the `awesome-sauce` directory. Let's go there now.
+  <p>That created a new Angular app in the `awesome-sauce` directory. Let's go there now.</p>
 
   <code-block lang="bsh" command="cd awesome-sauce"></code-block>
 </pwa-step>
 
 <pwa-step title="Add PWA">
-  Now that we've got a shiny new Angular app, let's add a Service Worker using Angular's new `ng add` command. This will use a Schematic to add the needed packages and modify our code. `--project` takes the same app name we defined earlier.
+  <p>Now that we've got a shiny new Angular app, let's add a Service Worker using Angular's new `ng add` command. This will use a Schematic to add the needed packages and modify our code. `--project` takes the same app name we defined earlier.</p>
 
   <code-block lang="bsh"
               command="ng add @angular/pwa --project awesome-sauce"
@@ -129,7 +130,7 @@ added 1 package from 1 contributor and removed 4 packages in 10.135s"></code-blo
 
   <node-package name="@angular/pwa"></node-package>
 
-  If you have a look at the version control you can see several new and modified files.
+  <p>If you have a look at the version control you can see several new and modified files.</p>
 
   <code-block lang="bsh"
               command="git status"
@@ -160,7 +161,7 @@ no changes added to commit (use "git add" and/or "git commit -a")'>
     <mat-list-item role="listitem">`icons` is were you should put your logo in various sizes</mat-list-item>
   </mat-list>
 
-  Let's also take a look at the changes to the existing files.
+  <p>Let's also take a look at the changes to the existing files.</p>
 
   <code-block lang="bsh"
               command="git diff angular.json"
@@ -179,7 +180,7 @@ index 661f562..fa3ce7f 100644
            }
          },'></code-block>
 
-   `angular.json` is the file used to configure the Angular CLI. Here we are telling it to build a Service Worker.
+  <p>`angular.json` is the file used to configure the Angular CLI. Here we are telling it to build a Service Worker.</p>
 
   <code-block lang="bsh"
              command="git diff package.json"
@@ -198,7 +199,7 @@ index 97ce98f..8068839 100644
    "devDependencies": {
      "@angular/compiler-cli": "^6.0.0-rc.1",'></code-block>
 
-  `package.json` is including a new `@angular/service-worker` dependancy.
+  <p>`package.json` is including a new `@angular/service-worker` dependancy.</p>
 
   <code-block lang="bsh"
               command="git diff src/app/app.module.ts"
@@ -225,7 +226,7 @@ index f657163..2f5db8d 100644
    providers: [],
    bootstrap: [AppComponent]"></code-block>
 
-  Here we see a new `ServiceWorkerModule` that's imported and is being told to register a Service Worker if the app is being built for production.
+  <p>Here we see a new `ServiceWorkerModule` that's imported and is being told to register a Service Worker if the app is being built for production.</p>
 
   <code-block lang="bsh"
               command="git diff src/index.html"
@@ -345,7 +346,7 @@ index 75e1aff..2390591 100644
 </pwa-step>
 
 <pwa-step title="Commit">
-  It's a good idea to commit the changes to Git.
+  <p>It's a good idea to commit the changes to Git.</p>
 
   <code-block lang="bsh" command="git add ."></code-block>
 
@@ -366,7 +367,7 @@ index 75e1aff..2390591 100644
 </pwa-step>
 
 <pwa-step title="Run it">
-  As we saw earlier the Service Worker only get's registered if we build the app in production mode.
+  <p>As we saw earlier the Service Worker only get's registered if we build the app in production mode.</p>
 
   <code-block lang="bsh"
               command="npm run build -- --prod"
@@ -394,21 +395,21 @@ Available on:
   http://192.168.200.8:8080
 Hit CTRL-C to stop the server"></code-block>
 
-  If you don't have `http-server`, it's a handly little utility for quickly spinning up a local server. It can be intalled like this:
+  <p>If you don't have `http-server`, it's a handly little utility for quickly spinning up a local server. It can be intalled like this:</p>
 
   <code-block lang="bsh" command="npm install --global http-server"></code-block>
 
   <node-package name="http-server" global></node-package>
 
-  If you go to `http://localhost:8080` in a browser you should see the following:
+  <p>If you go to `http://localhost:8080` in a browser you should see the following:</p>
 
   <img-2 [attr.width]="imgWidth" [attr.height]="imgHeight" src="assets/images/http-server.png" src-preview="assets/images/http-server.thumb.jpg" alt="App running in a browser"></img-2>
 
-  Now open the Chrome DevTools to the Application tab and you should see a Service Worker installed from localhost.
+  <p>Now open the Chrome DevTools to the Application tab and you should see a Service Worker installed from localhost.</p>
 
   <img-2 [attr.width]="imgWidth" [attr.height]="imgHeight" src="assets/images/service-worker.png" src-preview="assets/images/service-worker.thumb.jpg" alt="Installed Service Worker"></img-2>
 
-  Toggle the Network to "offline" and refesh. Everything will still render.
+  <p>Toggle the Network to "offline" and refesh. Everything will still render.</p>
 
   <img-2 [attr.width]="imgWidth" [attr.height]="imgHeight" src="assets/images/offline.png" src-preview="assets/images/offline.thumb.jpg" alt="App working offline"></img-2>
 
