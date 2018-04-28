@@ -23,7 +23,7 @@ export const appNav: Nav[] = [
 
 export const appRoutes: Routes = [
   { path: '', component: PwaInstallComponent, pathMatch: 'full' },
-  { path: 'manifest', component: PwaManifestComponent },
+  { path: 'manifest', component: ComingSoonComponent },
   { path: 'firebase', component: ComingSoonComponent },
   { path: 'lighthouse', component: ComingSoonComponent },
   { path: 'assets', component: ComingSoonComponent },
