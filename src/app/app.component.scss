@@ -9,9 +9,14 @@ mat-toolbar span {
   margin-left: 8px;
 }
 
+.mdc-tab-bar-scroller {
+  border-bottom: 1px solid #FFCDD2;
+}
+
 .mdc-tab-bar-scroller a {
   color: #E53935;
 }
+
 .mdc-tab-bar-scroller .mdc-tab-bar__indicator {
   background-color: #E53935;
 }
