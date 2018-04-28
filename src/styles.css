@@ -37,3 +37,11 @@ node-package {
   --node-package-color: #D32F2F;
   --node-package-link-color: #B71C1C;
 }
+
+.warning {
+  padding: 16px;
+  margin: 16px;
+  border-radius: 8px;
+  background-color: #D32F2F;
+  color: #fff;
+}
