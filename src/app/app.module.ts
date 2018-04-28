@@ -12,13 +12,15 @@ import { PwaInstallComponent } from './pwa-install/pwa-install.component';
 import { PwaStepComponent } from './pwa-step/pwa-step.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { CBComponent } from './c-b/c-b.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CodeBlockComponent,
     PwaStepComponent,
-    PwaInstallComponent
+    PwaInstallComponent,
+    CBComponent
   ],
   imports: [
     BrowserAnimationsModule,

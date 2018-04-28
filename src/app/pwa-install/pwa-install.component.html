@@ -61,7 +61,7 @@ webpack                           4.6.0"></code-block>
 </pwa-step>
 
 <pwa-step title="Generate">
-  <p>Let's generate a new Angular app with the `ng new` command. The main argument we'll be needing right now is the name of the app.</p>
+  <p>Let's generate a new Angular app with the <c-b code="ng new"></c-b> command. The main argument we'll be needing right now is the name of the app.</p>
 
   <code-block lang="bsh"
               command="ng new awesome-sauce"
@@ -98,13 +98,13 @@ CREATE awesome-sauce/e2e/tsconfig.e2e.json (213 bytes)
 added 1249 packages from 1269 contributors in 44.136s
 Successfully initialized git."></code-block>
 
-  <p>That created a new Angular app in the `awesome-sauce` directory. Let's go there now.</p>
+  <p>That created a new Angular app in the <c-b code="awesome-sauce"></c-b> directory. Let's go there now.</p>
 
   <code-block lang="bsh" command="cd awesome-sauce"></code-block>
 </pwa-step>
 
 <pwa-step title="Add PWA">
-  <p>Now that we've got a shiny new Angular app, let's add a Service Worker using Angular's new `ng add` command. This will use a Schematic to add the needed packages and modify our code. `--project` takes the same app name we defined earlier.</p>
+  <p>Now that we've got a shiny new Angular app, let's add a Service Worker using Angular's new <c-b code="ng add"></c-b> command. This will use a Schematic to add the needed packages and modify our code. <c-b code="--project"></c-b> takes the same app name we defined earlier.</p>
 
   <code-block lang="bsh"
               command="ng add @angular/pwa --project awesome-sauce"
@@ -156,9 +156,9 @@ no changes added to commit (use "git add" and/or "git commit -a")'>
   </code-block>
 
   <mat-list role="list">
-    <mat-list-item role="listitem">`ngsw-config.json` is where to tell Angular CLI how to handle various assets for caching</mat-list-item>
-    <mat-list-item role="listitem">`manifest.json` is a bit of metadata that describes your site and enables some PWA features in browsers</mat-list-item>
-    <mat-list-item role="listitem">`icons` is were you should put your logo in various sizes</mat-list-item>
+    <mat-list-item role="listitem"><c-b code="ngsw-config.json"></c-b> is where to tell Angular CLI how to handle various assets for caching</mat-list-item>
+    <mat-list-item role="listitem"><c-b code="manifest.json"></c-b> is a bit of metadata that describes your site and enables some PWA features in browsers</mat-list-item>
+    <mat-list-item role="listitem"><c-b code="icons"></c-b> is were you should put your logo in various sizes</mat-list-item>
   </mat-list>
 
   <p>Let's also take a look at the changes to the existing files.</p>
@@ -180,7 +180,7 @@ index 661f562..fa3ce7f 100644
            }
          },'></code-block>
 
-  <p>`angular.json` is the file used to configure the Angular CLI. Here we are telling it to build a Service Worker.</p>
+  <p><c-b code="angular.json"></c-b> is the file used to configure the Angular CLI. Here we are telling it to build a Service Worker.</p>
 
   <code-block lang="bsh"
              command="git diff package.json"
@@ -199,7 +199,7 @@ index 97ce98f..8068839 100644
    "devDependencies": {
      "@angular/compiler-cli": "^6.0.0-rc.1",'></code-block>
 
-  <p>`package.json` is including a new `@angular/service-worker` dependancy.</p>
+  <p><c-b code="package.json"></c-b> is including a new <c-b code="@angular/service-worker"></c-b> dependancy.</p>
 
   <code-block lang="bsh"
               command="git diff src/app/app.module.ts"
@@ -226,7 +226,7 @@ index f657163..2f5db8d 100644
    providers: [],
    bootstrap: [AppComponent]"></code-block>
 
-  <p>Here we see a new `ServiceWorkerModule` that's imported and is being told to register a Service Worker if the app is being built for production.</p>
+  <p>Here we see a new <c-b code="ServiceWorkerModule"></c-b> that's imported and is being told to register a Service Worker if the app is being built for production.</p>
 
   <code-block lang="bsh"
               command="git diff src/index.html"
@@ -245,11 +245,11 @@ index 75e1aff..2390591 100644
  <body>
    <app-root></app-root>'></code-block>
 
-  <p>The last changed file we need to look it is `index.html` telling browsers about the `manifest.json` file and setting a couple of meta tags.</p>
+  <p>The last changed file we need to look it is <c-b code="index.html"></c-b> telling browsers about the <c-b code="manifest.json"></c-b> file and setting a couple of meta tags.</p>
 
   <p>There are also two new JSON files and several new icon files.<p>
 
-  <p>Let's look at `ngsw-config.json` first. This is the main file where you will configure how and when the Servivce Worker handles assets. We'll go into more details later.</p>
+  <p>Let's look at <c-b code="ngsw-config.json"></c-b> first. This is the main file where you will configure how and when the Servivce Worker handles assets. We'll go into more details later.</p>
 
   <code-block lang="bsh"
               command="cat ngsw-config.json"
@@ -287,7 +287,7 @@ index 75e1aff..2390591 100644
               command="ls src/assets/icons"
               code="icon-128x128.png  icon-144x144.png  icon-152x152.png  icon-192x192.png  icon-384x384.png  icon-512x512.png  icon-72x72.png  icon-96x96.png"></code-block>
 
-  <p>Finally there is the `manifest.json`. This is criticle for how devices will handle your PWA. Check out the Manfiest page for details.</p>
+  <p>Finally there is the <c-b code="manifest.json"></c-b>. This is criticle for how devices will handle your PWA. Check out the Manfiest page for details.</p>
 
   <code-block lang="bsh"
               command="cat src/assets/manifest.json"
@@ -383,7 +383,7 @@ chunk {1} styles.34c57ab7888ec1573f9c.css (styles) 0 bytes [initial] [rendered]
 chunk {2} polyfills.2d976f42c1abc2acac30.js (polyfills) 59.4 kB [initial] [rendered]
 chunk {3} main.408c9c3eb6fe7147207b.js (main) 164 kB [initial] [rendered]'></code-block>
 
-  <p>The `-- --prod` looks a little odd but `--prod` will tell the Angular CLI to build in production mode, and the first `--` tells `npm` to pass it to Angular.</p>
+  <p>The <c-b code="-- --prod"></c-b> looks a little odd but <c-b code="--prod"></c-b> will tell the Angular CLI to build in production mode, and the first <c-b code="--"></c-b> tells <c-b code="npm"></c-b> to pass it to Angular.</p>
 
   <p>Now we can serve the built app with the Service Worker enabled from the app's dist directory.</p>
 
@@ -395,13 +395,13 @@ Available on:
   http://192.168.200.8:8080
 Hit CTRL-C to stop the server"></code-block>
 
-  <p>If you don't have `http-server`, it's a handly little utility for quickly spinning up a local server. It can be intalled like this:</p>
+  <p>If you don't have <c-b code="http-server"></c-b>, it's a handly little utility for quickly spinning up a local server. It can be intalled like this:</p>
 
   <code-block lang="bsh" command="npm install --global http-server"></code-block>
 
   <node-package name="http-server" global></node-package>
 
-  <p>If you go to `http://localhost:8080` in a browser you should see the following:</p>
+  <p>If you go to <c-b code="http://localhost:8080"></c-b> in a browser you should see the following:</p>
 
   <img-2 [attr.width]="imgWidth" [attr.height]="imgHeight" src="assets/images/http-server.png" src-preview="assets/images/http-server.thumb.jpg" alt="App running in a browser"></img-2>
 
