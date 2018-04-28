@@ -286,62 +286,7 @@ index 75e1aff..2390591 100644
               command="ls src/assets/icons"
               code="icon-128x128.png  icon-144x144.png  icon-152x152.png  icon-192x192.png  icon-384x384.png  icon-512x512.png  icon-72x72.png  icon-96x96.png"></code-block>
 
-  <p>Finally there is the <c-b code="manifest.json"></c-b>. This is criticle for how devices will handle your PWA. Check out the Manfiest page for details.</p>
-
-  <code-block lang="bsh"
-              command="cat src/assets/manifest.json"
-              code='{
-  "name": "awesome-sauce",
-  "short_name": "awesome-sauce",
-  "theme_color": "#1976d2",
-  "background_color": "#fafafa",
-  "display": "browser",
-  "scope": "/",
-  "start_url": "/",
-  "icons": [
-    {
-      "src": "/assets/icons/icon-72x72.png",
-      "sizes": "72x72",
-      "type": "image/png"
-    },
-    {
-      "src": "/assets/icons/icon-96x96.png",
-      "sizes": "96x96",
-      "type": "image/png"
-    },
-    {
-      "src": "/assets/icons/icon-128x128.png",
-      "sizes": "128x128",
-      "type": "image/png"
-    },
-    {
-      "src": "/assets/icons/icon-144x144.png",
-      "sizes": "144x144",
-      "type": "image/png"
-    },
-    {
-      "src": "/assets/icons/icon-152x152.png",
-      "sizes": "152x152",
-      "type": "image/png"
-    },
-    {
-      "src": "/assets/icons/icon-192x192.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "/assets/icons/icon-384x384.png",
-      "sizes": "384x384",
-      "type": "image/png"
-    },
-    {
-      "src": "/assets/icons/icon-512x512.png",
-      "sizes": "512x512",
-      "type": "image/png"
-    }
-  ],
-  "splash_pages": null
-}'></code-block>
+  <p>Finally there is the <c-b code="manifest.json"></c-b>. Check out the <a class="mat-button" [routerLink]="['/manifest']">Manifest page</a> for details.</p>
 </pwa-step>
 
 <pwa-step title="Commit">
