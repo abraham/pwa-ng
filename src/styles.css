@@ -1,9 +1,18 @@
 @import '~code-prettify/styles/sunburst.css';
 
-body {
+html, body {
+  height: 100%;
+  width: 100%;
   margin: 0;
   font-family: 'Roboto', sans-serif;
   background-color: #fff;
+}
+
+app-root {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 h1, h2 {
@@ -14,8 +23,43 @@ mat-card {
   margin: 8px;
 }
 
-.fixedwidth, pre, code {
-  font-family: 'Roboto Mono', monospace;
+header {
+  display: block;
+  max-width: 960px;
+  margin: 0 auto;
+  flex-shrink: 0;
+  width: 100%;
+}
+
+#container {
+  flex: 1 0 auto;
+  display: block;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 8px;
+  width: 100%;
+}
+
+footer {
+  flex-shrink: 0;
+  height: 128px;
+  background-color: #D32F2F;
+  color: #fff;
+  width: 100%;
+}
+
+footer content {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 100%;
+}
+
+footer a {
+  color: #fff;
 }
 
 mat-toolbar-row {
@@ -24,18 +68,16 @@ mat-toolbar-row {
   padding-left: 0 !important;
 }
 
-#container {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 0 8px;
-}
-
 node-package {
   margin: 16px 8px;
   width: calc(100% - 16px);
   --node-package-background-color: #fff;
   --node-package-color: #D32F2F;
   --node-package-link-color: #B71C1C;
+}
+
+.fixedwidth, pre, code {
+  font-family: 'Roboto Mono', monospace;
 }
 
 .warning {
