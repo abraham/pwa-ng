@@ -32,7 +32,12 @@
               "src/styles.css",
               "src/theme.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "node_modules"
+              ]
+            },
           },
           "configurations": {
             "production": {

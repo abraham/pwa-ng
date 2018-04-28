@@ -3,24 +3,32 @@ import 'img-2';
 
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { MatButtonModule, MatCardModule, MatListModule, MatTabsModule, MatToolbarModule } from '@angular/material';
+import { RouterModule, Routes } from '@angular/router';
 
+import { AboutComponent } from './about/about.component';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
+import { CBComponent } from './c-b/c-b.component';
 import { CodeBlockComponent } from './code-block/code-block.component';
+import { ComingSoonComponent } from './coming-soon.component';
 import { PwaInstallComponent } from './pwa-install/pwa-install.component';
+import { PwaManifestComponent } from './pwa-manifest/pwa-manifest.component';
 import { PwaStepComponent } from './pwa-step/pwa-step.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { appRoutes } from './routes';
 import { environment } from '../environments/environment';
-import { CBComponent } from './c-b/c-b.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    CBComponent,
     CodeBlockComponent,
-    PwaStepComponent,
+    ComingSoonComponent,
     PwaInstallComponent,
-    CBComponent
+    PwaManifestComponent,
+    PwaStepComponent,
+    AboutComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -31,7 +39,8 @@ import { CBComponent } from './c-b/c-b.component';
     MatListModule,
     MatTabsModule,
     MatToolbarModule,
-    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
+    RouterModule.forRoot(appRoutes, { enableTracing: true }),
+    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [],
   bootstrap: [AppComponent],

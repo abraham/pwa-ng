@@ -12,26 +12,30 @@
     Note: This guide is for Angular 6 which is currently in release candidate. Expect bugs.
   </div>
 
-  <mat-tab-group>
-    <mat-tab label="Install">
-      <pwa-install></pwa-install>
-    </mat-tab>
-    <mat-tab label="Manifest">
-      Coming soon...
-    </mat-tab>
-    <mat-tab label="Firebase">
-      Coming soon...
-    </mat-tab>
-    <mat-tab label="Lighthouse">
-      Coming soon...
-    </mat-tab>
-    <mat-tab label="Assets">
-      Coming soon...
-    </mat-tab>
-    <mat-tab label="About">
-      <p>
-        <a target="_blank" rel="noopener" href="https://github.com/abraham/pwa-ng">Angular PWA</a> is made by <a target="_blank" rel="noopener" href="https://twitter.com/abraham">@abraham</a> to show how easy it is to build a <a target="_blank" rel="noopener" href="https://developers.google.com/web/progressive-web-apps/">PWA</a> with <a target="_blank" rel="noopener" href="https://angular.io/">Angular</a>.
-      </p>
-    </mat-tab>
-  </mat-tab-group>
+  <div #nav id="my-mdc-tab-bar-scroller" class="mdc-tab-bar-scroller">
+    <div class="mdc-tab-bar-scroller__indicator mdc-tab-bar-scroller__indicator--back">
+      <a class="mdc-tab-bar-scroller__indicator__inner material-icons" href="#" aria-label="scroll back button">
+        navigate_before
+      </a>
+    </div>
+    <div class="mdc-tab-bar-scroller__scroll-frame">
+      <nav id="my-scrollable-tab-bar" class="mdc-tab-bar mdc-tab-bar-scroller__scroll-frame__tabs">
+        <a class="mdc-tab"
+           *ngFor="let link of appNav"
+           [routerLink]="link.path"
+           routerLinkActive="mdc-tab--active"
+           [routerLinkActiveOptions]="{ exact: true }">
+          {{link.label}}
+        </a>
+        <span class="mdc-tab-bar__indicator"></span>
+      </nav>
+    </div>
+    <div class="mdc-tab-bar-scroller__indicator mdc-tab-bar-scroller__indicator--forward">
+      <a class="mdc-tab-bar-scroller__indicator__inner material-icons" href="#" aria-label="scroll forward button">
+        navigate_next
+      </a>
+    </div>
+  </div>
+
+  <router-outlet></router-outlet>
 </div>

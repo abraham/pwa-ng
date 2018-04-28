@@ -45,3 +45,11 @@ node-package {
   background-color: #D32F2F;
   color: #fff;
 }
+
+.notice {
+  padding: 16px;
+  margin: 16px;
+  border-radius: 8px;
+  border: 1px solid #D32F2F;
+  color: #D32F2F;
+}
