@@ -1,4 +1,4 @@
 <div class="code-wrapper">
-  <pre class="prettyprint"><code class="fixedwidth code command" [ngClass]="language">$ {{command}}</code></pre>
+  <pre class="prettyprint"><code class="fixedwidth code command" [ngClass]="language">$ {{command}}<i class="material-icons copy" (click)="copy()" title="Copy command to clipboard">content_copy</i></code></pre>
   <pre *ngIf="code" class="prettyprint"><code class="fixedwidth code output" [ngClass]="language">{{code}}</code></pre>
 </div>

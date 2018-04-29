@@ -2,7 +2,7 @@ import 'node-package';
 import 'img-2';
 
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
-import { MatButtonModule, MatCardModule, MatListModule, MatTabsModule, MatToolbarModule } from '@angular/material';
+import { MatButtonModule, MatCardModule, MatListModule, MatSnackBarModule, MatTabsModule, MatToolbarModule } from '@angular/material';
 import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
@@ -35,6 +35,7 @@ import { environment } from '../environments/environment';
     MatCardModule,
     MatListModule,
     MatListModule,
+    MatSnackBarModule,
     MatTabsModule,
     MatToolbarModule,
     RouterModule.forRoot(appRoutes),
