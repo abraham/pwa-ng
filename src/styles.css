@@ -67,7 +67,8 @@ mat-toolbar-row {
 
 node-package {
   margin: 16px 8px;
-  width: calc(100% - 16px);
+  display: block;
+  width: calc(100% - 16px) !important; /* Hack for lack of shadowdom support */
   --node-package-background-color: #fff;
   --node-package-color: #D32F2F;
   --node-package-link-color: #B71C1C;
