@@ -1,6 +1,4 @@
 <div class="code-wrapper">
-  <pre class="prettyprint">
-<code class="fixedwidth" [ngClass]="language">$ {{command}}
-{{code}}
-</code></pre>
+  <pre class="prettyprint"><code class="fixedwidth code command" [ngClass]="language">$ {{command}}</code></pre>
+  <pre *ngIf="code" class="prettyprint"><code class="fixedwidth code output" [ngClass]="language">{{code}}</code></pre>
 </div>

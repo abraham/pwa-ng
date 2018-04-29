@@ -1,7 +1,18 @@
-pre {
-  width: calc(100% - 2em - 16px);
+.code {
+  margin: 8px;
+  padding: 16px;
+  display: block;
+  border-radius: 8px;
+  border: 1px solid #D32F2F;
+  word-wrap: break-word;
+  white-space: pre-wrap;
 }
 
-code {
-  word-wrap: break-word;
+.command {
+  background-color: #D32F2F;
+  color: #fff;
+}
+
+.output {
+  color: #000;
 }
