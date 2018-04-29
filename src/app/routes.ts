@@ -19,6 +19,10 @@ export const appNav: Nav[] = [
   { path: 'assets', label: 'Assets' },
 ];
 
+// TODO: Aditional guides to consider.
+// SSR
+// CI
+
 export const appRoutes: Routes = [
   { path: '', component: PwaInstallComponent, pathMatch: 'full' },
   { path: 'manifest', component: PwaManifestComponent },
