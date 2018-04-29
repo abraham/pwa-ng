@@ -19,7 +19,7 @@ h1, h2 {
   color: #D32F2F;
 }
 
-mat-card {
+h1, h2, p {
   margin: 8px;
 }
 
@@ -36,7 +36,6 @@ header {
   display: block;
   max-width: 960px;
   margin: 0 auto;
-  padding: 0 8px;
   width: 100%;
 }
 
@@ -82,7 +81,7 @@ node-package {
 
 .warning {
   padding: 16px;
-  margin: 16px;
+  margin: 16px 8px;
   border-radius: 8px;
   background-color: #D32F2F;
   color: #fff;
@@ -90,7 +89,7 @@ node-package {
 
 .notice {
   padding: 16px;
-  margin: 16px;
+  margin: 16px 8px;
   border-radius: 8px;
   border: 1px solid #D32F2F;
   color: #D32F2F;

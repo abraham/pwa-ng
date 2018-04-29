@@ -1,3 +1,7 @@
 pre {
-  width: calc(100% - 2em - 11px);
+  width: calc(100% - 2em - 16px);
+}
+
+code {
+  word-wrap: break-word;
 }
