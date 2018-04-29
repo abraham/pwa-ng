@@ -155,9 +155,18 @@ no changes added to commit (use "git add" and/or "git commit -a")'>
   </code-block>
 
   <mat-list role="list">
-    <mat-list-item role="listitem"><c-b code="ngsw-config.json"></c-b> is where to tell Angular CLI how to handle various assets for caching</mat-list-item>
-    <mat-list-item role="listitem"><c-b code="manifest.json"></c-b> is a bit of metadata that describes your site and enables some PWA features in browsers</mat-list-item>
-    <mat-list-item role="listitem"><c-b code="icons"></c-b> is were you should put your logo in various sizes</mat-list-item>
+    <mat-list-item role="listitem">
+      <c-b matLine code="ngsw-config.json"></c-b>
+      <p matLine>tells the Angular CLI how to handle assets for caching.</p>
+    </mat-list-item>
+    <mat-list-item role="listitem">
+      <c-b matLine code="manifest.json"></c-b>
+      <p matLine>describes your site and enables it to become installable.</p>
+    </mat-list-item>
+    <mat-list-item role="listitem">
+      <c-b matLine code="icons"></c-b>
+      <p matLine>will be your logo in various sizes</p>
+    </mat-list-item>
   </mat-list>
 
   <p>Let's also take a look at the changes to the existing files.</p>
