@@ -6,6 +6,10 @@ html, body {
   background-color: #fff;
 }
 
+body {
+  overflow-y: scroll;
+}
+
 app-root {
   height: 100%;
   width: 100%;
