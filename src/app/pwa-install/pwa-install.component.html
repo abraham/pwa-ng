@@ -3,10 +3,11 @@
 
   <code-block lang="bsh"
               command="npm install --global @angular/cli@next"
-              code="+ @angular/cli@6.0.0-rc.6
-added 254 packages from 178 contributors in 10.839s"></code-block>
+              code="...
++ @angular/cli@6.0.0-rc.7
+added 250 packages from 175 contributors in 9.11s"></code-block>
 
-  <p>If you prefer to user Yarn:</p>
+  <p>Or if you prefer to use Yarn:</p>
 
   <code-block lang="bsh"
               command="yarn global add @angular/cli@next"
@@ -15,7 +16,7 @@ added 254 packages from 178 contributors in 10.839s"></code-block>
 [2/4] 🚚  Fetching packages...
 [3/4] 🔗  Linking dependencies...
 [4/4] 📃  Building fresh packages...
-success Installed "@angular/cli@6.0.0-rc.6" with binaries:
+success Installed "@angular/cli@6.0.0-rc.7" with binaries:
     - ng
 ✨  Done in 9.07s.'>
   </code-block>
@@ -26,37 +27,31 @@ success Installed "@angular/cli@6.0.0-rc.6" with binaries:
 
   <code-block lang="bsh"
               command="ng --version"
-              code="     _                      _                 ____ _     ___
-    / \   _ __   __ _ _   _| | __ _ _ __     / ___| |   |_ _|
-   / △ \ | '_ \ / _` | | | | |/ _` | '__|   | |   | |    | |
-  / ___ \| | | | (_| | |_| | | (_| | |      | |___| |___ | |
- /_/   \_\_| |_|\__, |\__,_|_|\__,_|_|       \____|_____|___|
-                |___/
+              code="
+    _                      _                 ____ _     ___
+   / \   _ __   __ _ _   _| | __ _ _ __     / ___| |   |_ _|
+  / △ \ | '_ \ / _` | | | | |/ _` | '__|   | |   | |    | |
+ / ___ \| | | | (_| | |_| | | (_| | |      | |___| |___ | |
+/_/   \_\_| |_|\__, |\__,_|_|\__,_|_|       \____|_____|___|
+               |___/
 
 
-Angular CLI: 6.0.0-rc.6
-Node: 8.9.0
+Angular CLI: 6.0.0-rc.7
+Node: 10.0.0
 OS: darwin x64
-Angular: 6.0.0-rc.5
-... animations, common, compiler, compiler-cli, core, forms
-... http, language-service, platform-browser
-... platform-browser-dynamic, router, service-worker
+Angular:
+...
 
-Package                           Version
------------------------------------------------------------
-@angular-devkit/architect         0.5.9
-@angular-devkit/build-angular     0.5.9
-@angular-devkit/build-optimizer   0.5.9
-@angular-devkit/core              0.5.9
-@angular-devkit/schematics        0.5.8
-@angular/cli                      6.0.0-rc.6
-@ngtools/json-schema              1.1.0
-@ngtools/webpack                  6.0.0-rc.7
-@schematics/angular               0.5.8
-@schematics/update                0.5.8
-rxjs                              6.0.0
-typescript                        2.7.2
-webpack                           4.6.0"></code-block>
+Package                      Version
+------------------------------------------------------
+@angular-devkit/architect    0.5.10
+@angular-devkit/core         0.5.10
+@angular-devkit/schematics   0.5.10
+@ngtools/json-schema         1.1.0
+@schematics/angular          0.5.10
+@schematics/update           0.5.10
+rxjs                         6.0.0
+typescript                   2.7.2"></code-block>
 </pwa-step>
 
 <pwa-step title="Generate">
@@ -65,14 +60,14 @@ webpack                           4.6.0"></code-block>
   <code-block lang="bsh"
               command="ng new awesome-sauce"
               code="CREATE awesome-sauce/README.md (1034 bytes)
-CREATE awesome-sauce/angular.json (3856 bytes)
-CREATE awesome-sauce/package.json (1402 bytes)
+CREATE awesome-sauce/angular.json (3884 bytes)
+CREATE awesome-sauce/package.json (1397 bytes)
 CREATE awesome-sauce/tsconfig.json (384 bytes)
 CREATE awesome-sauce/tslint.json (2805 bytes)
 CREATE awesome-sauce/.editorconfig (245 bytes)
 CREATE awesome-sauce/.gitignore (503 bytes)
 CREATE awesome-sauce/src/environments/environment.prod.ts (51 bytes)
-CREATE awesome-sauce/src/environments/environment.ts (743 bytes)
+CREATE awesome-sauce/src/environments/environment.ts (631 bytes)
 CREATE awesome-sauce/src/favicon.ico (5430 bytes)
 CREATE awesome-sauce/src/index.html (299 bytes)
 CREATE awesome-sauce/src/main.ts (370 bytes)
@@ -80,7 +75,7 @@ CREATE awesome-sauce/src/polyfills.ts (3114 bytes)
 CREATE awesome-sauce/src/test.ts (642 bytes)
 CREATE awesome-sauce/src/assets/.gitkeep (0 bytes)
 CREATE awesome-sauce/src/styles.css (80 bytes)
-CREATE awesome-sauce/src/browserslist (51 bytes)
+CREATE awesome-sauce/src/browserslist (375 bytes)
 CREATE awesome-sauce/src/karma.conf.js (961 bytes)
 CREATE awesome-sauce/src/tsconfig.app.json (194 bytes)
 CREATE awesome-sauce/src/tsconfig.spec.json (282 bytes)
@@ -94,10 +89,11 @@ CREATE awesome-sauce/e2e/protractor.conf.js (752 bytes)
 CREATE awesome-sauce/e2e/src/app.e2e-spec.ts (299 bytes)
 CREATE awesome-sauce/e2e/src/app.po.ts (208 bytes)
 CREATE awesome-sauce/e2e/tsconfig.e2e.json (213 bytes)
-added 1249 packages from 1269 contributors in 44.136s
-Successfully initialized git."></code-block>
+...
+added 1240 packages from 1266 contributors in 34.424s
+    Successfully initialized git."></code-block>
 
-  <p>That created a new Angular app in the <c-b code="awesome-sauce"></c-b> directory. Let's go there now.</p>
+  <p>That creates a new Angular app in the <c-b code="awesome-sauce"></c-b> directory from where we will do most of our work.</p>
 
   <code-block lang="bsh" command="cd awesome-sauce"></code-block>
 </pwa-step>
@@ -108,10 +104,10 @@ Successfully initialized git."></code-block>
   <code-block lang="bsh"
               command="ng add @angular/pwa --project awesome-sauce"
               code="Installing packages for tooling via npm.
-+ @angular/pwa@0.5.9
-added 4 packages from 2 contributors in 9.988s
++ @angular/pwa@0.5.10
+added 2 packages from 2 contributors in 7.962s
 Installed packages for tooling via npm.
-CREATE ngsw-config.json (463 bytes)
+CREATE ngsw-config.json (392 bytes)
 CREATE src/assets/icons/icon-128x128.png (1253 bytes)
 CREATE src/assets/icons/icon-144x144.png (1394 bytes)
 CREATE src/assets/icons/icon-152x152.png (1427 bytes)
@@ -120,12 +116,12 @@ CREATE src/assets/icons/icon-384x384.png (3557 bytes)
 CREATE src/assets/icons/icon-512x512.png (5008 bytes)
 CREATE src/assets/icons/icon-72x72.png (792 bytes)
 CREATE src/assets/icons/icon-96x96.png (958 bytes)
-CREATE src/assets/manifest.json (1112 bytes)
-UPDATE angular.json (3893 bytes)
-UPDATE package.json (1448 bytes)
+CREATE src/assets/manifest.json (1091 bytes)
+UPDATE angular.json (3921 bytes)
+UPDATE package.json (1443 bytes)
 UPDATE src/app/app.module.ts (526 bytes)
-UPDATE src/index.html (455 bytes)
-added 1 package from 1 contributor and removed 4 packages in 10.135s"></code-block>
+UPDATE src/index.html (397 bytes)
+added 1 package from 1 contributor and removed 2 packages in 8.275s"></code-block>
 
   <node-package name="@angular/pwa"></node-package>
 
@@ -160,12 +156,12 @@ no changes added to commit (use "git add" and/or "git commit -a")'>
       <p matLine>tells the Angular CLI how to handle assets for caching.</p>
     </mat-list-item>
     <mat-list-item role="listitem">
-      <c-b matLine code="manifest.json"></c-b>
-      <p matLine>describes your site and enables it to become installable.</p>
-    </mat-list-item>
-    <mat-list-item role="listitem">
       <c-b matLine code="icons"></c-b>
       <p matLine>will be your logo in various sizes</p>
+    </mat-list-item>
+    <mat-list-item role="listitem">
+      <c-b matLine code="manifest.json"></c-b>
+      <p matLine>describes your site and enables it to become installable.</p>
     </mat-list-item>
   </mat-list>
 
@@ -174,10 +170,10 @@ no changes added to commit (use "git add" and/or "git commit -a")'>
   <code-block lang="bsh"
               command="git diff angular.json"
               code='diff --git a/angular.json b/angular.json
-index 661f562..fa3ce7f 100644
+index 421874b..a1f84fc 100644
 --- a/angular.json
 +++ b/angular.json
-@@ -50,7 +50,8 @@
+@@ -51,7 +51,8 @@
                "aot": true,
                "extractLicenses": true,
                "vendorChunk": false,
@@ -193,19 +189,19 @@ index 661f562..fa3ce7f 100644
   <code-block lang="bsh"
              command="git diff package.json"
              code='diff --git a/package.json b/package.json
-index 97ce98f..8068839 100644
+index ca469fa..bb69a7c 100644
 --- a/package.json
 +++ b/package.json
 @@ -23,7 +23,8 @@
-     "@angular/router": "^6.0.0-rc.1",
+     "@angular/router": "^6.0.0-rc.5",
      "core-js": "^2.5.4",
-     "rxjs": "^6.0.0-rc.0",
--    "zone.js": "^0.8.24"
-+    "zone.js": "^0.8.24",
-+    "@angular/service-worker": "^6.0.0-rc.1"
+     "rxjs": "^6.0.0",
+-    "zone.js": "^0.8.26"
++    "zone.js": "^0.8.26",
++    "@angular/service-worker": "^6.0.0-rc.5"
    },
    "devDependencies": {
-     "@angular/compiler-cli": "^6.0.0-rc.1",'></code-block>
+     "@angular/compiler-cli": "^6.0.0-rc.5",'></code-block>
 
   <p><c-b code="package.json"></c-b> is including a new <c-b code="@angular/service-worker"></c-b> dependancy.</p>
 
@@ -239,21 +235,20 @@ index f657163..2f5db8d 100644
   <code-block lang="bsh"
               command="git diff src/index.html"
               code='diff --git a/src/index.html b/src/index.html
-index 75e1aff..2390591 100644
+index 75e1aff..eff255d 100644
 --- a/src/index.html
 +++ b/src/index.html
-@@ -7,6 +7,9 @@
+@@ -7,6 +7,8 @@
 
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <link rel="icon" type="image/x-icon" href="favicon.ico">
 +  <link rel="manifest" href="assets/manifest.json">
-+  <meta name="Description" content="Angular Application">
-+  <meta name="theme-color" content="#FFFFFF">
++  <meta name="theme-color" content="#1976d2">
  </head>
  <body>
    <app-root></app-root>'></code-block>
 
-  <p>The last changed file we need to look it is <c-b code="index.html"></c-b> telling browsers about the <c-b code="manifest.json"></c-b> file and setting a couple of meta tags.</p>
+  <p>The last changed file we need to look it is <c-b code="index.html"></c-b>. With this change it tells browsers about the <c-b code="manifest.json"></c-b> file and sets a theme color.</p>
 
   <p>There are also two new JSON files and several new icon files.<p>
 
@@ -269,12 +264,9 @@ index 75e1aff..2390591 100644
     "resources": {
       "files": [
         "/favicon.ico",
-        "/index.html"
-      ],
-      "versionedFiles": [
-        "/*.bundle.css",
-        "/*.bundle.js",
-        "/*.chunk.js"
+        "/index.html",
+        "/*.css",
+        "/*.js"
       ]
     }
   }, {
@@ -289,13 +281,13 @@ index 75e1aff..2390591 100644
   }]
 }'></code-block>
 
-  <p>There are a number of icons added. Currently they are just the Angular logo but you should replace them with your logo/brand.</p>
+  <p>There are also a number of icons added. Currently they are just the Angular logo but you should replace them with your logo/brand.</p>
 
   <code-block lang="bsh"
               command="ls src/assets/icons"
               code="icon-128x128.png  icon-144x144.png  icon-152x152.png  icon-192x192.png  icon-384x384.png  icon-512x512.png  icon-72x72.png  icon-96x96.png"></code-block>
 
-  <p>Finally there is the <c-b code="manifest.json"></c-b>. Check out the <a class="mat-button" [routerLink]="['/manifest']">Manifest page</a> for details.</p>
+  <p>Finally there is <c-b code="manifest.json"></c-b>. Check out the <a mat-button [routerLink]="['/manifest']">Manifest page</a> for details.</p>
 </pwa-step>
 
 <pwa-step title="Commit">
@@ -305,8 +297,8 @@ index 75e1aff..2390591 100644
 
   <code-block lang="bsh"
               command="git commit -m 'Make it so'"
-              code="[master cab2bf6] Make it so
- 15 files changed, 98 insertions(+), 3 deletions(-)
+              code="[master b7d1c19] Make it so
+ 15 files changed, 93 insertions(+), 3 deletions(-)
  create mode 100644 ngsw-config.json
  create mode 100644 src/assets/icons/icon-128x128.png
  create mode 100644 src/assets/icons/icon-144x144.png
@@ -323,20 +315,20 @@ index 75e1aff..2390591 100644
   <p>As we saw earlier the Service Worker only get's registered if we build the app in production mode.</p>
 
   <code-block lang="bsh"
-              command="npm run build -- --prod"
-              code='> awesome-sauce@0.0.0 build /Users/abraham/dev/sandbox/awesome-sauce
-> ng build "--prod"
+              command="npx ng build --prod"
+              code='...
 
-
-Date: 2018-04-27T15:05:13.612Z
-Hash: 3434227a676a97e8ffe9
-Time: 24010ms
+Date: 2018-04-30T19:41:18.888Z
+Hash: 9a6060b615702f574419
+Time: 19850ms
 chunk {0} runtime.6afe30102d8fe7337431.js (runtime) 1.05 kB [entry] [rendered]
 chunk {1} styles.34c57ab7888ec1573f9c.css (styles) 0 bytes [initial] [rendered]
 chunk {2} polyfills.2d976f42c1abc2acac30.js (polyfills) 59.4 kB [initial] [rendered]
-chunk {3} main.408c9c3eb6fe7147207b.js (main) 164 kB [initial] [rendered]'></code-block>
+chunk {3} main.f369b54424cf39b986c8.js (main) 164 kB [initial] [rendered]'></code-block>
 
-  <p>The <c-b code="-- --prod"></c-b> looks a little odd but <c-b code="--prod"></c-b> will tell the Angular CLI to build in production mode, and the first <c-b code="--"></c-b> tells <c-b code="npm"></c-b> to pass it to Angular.</p>
+  <p>If you are not familiar with <c-b code="npx"></c-b>, it runs the passed in command via the version of the package installed with <c-b code="package.json"></c-b> instead of the globally installed version.</p>
+
+  <p><c-b code="--prod"></c-b> will tell the Angular CLI to build in production mode. This will perform additional optimizations to your CSS/JavaScript and most importantly will enable the Service Worker.</p>
 
   <p>Now we can serve the built app with the Service Worker enabled from the app's dist directory.</p>
 
