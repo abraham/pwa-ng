@@ -10,22 +10,59 @@
   <img-2 [attr.width]="imgWidth" [attr.height]="imgHeight" src="/assets/images/hosting-dashboard.png" alt="Firebase project dashboard"></img-2>
 
 
-  <p>You'll also need to install the Firebase tools CLI.</p>
+  <p>You'll need to install the Firebase tools CLI. We'll install it locally as a dev dependancy.</p>
 
-  <node-package name="firebase-tools" global></node-package>
+  <node-package name="firebase-tools"></node-package>
 
-  <code-block lang="bsh" command="firebase --version" code="3.18.4"></code-block>
+  <p>You can disregard the output from install.</p>
+
+  <code-block lang="bsh"
+              command="npm install firebase-tools --save-dev"
+              code="If you're using the Emulator via the Firebase CLI, you can
+disregard this message.
+
+If you're upgrading @google-cloud/functions-emulator, these
+are the recommended upgrade steps:
+
+1.  Stop the currently running emulator, if any:
+
+        functions stop
+
+2.  Uninstall the current emulator, if any:
+
+        npm uninstall -g @google-cloud/functions-emulator
+
+3.  Install the new version of the emulator:
+
+        npm install -g @google-cloud/functions-emulator
+
+If you have trouble after upgrading, try deleting the config
+directory found in:
+
+    ~/.config/configstore/@google-cloud/functions-emulator
+
+Then restart the emulator. You can also check for any renegade
+Node.js emulator processes that may need to be killed:
+
+    ps aux | grep node
+
++ firebase-tools@3.18.4
+added 333 packages from 182 contributors in 21.542s"></code-block>
+
+  <p>If you are not familiar with <c-b code="npx"></c-b>, it runs the passed in command via the version of the package installed with <c-b code="package.json"></c-b> instead of the globally installed version.</p>
+
+  <code-block lang="bsh" command="npx firebase --version" code="3.18.4"></code-block>
 
   <p>Once you have the Firebase CLI installed, you'll need to login.</p>
 
-  <code-block lang="bsh" command="firebase login"></code-block>
+  <code-block lang="bsh" command="npx firebase login"></code-block>
 
   <p>Now from within the <c-b code="awesome-sauce"></c-b> project directory, we'll set up a new Firebase project.</p>
 
   <p>Select <c-b code="Hosting"></c-b> and any other Firebase services you plan to use.</p>
 
   <code-block lang="bsh"
-              command="firebase init"
+              command="npx firebase init"
               code="You're about to initialize a Firebase project in this directory:
 
   /Users/abraham/dev/sandbox/awesome-sauce
@@ -82,21 +119,30 @@ i  Writing project information to .firebaserc...
 
 
   <code-block lang="bsh"
-              command="ls"
+              command="git status"
               code='On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   package-lock.json
+        modified:   package.json
+
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
 
         .firebaserc
         firebase.json
 
-nothing added to commit but untracked files present (use "git add" to track)'></code-block>
+no changes added to commit (use "git add" and/or "git commit -a")'></code-block>
 
-  <p>The first one is a bit of config tells the Firebase CLI what project it's associated with. You should add this to <c-b code=".gitignore"></c-b></p>
+  <p><c-b code="package.json"></c-b> is different because we added <c-b code="firebase-tools"></c-b>.</p>
+
+  <p>The first new file is a bit of config tells the Firebase CLI what project it's associated with. You should add this to <c-b code=".gitignore"></c-b></p>
 
   <code-block lang="bsh" command='echo ".firebaserc" >> .gitignore'></code-block>
 
-  <p>The other file is Firebase's general configuration. Currently it tells Hosting how to behave.</p>
+  <p>The other new file is Firebase's general configuration. Currently it tells Hosting how to behave.</p>
 
   <code-block lang="bsh"
               command='cat firebase.json'
@@ -132,7 +178,7 @@ nothing added to commit but untracked files present (use "git add" to track)'></
     </mat-list-item>
   </mat-list>
 
-  <p>Firebase projects can be deployed with <c-b code="firebas deploy"></c-b>, however we know Angular needs to be built first so let's combine that into a single command.</p>
+  <p>Firebase projects can be deployed with <c-b code="firebase deploy"></c-b>, however we know Angular needs to be built first so let's combine that into a single command.</p>
 
   <p>Update <c-b code="package.json"></c-b> so that the <c-b code="scripts"></c-b> value looks like this.</p>
 
@@ -152,8 +198,8 @@ nothing added to commit but untracked files present (use "git add" to track)'></
 
   <code-block lang="bsh"
             command="git commit -m 'Add Firebas Hosting config'"
-            code="[master 23f9e25] Add Firebase Hosting config
- 3 files changed, 18 insertions(+)
+            code="[master 80deeaf] Add Firebas Hosting config
+ 4 files changed, 3276 insertions(+), 34 deletions(-)
  create mode 100644 firebase.json"></code-block>
 
   <p>And the big moment! Let's share some Awesome wth the world.</p>
