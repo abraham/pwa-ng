@@ -1,60 +1,59 @@
 <pwa-step title="Manifest">
-  <p>The <c-b code="manifest.json"></c-b> is a critical component of building PWAs. It tells browsers your desired behaivor for how your app will be installed.</p>
+  <p>The <c-b code="manifest.json"></c-b> is a critical component of building PWAs. It tells browsers how you want your app to be installed and the desried behaivors.</p>
 
   <code-block lang="bsh"
               command="cat src/assets/manifest.json"
               code='{
-    "name": "awesome-sauce",
-    "short_name": "awesome-sauce",
-    "theme_color": "#1976d2",
-    "background_color": "#fafafa",
-    "display": "browser",
-    "scope": "/",
-    "start_url": "/",
-    "icons": [
-      {
-        "src": "/assets/icons/icon-72x72.png",
-        "sizes": "72x72",
-        "type": "image/png"
-      },
-      {
-        "src": "/assets/icons/icon-96x96.png",
-        "sizes": "96x96",
-        "type": "image/png"
-      },
-      {
-        "src": "/assets/icons/icon-128x128.png",
-        "sizes": "128x128",
-        "type": "image/png"
-      },
-      {
-        "src": "/assets/icons/icon-144x144.png",
-        "sizes": "144x144",
-        "type": "image/png"
-      },
-      {
-        "src": "/assets/icons/icon-152x152.png",
-        "sizes": "152x152",
-        "type": "image/png"
-      },
-      {
-        "src": "/assets/icons/icon-192x192.png",
-        "sizes": "192x192",
-        "type": "image/png"
-      },
-      {
-        "src": "/assets/icons/icon-384x384.png",
-        "sizes": "384x384",
-        "type": "image/png"
-      },
-      {
-        "src": "/assets/icons/icon-512x512.png",
-        "sizes": "512x512",
-        "type": "image/png"
-      }
-    ],
-    "splash_pages": null
-  }'></code-block>
+  "name": "awesome-sauce",
+  "short_name": "awesome-sauce",
+  "theme_color": "#1976d2",
+  "background_color": "#fafafa",
+  "display": "standalone",
+  "scope": "/",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "/assets/icons/icon-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/icons/icon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/icons/icon-128x128.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/icons/icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/icons/icon-152x152.png",
+      "sizes": "152x152",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/icons/icon-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}'></code-block>
 
   <p class="notice">The currently generated manifest incorrectly sets <c-b code="display"></c-b>. This should be fixed in the next release.</p>
 
@@ -62,17 +61,14 @@
 
   <code-block lang="bsh"
               command="npm start"
-              code="npm start
-
-> awesome-sauce@0.0.0 start /Users/abraham/dev/sandbox/awesome-sauce
-> ng serve
+              code="...
 
 ** Angular Live Development Server is listening on localhost: 4200, open your browser on http://localhost:4200/ **
 
-Date: 2018-04-28T17:14:08.808Z
-Hash: 6db963fee1dc5f6e97bd
-Time: 11452ms
-chunk {main} main.js, main.js.map (main) 11.4 kB [initial] [rendered]
+Date: 2018-04-30T19:50:43.397Z
+Hash: 9af9e23a388b818088c0
+Time: 7403ms
+chunk {main} main.js, main.js.map (main) 11.3 kB [initial] [rendered]
 chunk {polyfills} polyfills.js, polyfills.js.map (polyfills) 226 kB [initial] [rendered]
 chunk {runtime} runtime.js, runtime.js.map (runtime) 5.4 kB [entry] [rendered]
 chunk {styles} styles.js, styles.js.map (styles) 15.6 kB [initial] [rendered]
@@ -84,21 +80,21 @@ chunk {vendor} vendor.js, vendor.js.map (vendor) 3.39 MB [initial] [rendered]
   <!-- TODO: Update image to include error -->
   <img-2 [attr.width]="imgWidth" [attr.height]="imgHeight" src="/assets/images/manifest.png" alt="Chrome DevTools showing manifest preview"></img-2>
 
-  <p>In the <c-b code="manifest"></c-b> view of the <c-b code="Application"></c-b> page of Chrome DevTools, activate <c-b code="Add to homescreen"></c-b></p>
+  <p>In the <c-b code="manifest"></c-b> view of the <c-b code="Application"></c-b> page in Chrome DevTools, activate <c-b code="Add to homescreen"></c-b>.</p>
 
   <div>You should see: <blockquote>Site cannot be installed: no matching service worker detected. You may need to reload the page, or check that the service worker for the current page also controls the start URL from the manifest</blockquote></div>
 
   <p>Let's start up Angular in <c-b code="prod"></c-b> mode so the Service Worker is enabled.</p>
 
   <code-block lang="bsh"
-              command="npm run build -- --prod"
-              code="Date: 2018-04-28T18:10:46.841Z
-Hash: 3434227a676a97e8ffe9
-Time: 7941ms
+              command="npx ng build --prod"
+              code="Date: 2018-04-30T19:51:52.621Z
+Hash: 9a6060b615702f574419
+Time: 7058ms
 chunk {0} runtime.6afe30102d8fe7337431.js (runtime) 1.05 kB [entry] [rendered]
 chunk {1} styles.34c57ab7888ec1573f9c.css (styles) 0 bytes [initial] [rendered]
 chunk {2} polyfills.2d976f42c1abc2acac30.js (polyfills) 59.4 kB [initial] [rendered]
-chunk {3} main.408c9c3eb6fe7147207b.js (main) 164 kB [initial] [rendered]"></code-block>
+chunk {3} main.f369b54424cf39b986c8.js (main) 164 kB [initial] [rendered]"></code-block>
 
   <code-block lang="bsh"
               command="http-server dist/awesome-sauce"
@@ -108,13 +104,13 @@ Available on:
   http://192.168.86.24:8080
 Hit CTRL-C to stop the server"></code-block>
 
-  <p>Not that the URL has changed to <c-b code="http://localhost:4200"></c-b>.</p>
+  <p>Not that the URL has changed to <c-b code="http://localhost:8080"></c-b>.</p>
 
   <p><c-b code="Add to homescreen"></c-b> should how show a prompt leaving you with a 👍 good manifest.</p>
 
   <img-2 [attr.width]="imgWidth" [attr.height]="imgHeight" src="/assets/images/add-to-shelf.png" alt="Add to shelf prompt"></img-2>
 
-  <p>It's a good idea to cleanup the development Service Worker so that it doesn't interfere with future work on <c-b code="http://localhost"></c-b>.</p>
+  <p>It's a good idea to unregister the development Service Worker so that it doesn't interfere with future work on <c-b code="http://localhost"></c-b>.</p>
 
   <img-2 [attr.width]="imgWidth" [attr.height]="imgHeight" src="/assets/images/unregister-service-worker.png" alt="Unregister Service Worker"></img-2>
 </pwa-step>
