@@ -13,7 +13,7 @@ interface Nav {
 }
 
 export const appNav: Nav[] = [
-  { path: '', pathMatch: 'full', label: 'Install' },
+  { path: '', label: 'Install', pathMatch: 'full' },
   { path: 'manifest', label: 'Manifest' },
   { path: 'firebase', label: 'Firebase' },
   { path: 'lighthouse', label: 'Lighthouse' },
