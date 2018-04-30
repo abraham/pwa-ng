@@ -11,6 +11,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { CBComponent } from './c-b/c-b.component';
 import { CodeBlockComponent } from './code-block/code-block.component';
 import { ComingSoonComponent } from './coming-soon.component';
+import { FirebaseComponent } from './firebase/firebase.component';
 import { PwaInstallComponent } from './pwa-install/pwa-install.component';
 import { PwaManifestComponent } from './pwa-manifest/pwa-manifest.component';
 import { PwaStepComponent } from './pwa-step/pwa-step.component';
@@ -24,6 +25,7 @@ import { environment } from '../environments/environment';
     CBComponent,
     CodeBlockComponent,
     ComingSoonComponent,
+    FirebaseComponent,
     PwaInstallComponent,
     PwaManifestComponent,
     PwaStepComponent,

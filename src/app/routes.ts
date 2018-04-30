@@ -2,6 +2,7 @@ import { Route, Routes } from '@angular/router';
 
 import { ComingSoonComponent } from './coming-soon.component';
 import { Component } from '@angular/core';
+import { FirebaseComponent } from './firebase/firebase.component';
 import { PwaInstallComponent } from './pwa-install/pwa-install.component';
 import { PwaManifestComponent } from './pwa-manifest/pwa-manifest.component';
 
@@ -26,7 +27,7 @@ export const appNav: Nav[] = [
 export const appRoutes: Routes = [
   { path: '', component: PwaInstallComponent, pathMatch: 'full' },
   { path: 'manifest', component: PwaManifestComponent },
-  { path: 'firebase', component: ComingSoonComponent },
+  { path: 'firebase', component: FirebaseComponent },
   { path: 'lighthouse', component: ComingSoonComponent },
   { path: 'assets', component: ComingSoonComponent },
 ];

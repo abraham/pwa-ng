@@ -1,0 +1,193 @@
+<pwa-step title="Firebase">
+  <p><a href="https://firebase.google.com/products/hosting/" target="_blank" rel="noopener">Firebase Hosting</a> is an easy to use CDN that's great for hosting Angular PWAs.</p>
+
+  <p>First you'll need to have a Google account and to create a Firebase app.</p>
+
+  <img-2 [attr.width]="imgWidth" [attr.height]="imgHeight" src="/assets/images/hosting-new.png" alt="Create new Firebase project"></img-2>
+
+  <img-2 [attr.width]="imgWidth" [attr.height]="imgHeight" src="/assets/images/hosting-new-ready.png" alt="Firebase project ready"></img-2>
+
+  <img-2 [attr.width]="imgWidth" [attr.height]="imgHeight" src="/assets/images/hosting-dashboard.png" alt="Firebase project dashboard"></img-2>
+
+
+  <p>You'll also need to install the Firebase tools CLI.</p>
+
+  <node-package name="firebase-tools" global></node-package>
+
+  <code-block lang="bsh" command="firebase --version" code="3.18.4"></code-block>
+
+  <p>Once you have the Firebase CLI installed, you'll need to login.</p>
+
+  <code-block lang="bsh" command="firebase login"></code-block>
+
+  <p>Now from within the <c-b code="awesome-sauce"></c-b> project directory, we'll set up a new Firebase project.</p>
+
+  <p>Select <c-b code="Hosting"></c-b> and any other Firebase services you plan to use.</p>
+
+  <code-block lang="bsh"
+              command="firebase init"
+              code="You're about to initialize a Firebase project in this directory:
+
+  /Users/abraham/dev/sandbox/awesome-sauce
+
+? Which Firebase CLI features do you want to setup for this folder? Press Space to select features, then Enter to confirm your choices. (Press <space> to s
+elect)
+ ◯ Database: Deploy Firebase Realtime Database Rules
+ ◯ Firestore: Deploy rules and create indexes for Firestore
+ ◯ Functions: Configure and deploy Cloud Functions
+❯◉ Hosting: Configure and deploy Firebase Hosting sites
+ ◯ Storage: Deploy Cloud Storage security rules"></code-block>
+
+  <p>The next option will be to select the Firebase project you created earlier.</p>
+
+  <code-block lang="bsh" code="=== Project Setup
+
+First, let's associate this project directory with a Firebase project.
+You can create multiple project aliases by running firebase use --add,
+but for now we'll just set up a default project.
+
+? Select a default Firebase project for this directory:
+Slides Today (slides-today)
+Daily Cat (daily-cat)
+❯ awesome-sauce-demo (awesome-sauce-demo)
+Material Rocks (material-rocks)
+(Move up and down to reveal more choices)"></code-block>
+
+  <p>Followed by telling Firebase where your built code will live. Set it to <c-b code="dist/awesome-sauce"></c-b></p>
+
+  <code-block lang="bsh" code="=== Hosting Setup
+
+Your public directory is the folder (relative to your project directory) that
+will contain Hosting assets to be uploaded with firebase deploy. If you
+have a build process for your assets, use your build's output directory.
+
+? What do you want to use as your public directory? (public)"></code-block>
+
+  <p>Angular is a single-page app where multiple pages are served from the same <c-b code="index.html"></c-b> so confirm <c-b code="yes"></c-b>.</p>
+
+  <code-block lang="bsh" code="? Configure as a single-page app (rewrite all urls to /index.html)? (y/N)"></code-block>
+
+  <p>Firebase may try to be helpful and confirm overwritting <c-b code="index.html"></c-b>. The <c-b code="index.html"></c-b> in <c-b code="dist/awesome-sauce"></c-b> will get automatically overwritten at build time so your answer doesn't matter.</p>
+
+  <code-block lang="bsh" code="? File dist/awesome-sauce/index.html already exists. Overwrite? (y/N)"></code-block>
+
+  <p>Your local project folder has now been associated with a Firebase project. 🔥</p>
+
+  <code-block lang="bsh" code="i  Writing configuration info to firebase.json...
+i  Writing project information to .firebaserc...
+
+✔  Firebase initialization complete!"></code-block>
+
+  <p>Let's see what's new.</p>
+
+
+  <code-block lang="bsh"
+              command="ls"
+              code='On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        .firebaserc
+        firebase.json
+
+nothing added to commit but untracked files present (use "git add" to track)'></code-block>
+
+  <p>The first one is a bit of config tells the Firebase CLI what project it's associated with. You should add this to <c-b code=".gitignore"></c-b></p>
+
+  <code-block lang="bsh" command='echo ".firebaserc" >> .gitignore'></code-block>
+
+  <p>The other file is Firebase's general configuration. Currently it tells Hosting how to behave.</p>
+
+  <code-block lang="bsh"
+              command='cat firebase.json'
+              code='{
+  "hosting": {
+    "public": "dist/awesome-sauce",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}'></code-block>
+
+  <mat-list role="list">
+    <mat-list-item role="listitem">
+      <c-b matLine code="public"></c-b>
+      <p matLine>tells Firebase what directory to service files from.</p>
+    </mat-list-item>
+    <mat-list-item role="listitem">
+      <c-b matLine code="ignore"></c-b>
+      <p matLine>tells firebase what files to not upload when deploying.</p>
+    </mat-list-item>
+    <mat-list-item role="listitem">
+      <c-b matLine code="rewrites"></c-b>
+      <p matLine>tells Firebase how to map HTTP paths to files.</p>
+    </mat-list-item>
+  </mat-list>
+
+  <p>Firebase projects can be deployed with <c-b code="firebas deploy"></c-b>, however we know Angular needs to be built first so let's combine that into a single command.</p>
+
+  <p>Update <c-b code="package.json"></c-b> so that the <c-b code="scripts"></c-b> value looks like this.</p>
+
+  <code-block lang="bsh" code='{
+  "ng": "ng",
+  "start": "ng serve",
+  "build": "ng build",
+  "deploy": "ng build --prod && firebase deploy",
+  "test": "ng test",
+  "lint": "ng lint",
+  "e2e": "ng e2e"
+}'></code-block>
+
+  <p>This is another good place to commit changes.</p>
+
+  <code-block lang="bsh" command='git add .'></code-block>
+
+  <code-block lang="bsh"
+            command="git commit -m 'Add Firebas Hosting config'"
+            code="[master 23f9e25] Add Firebase Hosting config
+ 3 files changed, 18 insertions(+)
+ create mode 100644 firebase.json"></code-block>
+
+  <p>And the big moment! Let's share some Awesome wth the world.</p>
+
+
+
+  <code-block lang="bsh"
+            command="npm run deploy"
+            code="Date: 2018-04-30T15:32:41.111Z
+Hash: 3434227a676a97e8ffe9
+Time: 6593ms
+chunk {0} runtime.6afe30102d8fe7337431.js (runtime) 1.05 kB [entry] [rendered]
+chunk {1} styles.34c57ab7888ec1573f9c.css (styles) 0 bytes [initial] [rendered]
+chunk {2} polyfills.2d976f42c1abc2acac30.js (polyfills) 59.4 kB [initial] [rendered]
+chunk {3} main.408c9c3eb6fe7147207b.js (main) 164 kB [initial] [rendered]
+
+=== Deploying to 'awesome-sauce-demo'...
+
+i  deploying hosting
+i  hosting: preparing dist/awesome-sauce directory for upload...
+✔  hosting: 20 files uploaded successfully
+
+✔  Deploy complete!
+
+Project Console: https://console.firebase.google.com/project/awesome-sauce-demo/overview
+Hosting URL: https://awesome-sauce-demo.firebaseapp.com"></code-block>
+
+  <p>The app is now deployed to <a href="https://awesome-sauce-demo.firebaseapp.com">https://awesome-sauce-demo.firebaseapp.com</a><p>
+
+  <p>Note that if you open Chrome DevTools there is a registered Service Worker.<p>
+
+  <img-2 [attr.width]="imgWidth" [attr.height]="imgHeight" src="/assets/images/app-deployed-with-service-worker.png" alt="App deployed to Firebase with registered Service Worker"></img-2>
+
+  <p>Firebase also provides a nice dashboard of the most recent deploys to the project.</p>
+
+  <img-2 [attr.width]="imgWidth" [attr.height]="imgHeight" src="/assets/images/hosting-deploys.png" alt="Firebase Hosting dashboard showing latest deploy"></img-2>
+</pwa-step>
