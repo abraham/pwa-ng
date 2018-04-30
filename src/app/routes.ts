@@ -23,6 +23,7 @@ export const appNav: Nav[] = [
 // TODO: Aditional guides to consider.
 // SSR
 // CI
+// Push
 
 export const appRoutes: Routes = [
   { path: '', component: PwaInstallComponent, pathMatch: 'full' },
