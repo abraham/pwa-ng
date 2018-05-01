@@ -25,8 +25,15 @@ import { PwaManifestComponent } from './pwa-manifest/pwa-manifest.component';
 import { PwaStepComponent } from './pwa-step/pwa-step.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { ShareComponent } from './share/share.component';
+import WebFont from 'webfontloader';
 import { appRoutes } from './routes';
 import { environment } from '../environments/environment';
+
+WebFont.load({
+  google: {
+    families: ['Roboto', 'Roboto Mono', 'Material Icons'],
+  },
+});
 
 @NgModule({
   declarations: [

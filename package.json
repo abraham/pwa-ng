@@ -33,6 +33,7 @@
     "intersection-observer": "^0.5.0",
     "node-package": "github:abraham/node-package#style",
     "rxjs": "^6.0.0",
+    "webfontloader": "^1.6.28",
     "zone.js": "^0.8.24"
   },
   "devDependencies": {
