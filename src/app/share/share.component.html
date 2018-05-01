@@ -1,7 +1,7 @@
-<button *ngIf="nativeShare" class="share" mat-fab color="warn" color="primary" (click)="share($event)">
+<button *ngIf="nativeShare" class="share" mat-fab (click)="share($event)">
   <i class="material-icons" title="Share Angular PWA">share</i>
 </button>
-<button *ngIf="!nativeShare" class="share" mat-fab color="warn" color="primary" [matMenuTriggerFor]="menu" #menuTrigger="matMenuTrigger">
+<button *ngIf="!nativeShare" class="share" mat-fab [matMenuTriggerFor]="menu" #menuTrigger="matMenuTrigger">
   <i class="material-icons" title="Share Angular PWA">share</i>
 </button>
 <mat-menu #menu="matMenu">
