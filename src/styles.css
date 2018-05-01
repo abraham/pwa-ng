@@ -42,6 +42,7 @@ header {
 }
 
 footer {
+  margin-top: 24px;
   flex-shrink: 0;
   height: 128px;
   background-color: #D32F2F;

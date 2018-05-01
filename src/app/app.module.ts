@@ -2,7 +2,15 @@ import 'node-package';
 import 'img-2';
 
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
-import { MatButtonModule, MatCardModule, MatListModule, MatSnackBarModule, MatTabsModule, MatToolbarModule } from '@angular/material';
+import {
+  MatButtonModule,
+  MatCardModule,
+  MatListModule,
+  MatMenuModule,
+  MatSnackBarModule,
+  MatTabsModule,
+  MatToolbarModule
+} from '@angular/material';
 import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
@@ -16,6 +24,7 @@ import { PwaInstallComponent } from './pwa-install/pwa-install.component';
 import { PwaManifestComponent } from './pwa-manifest/pwa-manifest.component';
 import { PwaStepComponent } from './pwa-step/pwa-step.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { ShareComponent } from './share/share.component';
 import { appRoutes } from './routes';
 import { environment } from '../environments/environment';
 
@@ -29,6 +38,7 @@ import { environment } from '../environments/environment';
     PwaInstallComponent,
     PwaManifestComponent,
     PwaStepComponent,
+    ShareComponent,
   ],
   imports: [
     BrowserAnimationsModule,
@@ -37,6 +47,7 @@ import { environment } from '../environments/environment';
     MatCardModule,
     MatListModule,
     MatListModule,
+    MatMenuModule,
     MatSnackBarModule,
     MatTabsModule,
     MatToolbarModule,
