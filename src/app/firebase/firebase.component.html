@@ -1,6 +1,8 @@
 <pwa-step title="Firebase">
   <p><a href="https://firebase.google.com/products/hosting/" target="_blank" rel="noopener">Firebase Hosting</a> is an easy to use CDN that's great for hosting Angular PWAs.</p>
+</pwa-step>
 
+<pwa-step title="Create project">
   <p>First you'll need to have a Google account and to create a Firebase app.</p>
 
   <img-2 [attr.width]="imgWidth" [attr.height]="imgHeight" src="/assets/images/hosting-new.png" alt="Create new Firebase project"></img-2>
@@ -152,6 +154,39 @@ no changes added to commit (use "git add" and/or "git commit -a")'></code-block>
     </mat-list-item>
   </mat-list>
 
+  <p>One change we'll want to make to <c-b code="firebase.json"></c-b> is to exclude our service worker files from browser caching. This will make it so that new depoys show up for users faster. Add the <c-b code="headers"></c-b> section. <c-b code="ngsw-worker.js"></c-b> is the actual service worker Angular generates and <c-b code="ngsw.json"></c-b> is the configuration manifest the service worker uses know what to cache.</p>
+
+  <code-block lang="bsh"
+              code='{
+  "hosting": {
+    "public": "dist/awesome-sauce",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+    "headers": [
+      {
+        "source": "/@(ngsw-worker.js|ngsw.json)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "no-cache"
+          }
+        ]
+      }
+    ]
+  }
+}'></code-block>
+</pwa-step>
+
+<pwa-step title="Deploy">
   <p>Firebase projects can be deployed with <c-b code="firebase deploy"></c-b>, however we know Angular needs to be built first so let's combine that into a single command.</p>
 
   <p>Update <c-b code="package.json"></c-b> so that the <c-b code="scripts"></c-b> object has <c-b code="deploy"></c-b>.</p>
