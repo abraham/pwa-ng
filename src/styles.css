@@ -25,6 +25,10 @@ h1, h2, p {
   margin: 8px;
 }
 
+a {
+  color: #1976D2;
+}
+
 header {
   display: block;
   max-width: 960px;
@@ -95,6 +99,10 @@ node-package {
   border-radius: 8px;
   background-color: #1976D2;
   color: #fff;
+}
+
+.warning a {
+  color: #fff
 }
 
 .notice {

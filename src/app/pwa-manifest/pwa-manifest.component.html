@@ -82,7 +82,7 @@ chunk {vendor} vendor.js, vendor.js.map (vendor) 3.39 MB [initial] [rendered]
 
   <div>You should see: <blockquote>Site cannot be installed: no matching service worker detected. You may need to reload the page, or check that the service worker for the current page also controls the start URL from the manifest</blockquote></div>
 
-  <p>Let's start up Angular in <c-b code="--prod"></c-b> mode so the service worker is enabled using the command we made on the <a mat-button [routerLink]="['/']">Install page</a></p>
+  <p>Let's start up Angular in <c-b code="--prod"></c-b> mode so the service worker is enabled using the command we made on the <a [routerLink]="['/']">Install page</a>.</p>
 
   <code-block lang="bsh"
   command="npm run start:prod"
