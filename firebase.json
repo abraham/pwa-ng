@@ -8,11 +8,20 @@
     ],
     "headers": [
       {
-        "source" : "**/*.@(jpg|jpeg|gif|png)",
-        "headers" : [
+        "source": "**/*.@(jpg|jpeg|gif|png)",
+        "headers": [
           {
-            "key" : "Cache-Control",
-            "value" : "max-age=86400"
+            "key": "Cache-Control",
+            "value": "max-age=86400"
+          }
+        ]
+      },
+      {
+        "source": "/@(ngsw-worker.js|ngsw.json)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "no-cache"
           }
         ]
       }
