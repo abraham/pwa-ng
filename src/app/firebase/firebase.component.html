@@ -154,11 +154,12 @@ no changes added to commit (use "git add" and/or "git commit -a")'></code-block>
 
   <p>Firebase projects can be deployed with <c-b code="firebase deploy"></c-b>, however we know Angular needs to be built first so let's combine that into a single command.</p>
 
-  <p>Update <c-b code="package.json"></c-b> so that the <c-b code="scripts"></c-b> value looks like this.</p>
+  <p>Update <c-b code="package.json"></c-b> so that the <c-b code="scripts"></c-b> object has <c-b code="deploy"></c-b>.</p>
 
   <code-block lang="bsh" code='{
   "ng": "ng",
   "start": "ng serve",
+  "start:prod": "ng build --prod && lite-server --baseDir dist/awesome-sauce",
   "build": "ng build",
   "deploy": "ng build --prod && firebase deploy",
   "test": "ng test",
@@ -203,9 +204,9 @@ Hosting URL: https://awesome-sauce-demo.firebaseapp.com"></code-block>
 
   <p>The app is now deployed to <a href="https://awesome-sauce-demo.firebaseapp.com">https://awesome-sauce-demo.firebaseapp.com</a><p>
 
-  <p>Note that if you open Chrome DevTools there is a registered Service Worker.<p>
+  <p>Note that if you open Chrome DevTools there is a registered service worker.<p>
 
-  <img-2 [attr.width]="imgWidth" [attr.height]="imgHeight" src="/assets/images/app-deployed-with-service-worker.png" alt="App deployed to Firebase with registered Service Worker"></img-2>
+  <img-2 [attr.width]="imgWidth" [attr.height]="imgHeight" src="/assets/images/app-deployed-with-service-worker.png" alt="App deployed to Firebase with registered service worker"></img-2>
 
   <p>Firebase also provides a nice dashboard of the most recent deploys to the project.</p>
 

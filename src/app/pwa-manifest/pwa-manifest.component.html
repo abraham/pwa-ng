@@ -55,8 +55,6 @@
   ]
 }'></code-block>
 
-  <p class="notice">The currently generated manifest incorrectly sets <c-b code="display"></c-b>. This should be fixed in the next release.</p>
-
   <p>Let's start up the dev server and see how Google Chrome likes it.</p>
 
   <code-block lang="bsh"
@@ -84,33 +82,42 @@ chunk {vendor} vendor.js, vendor.js.map (vendor) 3.39 MB [initial] [rendered]
 
   <div>You should see: <blockquote>Site cannot be installed: no matching service worker detected. You may need to reload the page, or check that the service worker for the current page also controls the start URL from the manifest</blockquote></div>
 
-  <p>Let's start up Angular in <c-b code="prod"></c-b> mode so the Service Worker is enabled.</p>
+  <p>Let's start up Angular in <c-b code="--prod"></c-b> mode so the service worker is enabled using the command we made on the <a mat-button [routerLink]="['/']">Install page</a></p>
 
   <code-block lang="bsh"
-              command="npx ng build --prod"
-              code="Date: 2018-04-30T19:51:52.621Z
-Hash: 9a6060b615702f574419
-Time: 7058ms
+  command="npm run start:prod"
+              code="..
+Time: 6288ms
 chunk {0} runtime.6afe30102d8fe7337431.js (runtime) 1.05 kB [entry] [rendered]
 chunk {1} styles.34c57ab7888ec1573f9c.css (styles) 0 bytes [initial] [rendered]
 chunk {2} polyfills.2d976f42c1abc2acac30.js (polyfills) 59.4 kB [initial] [rendered]
-chunk {3} main.f369b54424cf39b986c8.js (main) 164 kB [initial] [rendered]"></code-block>
+chunk {3} main.f369b54424cf39b986c8.js (main) 164 kB [initial] [rendered]
+Did not detect a `bs-config.json` or `bs-config.js` override file. Using lite-server defaults...
+** browser-sync config **
+{ injectChanges: false,
+  files: [ './**/*.{html,htm,css,js}' ],
+  watchOptions: { ignored: 'node_modules' },
+  server:
+   { baseDir: 'dist/awesome-sauce',
+     middleware: [ [Function], [Function] ] } }
+[Browsersync] Access URLs:
+ --------------------------------------
+       Local: http://localhost:3000
+    External: http://192.168.200.8:3000
+ --------------------------------------
+          UI: http://localhost:3001
+ UI External: http://192.168.200.8:3001
+ --------------------------------------
+[Browsersync] Serving files from: dist/awesome-sauce
+[Browsersync] Watching files..."></code-block>
 
-  <code-block lang="bsh"
-              command="http-server dist/awesome-sauce"
-              code="Starting up http-server, serving dist/awesome-sauce
-Available on:
-  http://127.0.0.1:8080
-  http://192.168.86.24:8080
-Hit CTRL-C to stop the server"></code-block>
-
-  <p>Not that the URL has changed to <c-b code="http://localhost:8080"></c-b>.</p>
+  <p><c-b code="http://localhost:3000"></c-b> should open in your browser automatically.</p>
 
   <p><c-b code="Add to homescreen"></c-b> should how show a prompt leaving you with a 👍 good manifest.</p>
 
   <img-2 [attr.width]="imgWidth" [attr.height]="imgHeight" src="/assets/images/add-to-shelf.png" alt="Add to shelf prompt"></img-2>
 
-  <p>It's a good idea to unregister the development Service Worker so that it doesn't interfere with future work on <c-b code="http://localhost"></c-b>.</p>
+  <p>It's a good idea to unregister the development service worker so that it doesn't interfere with future work on <c-b code="http://localhost"></c-b>.</p>
 
-  <img-2 [attr.width]="imgWidth" [attr.height]="imgHeight" src="/assets/images/unregister-service-worker.png" alt="Unregister Service Worker"></img-2>
+  <img-2 [attr.width]="imgWidth" [attr.height]="imgHeight" src="/assets/images/unregister-service-worker.png" alt="Unregister service worker"></img-2>
 </pwa-step>

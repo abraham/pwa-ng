@@ -99,7 +99,7 @@ added 1240 packages from 1266 contributors in 34.424s
 </pwa-step>
 
 <pwa-step title="Add PWA">
-  <p>Now that we've got a shiny new Angular app, let's add a Service Worker using Angular's new <c-b code="ng add"></c-b> command. This will use a Schematic to add the needed packages and modify our code. <c-b code="--project"></c-b> takes the same app name we defined earlier.</p>
+  <p>Now that we've got a shiny new Angular app, let's add a service worker using Angular's new <c-b code="ng add"></c-b> command. This will use a Schematic to add the needed packages and modify our code. <c-b code="--project"></c-b> takes the same app name we defined earlier.</p>
 
   <code-block lang="bsh"
               command="ng add @angular/pwa --project awesome-sauce"
@@ -184,7 +184,7 @@ index 421874b..a1f84fc 100644
            }
          },'></code-block>
 
-  <p><c-b code="angular.json"></c-b> is the file used to configure the Angular CLI. Here we are telling it to build a Service Worker.</p>
+  <p><c-b code="angular.json"></c-b> is the file used to configure the Angular CLI. Here we are telling it to build a service worker.</p>
 
   <code-block lang="bsh"
              command="git diff package.json"
@@ -230,7 +230,7 @@ index f657163..2f5db8d 100644
    providers: [],
    bootstrap: [AppComponent]"></code-block>
 
-  <p>Here we see a new <c-b code="ServiceWorkerModule"></c-b> that's imported and is being told to register a Service Worker if the app is being built for production.</p>
+  <p>Here we see a new <c-b code="ServiceWorkerModule"></c-b> that's imported and is being told to register a service worker if the app is being built for production.</p>
 
   <code-block lang="bsh"
               command="git diff src/index.html"
@@ -312,45 +312,77 @@ index 75e1aff..eff255d 100644
 </pwa-step>
 
 <pwa-step title="Run it">
-  <p>As we saw earlier the Service Worker only get's registered if we build the app in production mode.</p>
+  <p>As we saw earlier from <c-b code="app.module.ts"></c-b> the service worker only get's registered if we build the app in production mode. Angular CLI's server however <a href="https://github.com/angular/angular-cli/issues/9869" target="_blank" rel="noopener">doesn't support</a> service workers with --prod, so we'll have to use a different server. Typically we'd do that with something like this to build and server the app:</p>
+
+  <code-block lang="bsh" command="npx ng build --prod && lite-server --baseDir dist/awesome-sauce"></code-block>
+
+  <p>But when developing sites with service workers, you tend to run locally in production mode semi-frequently. So let's install <c-b code="lite-server"></c-b> as a devDependency and update the <c-b code="scripts"></c-b> value of <c-b code="package.json"></c-b> with helper script.</p>
 
   <code-block lang="bsh"
-              command="npx ng build --prod"
-              code='...
+              command="npm install lite-server --save-dev"
+              code="+ lite-server@2.3.0
+added 96 packages from 125 contributors in 27.356s"></code-block>
 
-Date: 2018-04-30T19:41:18.888Z
+  <node-package name="lite-server"></node-package>
+
+  <p>Update <c-b code="package.json"></c-b> so that the <c-b code="scripts"></c-b> object has <c-b code="start:prod"></c-b>.</p>
+
+  <code-block lang="bsh" code='{
+  "ng": "ng",
+  "start": "ng serve",
+  "start:prod": "ng build --prod && lite-server --baseDir dist/awesome-sauce",
+  "build": "ng build",
+  "test": "ng test",
+  "lint": "ng lint",
+  "e2e": "ng e2e"
+}'></code-block>
+
+  <p>Now one command will rebuild the app in --prod mode and start the server. Keep in mind that if you make changes to the site you'll have to stop the server and start it again before seeing the changes.</p>
+
+  <p><c-b code="--prod"></c-b> will tell the Angular CLI to build in production mode. This will perform additional optimizations to your CSS/JavaScript and most importantly will enable the service worker. <c-b code="--baseDir"></c-b> will tell <c-b code="lite-server"></c-b> where the built app should be served from.</p>
+
+  <p>Don't forget to commit again.</p>
+
+  <code-block lang="bsh" command="git add ."></code-block>
+
+  <code-block lang="bsh" command="git commit -m 'Add lite-server and start:prod command'"></code-block>
+
+  <code-block lang="bsh"
+              command="npm run start:prod"
+              code="...
+Date: 2018-05-01T21:09:58.203Z
 Hash: 9a6060b615702f574419
-Time: 19850ms
+Time: 6681ms
 chunk {0} runtime.6afe30102d8fe7337431.js (runtime) 1.05 kB [entry] [rendered]
 chunk {1} styles.34c57ab7888ec1573f9c.css (styles) 0 bytes [initial] [rendered]
 chunk {2} polyfills.2d976f42c1abc2acac30.js (polyfills) 59.4 kB [initial] [rendered]
-chunk {3} main.f369b54424cf39b986c8.js (main) 164 kB [initial] [rendered]'></code-block>
+chunk {3} main.f369b54424cf39b986c8.js (main) 164 kB [initial] [rendered]
+Did not detect a `bs-config.json` or `bs-config.js` override file. Using lite-server defaults...
+** browser-sync config **
+{ injectChanges: false,
+  files: [ './**/*.{html,htm,css,js}' ],
+  watchOptions: { ignored: 'node_modules' },
+  server:
+   { baseDir: 'dist/awesome-sauce',
+     middleware: [ [Function], [Function] ] } }
+[Browsersync] Access URLs:
+ --------------------------------------
+       Local: http://localhost:3000
+    External: http://192.168.200.8:3000
+ --------------------------------------
+          UI: http://localhost:3001
+ UI External: http://192.168.200.8:3001
+ --------------------------------------
+[Browsersync] Serving files from: dist/awesome-sauce
+[Browsersync] Watching files..."></code-block>
 
-  <p>If you are not familiar with <c-b code="npx"></c-b>, it runs the passed in command via the version of the package installed with <c-b code="package.json"></c-b> instead of the globally installed version.</p>
-
-  <p><c-b code="--prod"></c-b> will tell the Angular CLI to build in production mode. This will perform additional optimizations to your CSS/JavaScript and most importantly will enable the Service Worker.</p>
-
-  <p>Now we can serve the built app with the Service Worker enabled from the app's dist directory.</p>
-
-  <code-block lang="bsh"
-              command="http-server dist/awesome-sauce"
-              code="Starting up http-server, serving dist/awesome-sauce
-Available on:
-  http://127.0.0.1:8080
-  http://192.168.200.8:8080
-Hit CTRL-C to stop the server"></code-block>
-
-  <p>If you don't have <c-b code="http-server"></c-b>, it's a handly little utility for quickly spinning up a local server. It can be intalled like this:</p>
-
-  <node-package name="http-server" global></node-package>
-
-  <p>If you go to <c-b code="http://localhost:8080"></c-b> in a browser you should see the following:</p>
+  <p><c-b code="http://localhost:3000"></c-b> should open in a browser automatically revealing this:</p>
 
   <img-2 [attr.width]="imgWidth" [attr.height]="imgHeight" src="/assets/images/http-server.png" alt="App running in a browser"></img-2>
 
-  <p>Now open the Chrome DevTools to the Application tab and you should see a Service Worker installed from localhost.</p>
+  <p>Now open the Chrome DevTools to the Application tab and you should see a service worker installed from localhost.</p>
 
-  <img-2 [attr.width]="imgWidth" [attr.height]="imgHeight" src="/assets/images/service-worker.png" alt="Installed Service Worker"></img-2>
+  <img-2 [attr.width]="imgWidth" [attr.height]="imgHeight" src="/assets/images/service-worker.png" alt="Installed service worker"></img-2>
 
   <p>Toggle the Network to "offline" and refesh. Everything will still render.</p>
 
