@@ -16,14 +16,14 @@
 
   <node-package name="firebase-tools"></node-package>
 
-  <p>You can disregard of the output from install.</p>
+  <p>You can disregard most of the output from installing.</p>
 
   <code-block lang="bsh"
               command="npm install firebase-tools --save-dev"
               code="...
 
 + firebase-tools@3.18.4
-added 333 packages from 182 contributors in 21.542s"></code-block>
+added 334 packages from 176 contributors in 24.024s"></code-block>
 
   <p>If you are not familiar with <c-b code="npx"></c-b>, it runs the passed in command via the version of the package installed with <c-b code="package.json"></c-b> instead of the globally installed version.</p>
 
@@ -39,7 +39,8 @@ added 333 packages from 182 contributors in 21.542s"></code-block>
 
   <code-block lang="bsh"
               command="npx firebase init"
-              code="You're about to initialize a Firebase project in this directory:
+              code="...
+You're about to initialize a Firebase project in this directory:
 
   /Users/abraham/dev/sandbox/awesome-sauce
 
@@ -60,10 +61,10 @@ You can create multiple project aliases by running firebase use --add,
 but for now we'll just set up a default project.
 
 ? Select a default Firebase project for this directory:
-Slides Today (slides-today)
-Daily Cat (daily-cat)
+  Slides Today (slides-today)
+  Daily Cat (daily-cat)
 ❯ awesome-sauce-demo (awesome-sauce-demo)
-Material Rocks (material-rocks)
+  Material Rocks (material-rocks)
 (Move up and down to reveal more choices)"></code-block>
 
   <p>Followed by telling Firebase where your built code will live. Set it to <c-b code="dist/awesome-sauce"></c-b></p>
@@ -146,7 +147,7 @@ no changes added to commit (use "git add" and/or "git commit -a")'></code-block>
     </mat-list-item>
     <mat-list-item role="listitem">
       <c-b matLine code="ignore"></c-b>
-      <p matLine>tells firebase what files to not upload when deploying.</p>
+      <p matLine>tells Firebase what files to exclude when deploying.</p>
     </mat-list-item>
     <mat-list-item role="listitem">
       <c-b matLine code="rewrites"></c-b>
@@ -206,25 +207,20 @@ no changes added to commit (use "git add" and/or "git commit -a")'></code-block>
 
   <code-block lang="bsh" command='git add .'></code-block>
 
-  <code-block lang="bsh"
-            command="git commit -m 'Add Firebase Hosting config'"
-            code="[master 80deeaf] Add Firebase Hosting config
- 4 files changed, 3276 insertions(+), 34 deletions(-)
- create mode 100644 firebase.json"></code-block>
+  <code-block lang="bsh" command="git commit -m 'Add Firebase Hosting config'"></code-block>
 
-  <p>And the big moment! Let's share some Awesome wth the world.</p>
-
-
+  <p>And the big moment! Let's share some Awesome™ with the world.</p>
 
   <code-block lang="bsh"
             command="npm run deploy"
-            code="Date: 2018-04-30T15:32:41.111Z
-Hash: 3434227a676a97e8ffe9
-Time: 6593ms
+            code="...
+Date: 2018-05-03T21:18:51.509Z
+Hash: 901654847701462d96dc
+Time: 6469ms
 chunk {0} runtime.6afe30102d8fe7337431.js (runtime) 1.05 kB [entry] [rendered]
 chunk {1} styles.34c57ab7888ec1573f9c.css (styles) 0 bytes [initial] [rendered]
-chunk {2} polyfills.2d976f42c1abc2acac30.js (polyfills) 59.4 kB [initial] [rendered]
-chunk {3} main.408c9c3eb6fe7147207b.js (main) 164 kB [initial] [rendered]
+chunk {2} polyfills.6c08419970f9e4781b69.js (polyfills) 59.4 kB [initial] [rendered]
+chunk {3} main.030526a378002e4a8b27.js (main) 164 kB [initial] [rendered]
 
 === Deploying to 'awesome-sauce-demo'...
 
@@ -237,9 +233,11 @@ i  hosting: preparing dist/awesome-sauce directory for upload...
 Project Console: https://console.firebase.google.com/project/awesome-sauce-demo/overview
 Hosting URL: https://awesome-sauce-demo.firebaseapp.com"></code-block>
 
-  <p>The app is now deployed to <a href="https://awesome-sauce-demo.firebaseapp.com">https://awesome-sauce-demo.firebaseapp.com</a><p>
+  <p>The app is now deployed to <a href="https://awesome-sauce-demo.firebaseapp.com">https://awesome-sauce-demo.firebaseapp.com</a>.<p>
 
-  <p>Note that if you open Chrome DevTools there is a registered service worker.<p>
+  <p class="notice">Of course <c-b code="awesome-sauce-demo.firebaseapp.com"></c-b> is controlled by me so your's will be at a different Firebase URL.</p>
+
+  <p>If you open Chrome DevTools there is a registered service worker and you can again set the site to offline and have it still load.<p>
 
   <img-2 [attr.width]="imgWidth" [attr.height]="imgHeight" src="/assets/images/app-deployed-with-service-worker.png" alt="App deployed to Firebase with registered service worker"></img-2>
 
