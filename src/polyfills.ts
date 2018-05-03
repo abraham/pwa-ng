@@ -77,5 +77,14 @@ import 'zone.js/dist/zone';  // Included with Angular CLI.
 /***************************************************************************************************
  * APPLICATION IMPORTS
  */
-import '@webcomponents/webcomponentsjs/webcomponents-sd-ce';
-import 'intersection-observer';
+const polyfills = [];
+if (!('customElements' in window)) {
+   polyfills.push(import('@webcomponents/webcomponentsjs/webcomponents-sd-ce'));
+}
+if (!('IntersectionObserver' in window)) {
+  polyfills.push(import('intersection-observer'));
+}
+Promise.all(polyfills).then(() => {
+  import('node-package');
+  import('img-2');
+});
