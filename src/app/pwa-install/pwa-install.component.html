@@ -1,21 +1,14 @@
 <pwa-step title="Install">
   <p>Install Angular CLI v6+:</p>
 
-  <code-block lang="bsh"
-              command="npm install --global @angular/cli@next"
-              code="...
-+ @angular/cli@6.0.0-rc.7
-added 250 packages from 175 contributors in 9.11s"></code-block>
-
-
-
-  <p class='notice'>
-    Ignore the following <c-b code="npm install"></c-b> command as it is missing <c-b code="@next"></c-b>.
-  </p>
-
   <node-package name="@angular/cli" global></node-package>
 
-  <p>You should now have the Angular CLI installed.</p>
+  <code-block lang="bsh"
+              code="...
++ @angular/cli@6.0.0
+added 321 packages from 208 contributors in 13.595s"></code-block>
+
+  <p>You should now have the Angular CLI installed globally.</p>
 
   <code-block lang="bsh"
               command="ng --version"
@@ -28,7 +21,7 @@ added 250 packages from 175 contributors in 9.11s"></code-block>
                |___/
 
 
-Angular CLI: 6.0.0-rc.7
+Angular CLI: 6.0.0
 Node: 10.0.0
 OS: darwin x64
 Angular:
@@ -36,24 +29,23 @@ Angular:
 
 Package                      Version
 ------------------------------------------------------
-@angular-devkit/architect    0.5.10
-@angular-devkit/core         0.5.10
-@angular-devkit/schematics   0.5.10
-@ngtools/json-schema         1.1.0
-@schematics/angular          0.5.10
-@schematics/update           0.5.10
-rxjs                         6.0.0
+@angular-devkit/architect    0.6.0
+@angular-devkit/core         0.6.0
+@angular-devkit/schematics   0.6.0
+@schematics/angular          0.6.0
+@schematics/update           0.6.0
+rxjs                         6.1.0
 typescript                   2.7.2"></code-block>
 </pwa-step>
 
 <pwa-step title="Generate">
-  <p>Let's generate a new Angular app with the <c-b code="ng new"></c-b> command. The main argument we'll be needing right now is the name of the app.</p>
+  <p>Let's generate a new Angular app with the <c-b code="ng new"></c-b> command. The only argument we'll be needing right now is the name of the app.</p>
 
   <code-block lang="bsh"
               command="ng new awesome-sauce"
-              code="CREATE awesome-sauce/README.md (1034 bytes)
-CREATE awesome-sauce/angular.json (3884 bytes)
-CREATE awesome-sauce/package.json (1397 bytes)
+              code="CREATE awesome-sauce/README.md (1029 bytes)
+CREATE awesome-sauce/angular.json (3456 bytes)
+CREATE awesome-sauce/package.json (1317 bytes)
 CREATE awesome-sauce/tsconfig.json (384 bytes)
 CREATE awesome-sauce/tslint.json (2805 bytes)
 CREATE awesome-sauce/.editorconfig (245 bytes)
@@ -63,12 +55,12 @@ CREATE awesome-sauce/src/environments/environment.ts (631 bytes)
 CREATE awesome-sauce/src/favicon.ico (5430 bytes)
 CREATE awesome-sauce/src/index.html (299 bytes)
 CREATE awesome-sauce/src/main.ts (370 bytes)
-CREATE awesome-sauce/src/polyfills.ts (3114 bytes)
+CREATE awesome-sauce/src/polyfills.ts (3194 bytes)
 CREATE awesome-sauce/src/test.ts (642 bytes)
 CREATE awesome-sauce/src/assets/.gitkeep (0 bytes)
 CREATE awesome-sauce/src/styles.css (80 bytes)
 CREATE awesome-sauce/src/browserslist (375 bytes)
-CREATE awesome-sauce/src/karma.conf.js (961 bytes)
+CREATE awesome-sauce/src/karma.conf.js (964 bytes)
 CREATE awesome-sauce/src/tsconfig.app.json (194 bytes)
 CREATE awesome-sauce/src/tsconfig.spec.json (282 bytes)
 CREATE awesome-sauce/src/tslint.json (314 bytes)
@@ -82,7 +74,7 @@ CREATE awesome-sauce/e2e/src/app.e2e-spec.ts (299 bytes)
 CREATE awesome-sauce/e2e/src/app.po.ts (208 bytes)
 CREATE awesome-sauce/e2e/tsconfig.e2e.json (213 bytes)
 ...
-added 1240 packages from 1266 contributors in 34.424s
+added 1144 packages from 1269 contributors in 41.255s
     Successfully initialized git."></code-block>
 
   <p>That creates a new Angular app in the <c-b code="awesome-sauce"></c-b> directory from where we will do most of our work.</p>
@@ -91,13 +83,13 @@ added 1240 packages from 1266 contributors in 34.424s
 </pwa-step>
 
 <pwa-step title="Add PWA">
-  <p>Now that we've got a shiny new Angular app, let's add a service worker using Angular's new <c-b code="ng add"></c-b> command. This will use a Schematic to add the needed packages and modify our code. <c-b code="--project"></c-b> takes the same app name we defined earlier.</p>
+  <p>Now that we've got a shiny new Angular app, let's add a service worker using Angular's fancy <c-b code="ng add"></c-b> command. This will use a Schematic to add the needed packages and modify our code.</p>
 
   <code-block lang="bsh"
-              command="ng add @angular/pwa --project awesome-sauce"
+              command="ng add @angular/pwa"
               code="Installing packages for tooling via npm.
-+ @angular/pwa@0.5.10
-added 2 packages from 2 contributors in 7.962s
++ @angular/pwa@0.6.0
+added 2 packages from 2 contributors in 8.88s
 Installed packages for tooling via npm.
 CREATE ngsw-config.json (392 bytes)
 CREATE src/assets/icons/icon-128x128.png (1253 bytes)
@@ -108,12 +100,12 @@ CREATE src/assets/icons/icon-384x384.png (3557 bytes)
 CREATE src/assets/icons/icon-512x512.png (5008 bytes)
 CREATE src/assets/icons/icon-72x72.png (792 bytes)
 CREATE src/assets/icons/icon-96x96.png (958 bytes)
-CREATE src/assets/manifest.json (1091 bytes)
-UPDATE angular.json (3921 bytes)
-UPDATE package.json (1443 bytes)
+CREATE src/manifest.json (1083 bytes)
+UPDATE angular.json (3563 bytes)
+UPDATE package.json (1388 bytes)
 UPDATE src/app/app.module.ts (526 bytes)
-UPDATE src/index.html (397 bytes)
-added 1 package from 1 contributor and removed 2 packages in 8.275s"></code-block>
+UPDATE src/index.html (390 bytes)
+added 1 package from 1 contributor in 9.511s"></code-block>
 
   <node-package name="@angular/pwa"></node-package>
 
@@ -137,7 +129,7 @@ Untracked files:
 
         ngsw-config.json
         src/assets/icons/
-        src/assets/manifest.json
+        src/manifest.json
 
 no changes added to commit (use "git add" and/or "git commit -a")'>
   </code-block>
@@ -148,12 +140,12 @@ no changes added to commit (use "git add" and/or "git commit -a")'>
       <p matLine>tells the Angular CLI how to handle assets for caching.</p>
     </mat-list-item>
     <mat-list-item role="listitem">
-      <c-b matLine code="icons"></c-b>
-      <p matLine>will be your logo in various sizes</p>
+      <c-b matLine code="src/assets/icons"></c-b>
+      <p matLine>will be where you put your logo in various sizes.</p>
     </mat-list-item>
     <mat-list-item role="listitem">
-      <c-b matLine code="manifest.json"></c-b>
-      <p matLine>describes your site and enables it to become installable.</p>
+      <c-b matLine code="src/manifest.json"></c-b>
+      <p matLine>describes your site and makes it installable.</p>
     </mat-list-item>
   </mat-list>
 
@@ -162,10 +154,20 @@ no changes added to commit (use "git add" and/or "git commit -a")'>
   <code-block lang="bsh"
               command="git diff angular.json"
               code='diff --git a/angular.json b/angular.json
-index 421874b..a1f84fc 100644
+index 1711796..02fdbfd 100644
 --- a/angular.json
 +++ b/angular.json
-@@ -51,7 +51,8 @@
+@@ -20,7 +20,8 @@
+             "tsConfig": "src/tsconfig.app.json",
+             "assets": [
+               "src/favicon.ico",
+-              "src/assets"
++              "src/assets",
++              "src/manifest.json"
+             ],
+             "styles": [
+               "src/styles.css"
+@@ -43,7 +44,8 @@
                "aot": true,
                "extractLicenses": true,
                "vendorChunk": false,
@@ -174,28 +176,42 @@ index 421874b..a1f84fc 100644
 +              "serviceWorker": true
              }
            }
+         },
+@@ -77,7 +79,8 @@
+             "scripts": [],
+             "assets": [
+               "src/favicon.ico",
+-              "src/assets"
++              "src/assets",
++              "src/manifest.json"
+             ]
+           }
          },'></code-block>
 
-  <p><c-b code="angular.json"></c-b> is the file used to configure the Angular CLI. Here we are telling it to build a service worker.</p>
+  <p><c-b code="angular.json"></c-b> is the file used to configure the Angular CLI. Here it is being told to build a service worker and that <c-b code="manifest.json"></c-b> should be treated like an asset.</p>
 
   <code-block lang="bsh"
              command="git diff package.json"
              code='diff --git a/package.json b/package.json
-index ca469fa..bb69a7c 100644
+index 357afac..770aad5 100644
 --- a/package.json
 +++ b/package.json
-@@ -23,7 +23,8 @@
-     "@angular/router": "^6.0.0-rc.5",
+@@ -19,10 +19,12 @@
+     "@angular/http": "^6.0.0",
+     "@angular/platform-browser": "^6.0.0",
+     "@angular/platform-browser-dynamic": "^6.0.0",
++    "@angular/pwa": "^0.6.0",
+     "@angular/router": "^6.0.0",
      "core-js": "^2.5.4",
      "rxjs": "^6.0.0",
 -    "zone.js": "^0.8.26"
 +    "zone.js": "^0.8.26",
-+    "@angular/service-worker": "^6.0.0-rc.5"
++    "@angular/service-worker": "^6.0.0"
    },
    "devDependencies": {
-     "@angular/compiler-cli": "^6.0.0-rc.5",'></code-block>
+     "@angular/compiler-cli": "^6.0.0",'></code-block>
 
-  <p><c-b code="package.json"></c-b> is including a new <c-b code="@angular/service-worker"></c-b> dependancy.</p>
+  <p><c-b code="package.json"></c-b> is including new <c-b code="@angular/service-worker"></c-b> and <c-b code="@angular/pwa"></c-b> dependancies.</p>
 
   <code-block lang="bsh"
               command="git diff src/app/app.module.ts"
@@ -227,14 +243,14 @@ index f657163..2f5db8d 100644
   <code-block lang="bsh"
               command="git diff src/index.html"
               code='diff --git a/src/index.html b/src/index.html
-index 75e1aff..eff255d 100644
+index 75e1aff..7a03af0 100644
 --- a/src/index.html
 +++ b/src/index.html
 @@ -7,6 +7,8 @@
 
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <link rel="icon" type="image/x-icon" href="favicon.ico">
-+  <link rel="manifest" href="assets/manifest.json">
++  <link rel="manifest" href="manifest.json">
 +  <meta name="theme-color" content="#1976d2">
  </head>
  <body>
@@ -242,9 +258,9 @@ index 75e1aff..eff255d 100644
 
   <p>The last changed file we need to look it is <c-b code="index.html"></c-b>. With this change it tells browsers about the <c-b code="manifest.json"></c-b> file and sets a theme color.</p>
 
-  <p>There are also two new JSON files and several new icon files.<p>
+  <p>There are also two new JSON files and a new icons directory.<p>
 
-  <p>Let's look at <c-b code="ngsw-config.json"></c-b> first. This is the main file where you will configure how and when the Servivce Worker handles assets. We'll go into more details later.</p>
+  <p>Let's look at <c-b code="ngsw-config.json"></c-b> first. This is the main file where you will configure how and when the Servivce Worker handles assets. We'll cover this in more details on the <a [routerLink]="['/assets']">Assets page</a>.</p>
 
   <code-block lang="bsh"
               command="cat ngsw-config.json"
@@ -289,8 +305,8 @@ index 75e1aff..eff255d 100644
 
   <code-block lang="bsh"
               command="git commit -m 'Make it so'"
-              code="[master b7d1c19] Make it so
- 15 files changed, 93 insertions(+), 3 deletions(-)
+              code="[master 9a792f1] Make it so
+ 15 files changed, 180 insertions(+), 287 deletions(-)
  create mode 100644 ngsw-config.json
  create mode 100644 src/assets/icons/icon-128x128.png
  create mode 100644 src/assets/icons/icon-144x144.png
@@ -300,7 +316,7 @@ index 75e1aff..eff255d 100644
  create mode 100644 src/assets/icons/icon-512x512.png
  create mode 100644 src/assets/icons/icon-72x72.png
  create mode 100644 src/assets/icons/icon-96x96.png
- create mode 100644 src/assets/manifest.json"></code-block>
+ create mode 100644 src/manifest.json"></code-block>
 </pwa-step>
 
 <pwa-step title="Run it">
@@ -312,10 +328,11 @@ index 75e1aff..eff255d 100644
 
   <code-block lang="bsh"
               command="npm install lite-server --save-dev"
-              code="+ lite-server@2.3.0
-added 96 packages from 125 contributors in 27.356s"></code-block>
+              code="...
++ lite-server@2.3.0
+added 108 packages from 133 contributors in 29.716s"></code-block>
 
-  <node-package name="lite-server"></node-package>
+  <node-package name="lite-server" global></node-package>
 
   <p>Update <c-b code="package.json"></c-b> so that the <c-b code="scripts"></c-b> object has <c-b code="start:prod"></c-b>.</p>
 
@@ -329,9 +346,11 @@ added 96 packages from 125 contributors in 27.356s"></code-block>
   "e2e": "ng e2e"
 }'></code-block>
 
-  <p>Now one command will rebuild the app in --prod mode and start the server. Keep in mind that if you make changes to the site you'll have to stop the server and start it again before seeing the changes.</p>
+  <p>Now one command will rebuild the app in <c-b code="--prod"></c-b> mode and start the server.</p>
 
-  <p><c-b code="--prod"></c-b> will tell the Angular CLI to build in production mode. This will perform additional optimizations to your CSS/JavaScript and most importantly will enable the service worker. <c-b code="--baseDir"></c-b> will tell <c-b code="lite-server"></c-b> where the built app should be served from.</p>
+  <p class="notice">Keep in mind when serving in <c-b code="lite-server"></c-b> mode, you'll have to stop and start for any code changes to take effect.</p>
+
+  <p><c-b code="--prod"></c-b> will tell the Angular CLI to build in production mode. This will perform additional optimizations to your CSS/JavaScript. But most importantly it will enable the service worker. <c-b code="--baseDir"></c-b> will tell <c-b code="lite-server"></c-b> where the built app should be served from.</p>
 
   <p>Don't forget to commit again.</p>
 
@@ -342,13 +361,13 @@ added 96 packages from 125 contributors in 27.356s"></code-block>
   <code-block lang="bsh"
               command="npm run start:prod"
               code="...
-Date: 2018-05-01T21:09:58.203Z
-Hash: 9a6060b615702f574419
-Time: 6681ms
+Date: 2018-05-03T20:52:36.653Z
+Hash: 901654847701462d96dc
+Time: 18233ms
 chunk {0} runtime.6afe30102d8fe7337431.js (runtime) 1.05 kB [entry] [rendered]
 chunk {1} styles.34c57ab7888ec1573f9c.css (styles) 0 bytes [initial] [rendered]
-chunk {2} polyfills.2d976f42c1abc2acac30.js (polyfills) 59.4 kB [initial] [rendered]
-chunk {3} main.f369b54424cf39b986c8.js (main) 164 kB [initial] [rendered]
+chunk {2} polyfills.6c08419970f9e4781b69.js (polyfills) 59.4 kB [initial] [rendered]
+chunk {3} main.030526a378002e4a8b27.js (main) 164 kB [initial] [rendered]
 Did not detect a `bs-config.json` or `bs-config.js` override file. Using lite-server defaults...
 ** browser-sync config **
 { injectChanges: false,
@@ -366,7 +385,8 @@ Did not detect a `bs-config.json` or `bs-config.js` override file. Using lite-se
  UI External: http://192.168.200.8:3001
  --------------------------------------
 [Browsersync] Serving files from: dist/awesome-sauce
-[Browsersync] Watching files..."></code-block>
+[Browsersync] Watching files...
+..."></code-block>
 
   <p class='notice'>
     If you get an error here, try running  <c-b code="npm ci"></c-b> or <c-b code="npm install"></c-b>.
