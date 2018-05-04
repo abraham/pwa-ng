@@ -5,6 +5,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "start:prod": "ng build --prod && lite-server --baseDir dist/pwa-ng",
     "build": "ng build",
     "deploy": "ng build --prod && firebase deploy",
     "test": "ng test",
@@ -52,6 +53,7 @@
     "karma-coverage-istanbul-reporter": "~1.4.2",
     "karma-jasmine": "~1.1.1",
     "karma-jasmine-html-reporter": "^0.2.2",
+    "lite-server": "^2.3.0",
     "protractor": "~5.3.0",
     "ts-node": "~5.0.1",
     "tslint": "~5.9.1",
