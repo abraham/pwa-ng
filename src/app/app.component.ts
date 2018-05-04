@@ -3,7 +3,7 @@ import { MDCTab, MDCTabFoundation } from '@material/tabs';
 import { MDCTabBar, MDCTabBarFoundation } from '@material/tabs';
 import { MDCTabBarFoundationScroller, MDCTabBarScroller } from '@material/tabs';
 
-import { appNav } from './routes';
+import { nav } from './app.routes';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +13,7 @@ import { appNav } from './routes';
 export class AppComponent implements AfterViewInit {
   @ViewChild('nav') nav: ElementRef;
 
-  public appNav = appNav;
+  public appNav = nav;
   private tabBarScroller: MDCTabBarScroller;
 
   constructor() { }

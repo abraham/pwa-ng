@@ -23,7 +23,7 @@ import { PwaStepComponent } from './pwa-step/pwa-step.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { ShareComponent } from './share/share.component';
 import WebFont from 'webfontloader';
-import { appRoutes } from './routes';
+import { routes } from './app.routes';
 import { environment } from '../environments/environment';
 
 WebFont.load({
@@ -55,7 +55,7 @@ WebFont.load({
     MatSnackBarModule,
     MatTabsModule,
     MatToolbarModule,
-    RouterModule.forRoot(appRoutes),
+    RouterModule.forRoot(routes),
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [],

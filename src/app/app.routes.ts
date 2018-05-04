@@ -12,7 +12,7 @@ interface Nav {
   pathMatch?: string;
 }
 
-export const appNav: Nav[] = [
+export const nav: Nav[] = [
   { path: '', label: 'Install', pathMatch: 'full' },
   { path: 'manifest', label: 'Manifest' },
   { path: 'firebase', label: 'Firebase' },
@@ -25,7 +25,7 @@ export const appNav: Nav[] = [
 // CI
 // Push
 
-export const appRoutes: Routes = [
+export const routes: Routes = [
   { path: '', component: PwaInstallComponent, pathMatch: 'full' },
   { path: 'manifest', component: PwaManifestComponent },
   { path: 'firebase', component: FirebaseComponent },
