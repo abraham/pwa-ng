@@ -7,6 +7,7 @@
     "start": "ng serve",
     "start:prod": "ng build --prod && lite-server --baseDir dist/pwa-ng",
     "build": "ng build",
+    "build:prod": "ng build --prod",
     "deploy": "ng build --prod && firebase deploy",
     "test": "ng test",
     "lint": "ng lint",
