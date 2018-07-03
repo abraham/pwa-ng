@@ -33,7 +33,7 @@
     "core-js": "2.5.5",
     "img-2": "github:abraham/img-2",
     "intersection-observer": "0.5.0",
-    "node-package": "github:abraham/node-package#style",
+    "node-package": "^1.1.1",
     "rxjs": "6.2.0",
     "webfontloader": "1.6.28",
     "zone.js": "0.8.26"
