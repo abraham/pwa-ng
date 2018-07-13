@@ -34,7 +34,7 @@
     "img-2": "github:abraham/img-2",
     "intersection-observer": "0.5.0",
     "node-package": "1.1.1",
-    "rxjs": "6.2.1",
+    "rxjs": "6.2.2",
     "webfontloader": "1.6.28",
     "zone.js": "0.8.26"
   },
