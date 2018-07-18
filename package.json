@@ -28,7 +28,7 @@
     "@angular/router": "6.0.9",
     "@angular/service-worker": "6.0.9",
     "@material/tabs": "0.37.1",
-    "@webcomponents/webcomponentsjs": "1.0.1",
+    "@webcomponents/webcomponentsjs": "1.2.3",
     "clipboard-polyfill": "2.4.7",
     "core-js": "2.5.7",
     "img-2": "github:abraham/img-2",
