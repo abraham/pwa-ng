@@ -87,6 +87,7 @@ node-package {
   --node-package-background-color: #fff;
   --node-package-color: #D32F2F;
   --node-package-link-color: #B71C1C;
+  border: 1px solid #D32F2F;
 }
 
 .fixedwidth, pre, code {
