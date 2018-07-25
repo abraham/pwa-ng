@@ -26,7 +26,7 @@
     "@angular/platform-browser": "6.0.9",
     "@angular/platform-browser-dynamic": "6.0.9",
     "@angular/router": "6.0.9",
-    "@angular/service-worker": "6.1.0",
+    "@angular/service-worker": "6.1.0-rc.3",
     "@material/tabs": "0.37.1",
     "@webcomponents/webcomponentsjs": "2.0.3",
     "clipboard-polyfill": "2.4.7",
