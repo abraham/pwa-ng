@@ -32,7 +32,7 @@
               "includePaths": [
                 "node_modules"
               ]
-            },
+            }
           },
           "configurations": {
             "production": {
@@ -127,5 +127,10 @@
       }
     }
   },
-  "defaultProject": "pwa-ng"
+  "defaultProject": "pwa-ng",
+  "cli": {
+    "warnings": {
+      "typescriptMismatch": false
+    }
+  }
 }
