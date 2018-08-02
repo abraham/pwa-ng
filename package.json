@@ -16,7 +16,7 @@
   "private": true,
   "dependencies": {
     "@abraham/reflection": "0.4.2",
-    "@angular/animations": "6.1.1",
+    "@angular/animations": "6.1.0",
     "@angular/cdk": "6.4.2",
     "@angular/common": "6.1.0",
     "@angular/compiler": "6.1.0",
