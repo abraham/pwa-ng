@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { MatMenuTrigger, MatSnackBar } from '@angular/material';
 
 @Component({
@@ -6,39 +6,43 @@ import { MatMenuTrigger, MatSnackBar } from '@angular/material';
   templateUrl: './share.component.html',
   styleUrls: ['./share.component.css']
 })
-export class ShareComponent implements OnInit {
+export class ShareComponent {
   @ViewChild(MatMenuTrigger) menu: MatMenuTrigger;
 
-  nativeShare = 'share' in navigator;
-  services = {
-    google: () => `https://plus.google.com/share?url=${this.url}`,
-    twitter: () => `https://twitter.com/intent/tweet?text=${this.text + ' ' + this.url}`,
-    facebook: () => `https://www.facebook.com/sharer/sharer.php?u=${this.url}`,
+  public objectKeys = Object.keys;
+  public nativeShare = 'share' in navigator;
+  public services = {
+    google: {
+      name: 'Google+',
+      url: () => `https://plus.google.com/share?url=${this.currentUrl}` },
+    twitter: {
+      name: 'Twitter',
+      url: () => `https://twitter.com/intent/tweet?text=${this.currentTitle} ${this.currentUrl}` },
+    facebook: {
+      name: 'Facebook',
+      url: () => `https://www.facebook.com/sharer/sharer.php?u=${this.currentUrl}` },
   };
 
   constructor(public snackBar: MatSnackBar) { }
 
-  ngOnInit() {
-  }
-
-  private get text(): string {
+  private get currentTitle(): string {
     return document.querySelector('title').innerText;
   }
 
-  private get url(): string {
+  private get currentUrl(): string {
     return window.location.href;
   }
 
-  public share(event) {
+  public share(_event) {
     navigator.share({
-      text: this.text,
-      url: this.url,
+      text: this.currentTitle,
+      url: this.currentUrl,
     })
     .catch(this.error);
   }
 
   public shareTo(service: string) {
-    window.open(this.services[service]());
+    window.open(this.services[service].url());
   }
 
   public error(message: string) {
