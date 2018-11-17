@@ -1,7 +1,4 @@
-import { Route, Routes } from '@angular/router';
-
-import { ComingSoonComponent } from './coming-soon.component';
-import { Component } from '@angular/core';
+import { Routes } from '@angular/router';
 import { FirebaseComponent } from './firebase/firebase.component';
 import { PwaInstallComponent } from './pwa-install/pwa-install.component';
 import { PwaManifestComponent } from './pwa-manifest/pwa-manifest.component';
@@ -16,19 +13,10 @@ export const nav: Nav[] = [
   { path: '', label: 'Install', pathMatch: 'full' },
   { path: 'manifest', label: 'Manifest' },
   { path: 'firebase', label: 'Firebase' },
-  { path: 'lighthouse', label: 'Lighthouse' },
-  { path: 'assets', label: 'Assets' },
 ];
-
-// TODO: Aditional guides to consider.
-// SSR
-// CI
-// Push
 
 export const routes: Routes = [
   { path: '', component: PwaInstallComponent, pathMatch: 'full' },
   { path: 'manifest', component: PwaManifestComponent },
   { path: 'firebase', component: FirebaseComponent },
-  { path: 'lighthouse', component: ComingSoonComponent },
-  { path: 'assets', component: ComingSoonComponent },
 ];

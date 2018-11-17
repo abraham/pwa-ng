@@ -38,18 +38,6 @@
       {
         "source": "/firebase",
         "destination": "/index.html"
-      },
-      {
-        "source": "/lighthouse",
-        "destination": "/index.html"
-      },
-      {
-        "source": "/assets",
-        "destination": "/index.html"
-      },
-      {
-        "source": "/about",
-        "destination": "/index.html"
       }
     ]
   }
