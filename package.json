@@ -29,7 +29,7 @@
     "@angular/router": "7.2.3",
     "@angular/service-worker": "7.2.3",
     "@material/tabs": "0.43.0",
-    "@webcomponents/webcomponentsjs": "2.2.4",
+    "@webcomponents/webcomponentsjs": "2.2.5",
     "clipboard-polyfill": "2.7.0",
     "img-2": "github:abraham/img-2",
     "intersection-observer": "0.5.1",
