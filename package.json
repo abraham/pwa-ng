@@ -28,7 +28,7 @@
     "@angular/platform-browser-dynamic": "7.2.3",
     "@angular/router": "7.2.3",
     "@angular/service-worker": "7.2.3",
-    "@material/tabs": "0.43.0",
+    "@material/tabs": "0.44.0",
     "@webcomponents/webcomponentsjs": "2.2.6",
     "clipboard-polyfill": "2.7.0",
     "img-2": "github:abraham/img-2",
