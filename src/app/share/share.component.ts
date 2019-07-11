@@ -1,5 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
-import { MatMenuTrigger, MatSnackBar } from '@angular/material';
+import { MatMenuTrigger } from '@angular/material/menu';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'pwa-share',
