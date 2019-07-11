@@ -7,7 +7,7 @@ import { MatMenuTrigger, MatSnackBar } from '@angular/material';
   styleUrls: ['./share.component.css']
 })
 export class ShareComponent {
-  @ViewChild(MatMenuTrigger) menu: MatMenuTrigger;
+  @ViewChild(MatMenuTrigger, { static: false }) menu: MatMenuTrigger;
 
   public objectKeys = Object.keys;
   public nativeShare = 'share' in navigator;

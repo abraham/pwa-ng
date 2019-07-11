@@ -11,7 +11,7 @@ import { nav } from './app.routes';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements AfterViewInit {
-  @ViewChild('nav') nav: ElementRef;
+  @ViewChild('nav', { static: true }) nav: ElementRef;
 
   public appNav = nav;
   private tabBarScroller: MDCTabBarScroller;
