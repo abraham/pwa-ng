@@ -28,7 +28,7 @@
     "@angular/router": "8.2.14",
     "@angular/service-worker": "8.2.14",
     "@material/tabs": "0.44.1",
-    "@webcomponents/webcomponentsjs": "2.3.0",
+    "@webcomponents/webcomponentsjs": "2.4.0",
     "clipboard-polyfill": "2.8.6",
     "img-2": "github:abraham/img-2",
     "intersection-observer": "0.7.0",
