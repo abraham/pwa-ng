@@ -2,6 +2,12 @@ import { Component, ViewChild } from '@angular/core';
 import { MatMenuTrigger } from '@angular/material/menu';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
+declare global {
+  interface Navigator {
+    share: (data: { text: string, url: string }) => Promise<any>;
+  }
+}
+
 @Component({
   selector: 'pwa-share',
   templateUrl: './share.component.html',
@@ -34,7 +40,7 @@ export class ShareComponent {
     return window.location.href;
   }
 
-  public share(_event) {
+  public share() {
     navigator.share({
       text: this.currentTitle,
       url: this.currentUrl,
