@@ -140,9 +140,6 @@
   },
   "defaultProject": "pwa-ng",
   "cli": {
-    "warnings": {
-      "typescriptMismatch": false
-    },
     "analytics": "a84782df-bced-4f87-a4be-18aa968e58e0"
   }
 }
