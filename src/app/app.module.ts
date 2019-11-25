@@ -16,7 +16,7 @@ import { ShareComponent } from './share/share.component';
 
 WebFont.load({
   google: {
-    families: ['Roboto', 'Roboto Mono', 'Material Icons'],
+    families: ['Material Icons'],
   },
 });
 
