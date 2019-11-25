@@ -24,7 +24,7 @@
     <div class="mdc-tab-bar-scroller__scroll-frame">
       <nav id="my-scrollable-tab-bar" class="mdc-tab-bar mdc-tab-bar-scroller__scroll-frame__tabs">
         <a class="mdc-tab"
-           *ngFor="let link of appNav"
+           *ngFor="let link of appRoutes"
            [routerLink]="link.path"
            routerLinkActive="mdc-tab--active"
            [routerLinkActiveOptions]="{ exact: true }">

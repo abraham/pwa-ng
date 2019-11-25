@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { MDCTabBarScroller } from '@material/tabs';
-import { nav } from './app.routes';
+import { routes } from './app.routes';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +10,7 @@ import { nav } from './app.routes';
 export class AppComponent implements AfterViewInit {
   @ViewChild('nav', { static: true }) nav: ElementRef;
 
-  public appNav = nav;
+  public appRoutes = routes;
   private tabBarScroller: MDCTabBarScroller;
 
   constructor() { }
