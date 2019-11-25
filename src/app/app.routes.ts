@@ -1,7 +1,4 @@
 import { Route } from '@angular/router';
-import { FirebaseComponent } from './firebase/firebase.component';
-import { PwaInstallComponent } from './pwa-install/pwa-install.component';
-import { PwaManifestComponent } from './pwa-manifest/pwa-manifest.component';
 
 export interface NamedRoute extends Route {
   label: string;
@@ -11,17 +8,17 @@ export const routes: NamedRoute[] = [
   {
     path: '',
     label: 'Install',
-    component: PwaInstallComponent,
-    pathMatch: 'full'
+    pathMatch: 'full',
+    loadChildren: () => import('./pwa-install/pwa-install.module').then(m => m.PwaInstallModule)
   },
   {
     path: 'manifest',
     label: 'Manifest',
-    component: PwaManifestComponent
+    loadChildren: () => import('./pwa-manifest/pwa-manifest.module').then(m => m.PwaManifestModule)
   },
   {
     path: 'firebase',
     label: 'Firebase',
-    component: FirebaseComponent
+    loadChildren: () => import('./firebase/firebase.module').then(m => m.FirebaseModule)
   },
 ];
