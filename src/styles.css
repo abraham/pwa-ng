@@ -37,7 +37,7 @@ header {
   width: 100%;
 }
 
-#container {
+#app-container {
   flex: 1 0 auto;
   display: block;
   max-width: 960px;
