@@ -1,6 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { MatMenuTrigger } from '@angular/material/menu';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Title } from '@angular/platform-browser';
 
 declare global {
   interface Navigator {
@@ -20,7 +21,7 @@ export class ShareComponent {
   public services = [
     {
       name: 'Twitter',
-      url: () => `https://twitter.com/intent/tweet?text=${this.currentTitle} ${this.currentUrl}`,
+      url: () => `https://twitter.com/intent/tweet?text=${this.title.getTitle()} ${this.currentUrl}`,
     },
     {
       name: 'Facebook',
@@ -28,11 +29,7 @@ export class ShareComponent {
     }
   ];
 
-  constructor(public snackBar: MatSnackBar) { }
-
-  private get currentTitle(): string {
-    return document.querySelector('title').innerText;
-  }
+  constructor(private snackBar: MatSnackBar, private title: Title) { }
 
   private get currentUrl(): string {
     return window.location.href;
@@ -40,7 +37,7 @@ export class ShareComponent {
 
   public share() {
     navigator.share({
-      text: this.currentTitle,
+      text: this.title.getTitle(),
       url: this.currentUrl,
     })
     .catch(this.error);

@@ -23,8 +23,8 @@ WebFont.load({
 @NgModule({
   declarations: [
     AppComponent,
-    ShareComponent,
     ContainerDirective,
+    ShareComponent,
   ],
   imports: [
     BrowserAnimationsModule,
