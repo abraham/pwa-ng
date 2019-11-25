@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: 'install',
+  selector: 'app-install',
   templateUrl: './install.component.html',
   styleUrls: ['./install.component.css']
 })

@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'manifest',
+  selector: 'app-manifest',
   templateUrl: './manifest.component.html',
   styleUrls: ['./manifest.component.css']
 })

@@ -1,7 +1,7 @@
-<step title="Manifest">
-  <p>The <c-b code="manifest.json"></c-b> is a critical component of building PWAs. It tells browsers how you want your app to be installed, what branding to use, and how to render a splash screen.</p>
+<app-step title="Manifest">
+  <p>The <app-c-b code="manifest.json"></app-c-b> is a critical component of building PWAs. It tells browsers how you want your app to be installed, what branding to use, and how to render a splash screen.</p>
 
-  <code-block lang="bsh"
+  <app-code-block lang="bsh"
               command="cat src/manifest.json"
               code='{
   "name": "awesome-sauce",
@@ -53,11 +53,11 @@
       "type": "image/png"
     }
   ]
-}'></code-block>
+}'></app-code-block>
 
   <p>Let's start up the dev server and see how Google Chrome likes it.</p>
 
-  <code-block lang="bsh"
+  <app-code-block lang="bsh"
               command="npm start"
               code="...
 
@@ -71,22 +71,22 @@ chunk {polyfills} polyfills.js, polyfills.js.map (polyfills) 226 kB [initial] [r
 chunk {runtime} runtime.js, runtime.js.map (runtime) 5.4 kB [entry] [rendered]
 chunk {styles} styles.js, styles.js.map (styles) 15.6 kB [initial] [rendered]
 chunk {vendor} vendor.js, vendor.js.map (vendor) 3.39 MB [initial] [rendered]
-ℹ ｢wdm｣: Compiled successfully."></code-block>
+ℹ ｢wdm｣: Compiled successfully."></app-code-block>
 
-  <p>Now open <c-b code="http://localhost:4200"></c-b> in Chrome.</p>
+  <p>Now open <app-c-b code="http://localhost:4200"></app-c-b> in Chrome.</p>
 
   <!-- TODO: Update image to include error -->
   <img-2 [attr.width]="imgWidth" [attr.height]="imgHeight" src="/assets/images/manifest.png" alt="Chrome DevTools showing manifest preview"></img-2>
 
-  <p>Check out the <c-b code="manifest"></c-b> view of the <c-b code="Application"></c-b> page in Chrome DevTools. You'll notice that there are some generic details currently set. You'll want to update the names, colors, and icons to be more unique.</p>
+  <p>Check out the <app-c-b code="manifest"></app-c-b> view of the <app-c-b code="Application"></app-c-b> page in Chrome DevTools. You'll notice that there are some generic details currently set. You'll want to update the names, colors, and icons to be more unique.</p>
 
-  <p>Activate <c-b code="Add to homescreen"></c-b>. You should see:</p>
+  <p>Activate <app-c-b code="Add to homescreen"></app-c-b>. You should see:</p>
 
   <p class="notice">Site cannot be installed: no matching service worker detected. You may need to reload the page, or check that the service worker for the current page also controls the start URL from the manifest</p>
 
-  <p>Let's start up Angular in <c-b code="--prod"></c-b> mode so the service worker is enabled using the command we made on the <a [routerLink]="['/']">Install page</a>.</p>
+  <p>Let's start up Angular in <app-c-b code="--prod"></app-c-b> mode so the service worker is enabled using the command we made on the <a [routerLink]="['/']">Install page</a>.</p>
 
-  <code-block lang="bsh"
+  <app-code-block lang="bsh"
   command="npm run start:prod"
               code="...
 Date: 2018-05-03T21:01:56.674Z
@@ -114,17 +114,17 @@ Did not detect a `bs-config.json` or `bs-config.js` override file. Using lite-se
  --------------------------------------
 [Browsersync] Serving files from: dist/awesome-sauce
 [Browsersync] Watching files...
-..."></code-block>
+..."></app-code-block>
 
-  <p><c-b code="http://localhost:3000"></c-b> should open in your browser automatically.</p>
+  <p><app-c-b code="http://localhost:3000"></app-c-b> should open in your browser automatically.</p>
 
-  <p><c-b code="Add to homescreen"></c-b> should how show a prompt leaving you with a 👍 good manifest.</p>
+  <p><app-c-b code="Add to homescreen"></app-c-b> should how show a prompt leaving you with a 👍 good manifest.</p>
 
   <img-2 [attr.width]="imgWidth" [attr.height]="imgHeight" src="/assets/images/add-to-shelf.png" alt="Add to shelf prompt"></img-2>
 
   <p>Neat! Your PWA is now installable.</p>
 
-  <p>It's a good idea to unregister the development service worker so that it doesn't interfere with future work on <c-b code="http://localhost"></c-b>.</p>
+  <p>It's a good idea to unregister the development service worker so that it doesn't interfere with future work on <app-c-b code="http://localhost"></app-c-b>.</p>
 
   <img-2 [attr.width]="imgWidth" [attr.height]="imgHeight" src="/assets/images/unregister-service-worker.png" alt="Unregister service worker"></img-2>
-</step>
+</app-step>

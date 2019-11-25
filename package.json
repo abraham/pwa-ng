@@ -9,7 +9,7 @@
     "build": "ng build",
     "build:prod": "ng build --prod",
     "deploy": "ng run pwa-ng:deploy",
-    "test": "npm run build && npm run build:prod",
+    "test": "npm run lint && npm run build && npm run build:prod",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },

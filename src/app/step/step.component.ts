@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'step',
+  selector: 'app-step',
   templateUrl: './step.component.html',
   styleUrls: ['./step.component.css']
 })

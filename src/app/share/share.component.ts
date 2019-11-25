@@ -9,7 +9,7 @@ declare global {
 }
 
 @Component({
-  selector: 'share',
+  selector: 'app-share',
   templateUrl: './share.component.html',
   styleUrls: ['./share.component.css']
 })

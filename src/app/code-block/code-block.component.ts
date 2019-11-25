@@ -4,7 +4,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import * as clipboard from 'clipboard-polyfill';
 
 @Component({
-  selector: 'code-block',
+  selector: 'app-code-block',
   templateUrl: './code-block.component.html',
   styleUrls: ['./code-block.component.css']
 })

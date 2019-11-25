@@ -1,8 +1,8 @@
-<step title="Firebase">
+<app-step title="Firebase">
   <p><a href="https://firebase.google.com/products/hosting/" target="_blank" rel="noopener">Firebase Hosting</a> is an easy to use CDN that's great for hosting Angular PWAs.</p>
-</step>
+</app-step>
 
-<step title="Create project">
+<app-step title="Create project">
   <p>First you'll need to have a Google account and to create a Firebase app.</p>
 
   <img-2 [attr.width]="imgWidth" [attr.height]="imgHeight" src="/assets/images/hosting-new.png" alt="Create new Firebase project"></img-2>
@@ -18,26 +18,26 @@
 
   <p>You can disregard most of the output from installing.</p>
 
-  <code-block lang="bsh"
+  <app-code-block lang="bsh"
               command="npm install firebase-tools --save-dev"
               code="...
 
 + firebase-tools@3.18.4
-added 334 packages from 176 contributors in 24.024s"></code-block>
+added 334 packages from 176 contributors in 24.024s"></app-code-block>
 
-  <p>If you are not familiar with <c-b code="npx"></c-b>, it runs the passed in command via the version of the package installed with <c-b code="package.json"></c-b> instead of the globally installed version.</p>
+  <p>If you are not familiar with <app-c-b code="npx"></app-c-b>, it runs the passed in command via the version of the package installed with <app-c-b code="package.json"></app-c-b> instead of the globally installed version.</p>
 
-  <code-block lang="bsh" command="npx firebase --version" code="3.18.4"></code-block>
+  <app-code-block lang="bsh" command="npx firebase --version" code="3.18.4"></app-code-block>
 
   <p>Once you have the Firebase CLI installed, you'll need to login.</p>
 
-  <code-block lang="bsh" command="npx firebase login"></code-block>
+  <app-code-block lang="bsh" command="npx firebase login"></app-code-block>
 
-  <p>Now from within the <c-b code="awesome-sauce"></c-b> project directory, we'll set up a new Firebase project.</p>
+  <p>Now from within the <app-c-b code="awesome-sauce"></app-c-b> project directory, we'll set up a new Firebase project.</p>
 
-  <p>Select <c-b code="Hosting"></c-b> and any other Firebase services you plan to use.</p>
+  <p>Select <app-c-b code="Hosting"></app-c-b> and any other Firebase services you plan to use.</p>
 
-  <code-block lang="bsh"
+  <app-code-block lang="bsh"
               command="npx firebase init"
               code="...
 You're about to initialize a Firebase project in this directory:
@@ -50,11 +50,11 @@ elect)
  ◯ Firestore: Deploy rules and create indexes for Firestore
  ◯ Functions: Configure and deploy Cloud Functions
 ❯◉ Hosting: Configure and deploy Firebase Hosting sites
- ◯ Storage: Deploy Cloud Storage security rules"></code-block>
+ ◯ Storage: Deploy Cloud Storage security rules"></app-code-block>
 
   <p>The next option will be to select the Firebase project you created earlier.</p>
 
-  <code-block lang="bsh" code="=== Project Setup
+  <app-code-block lang="bsh" code="=== Project Setup
 
 First, let's associate this project directory with a Firebase project.
 You can create multiple project aliases by running firebase use --add,
@@ -65,37 +65,37 @@ but for now we'll just set up a default project.
   Daily Cat (daily-cat)
 ❯ awesome-sauce-demo (awesome-sauce-demo)
   Material Rocks (material-rocks)
-(Move up and down to reveal more choices)"></code-block>
+(Move up and down to reveal more choices)"></app-code-block>
 
-  <p>Followed by telling Firebase where your built code will live. Set it to <c-b code="dist/awesome-sauce"></c-b></p>
+  <p>Followed by telling Firebase where your built code will live. Set it to <app-c-b code="dist/awesome-sauce"></app-c-b></p>
 
-  <code-block lang="bsh" code="=== Hosting Setup
+  <app-code-block lang="bsh" code="=== Hosting Setup
 
 Your public directory is the folder (relative to your project directory) that
 will contain Hosting assets to be uploaded with firebase deploy. If you
 have a build process for your assets, use your build's output directory.
 
-? What do you want to use as your public directory? (public)"></code-block>
+? What do you want to use as your public directory? (public)"></app-code-block>
 
-  <p>Angular is a single-page app where multiple pages are served from the same <c-b code="index.html"></c-b> so confirm <c-b code="yes"></c-b>.</p>
+  <p>Angular is a single-page app where multiple pages are served from the same <app-c-b code="index.html"></app-c-b> so confirm <app-c-b code="yes"></app-c-b>.</p>
 
-  <code-block lang="bsh" code="? Configure as a single-page app (rewrite all urls to /index.html)? (y/N)"></code-block>
+  <app-code-block lang="bsh" code="? Configure as a single-page app (rewrite all urls to /index.html)? (y/N)"></app-code-block>
 
-  <p>Firebase may try to be helpful and confirm overwritting <c-b code="index.html"></c-b>. The <c-b code="index.html"></c-b> in <c-b code="dist/awesome-sauce"></c-b> will get automatically overwritten at build time so your answer doesn't matter.</p>
+  <p>Firebase may try to be helpful and confirm overwritting <app-c-b code="index.html"></app-c-b>. The <app-c-b code="index.html"></app-c-b> in <app-c-b code="dist/awesome-sauce"></app-c-b> will get automatically overwritten at build time so your answer doesn't matter.</p>
 
-  <code-block lang="bsh" code="? File dist/awesome-sauce/index.html already exists. Overwrite? (y/N)"></code-block>
+  <app-code-block lang="bsh" code="? File dist/awesome-sauce/index.html already exists. Overwrite? (y/N)"></app-code-block>
 
   <p>Your local project folder has now been associated with a Firebase project. 🔥</p>
 
-  <code-block lang="bsh" code="i  Writing configuration info to firebase.json...
+  <app-code-block lang="bsh" code="i  Writing configuration info to firebase.json...
 i  Writing project information to .firebaserc...
 
-✔  Firebase initialization complete!"></code-block>
+✔  Firebase initialization complete!"></app-code-block>
 
   <p>Let's see what's new.</p>
 
 
-  <code-block lang="bsh"
+  <app-code-block lang="bsh"
               command="git status"
               code='On branch master
 Changes not staged for commit:
@@ -111,17 +111,17 @@ Untracked files:
         .firebaserc
         firebase.json
 
-no changes added to commit (use "git add" and/or "git commit -a")'></code-block>
+no changes added to commit (use "git add" and/or "git commit -a")'></app-code-block>
 
-  <p><c-b code="package.json"></c-b> is different because we added <c-b code="firebase-tools"></c-b>.</p>
+  <p><app-c-b code="package.json"></app-c-b> is different because we added <app-c-b code="firebase-tools"></app-c-b>.</p>
 
-  <p>The first new file is a bit of config tells the Firebase CLI what project it's associated with. You should add this to <c-b code=".gitignore"></c-b></p>
+  <p>The first new file is a bit of config tells the Firebase CLI what project it's associated with. You should add this to <app-c-b code=".gitignore"></app-c-b></p>
 
-  <code-block lang="bsh" command='echo ".firebaserc" >> .gitignore'></code-block>
+  <app-code-block lang="bsh" command='echo ".firebaserc" >> .gitignore'></app-code-block>
 
   <p>The other new file is Firebase's general configuration. Currently it tells Hosting how to behave.</p>
 
-  <code-block lang="bsh"
+  <app-code-block lang="bsh"
               command='cat firebase.json'
               code='{
   "hosting": {
@@ -138,26 +138,26 @@ no changes added to commit (use "git add" and/or "git commit -a")'></code-block>
       }
     ]
   }
-}'></code-block>
+}'></app-code-block>
 
   <mat-list role="list">
     <mat-list-item role="listitem">
-      <c-b matLine code="public"></c-b>
+      <app-c-b matLine code="public"></app-c-b>
       <p matLine>tells Firebase what directory to service files from.</p>
     </mat-list-item>
     <mat-list-item role="listitem">
-      <c-b matLine code="ignore"></c-b>
+      <app-c-b matLine code="ignore"></app-c-b>
       <p matLine>tells Firebase what files to exclude when deploying.</p>
     </mat-list-item>
     <mat-list-item role="listitem">
-      <c-b matLine code="rewrites"></c-b>
+      <app-c-b matLine code="rewrites"></app-c-b>
       <p matLine>tells Firebase how to map HTTP paths to files.</p>
     </mat-list-item>
   </mat-list>
 
-  <p>One change we'll want to make to <c-b code="firebase.json"></c-b> is to exclude our service worker files from browser caching. This will make it so that new depoys show up for users faster. Add the <c-b code="headers"></c-b> section. <c-b code="ngsw-worker.js"></c-b> is the actual service worker Angular generates and <c-b code="ngsw.json"></c-b> is the configuration manifest the service worker uses know what to cache.</p>
+  <p>One change we'll want to make to <app-c-b code="firebase.json"></app-c-b> is to exclude our service worker files from browser caching. This will make it so that new depoys show up for users faster. Add the <app-c-b code="headers"></app-c-b> section. <app-c-b code="ngsw-worker.js"></app-c-b> is the actual service worker Angular generates and <app-c-b code="ngsw.json"></app-c-b> is the configuration manifest the service worker uses know what to cache.</p>
 
-  <code-block lang="bsh"
+  <app-code-block lang="bsh"
               code='{
   "hosting": {
     "public": "dist/awesome-sauce",
@@ -184,15 +184,15 @@ no changes added to commit (use "git add" and/or "git commit -a")'></code-block>
       }
     ]
   }
-}'></code-block>
-</step>
+}'></app-code-block>
+</app-step>
 
-<step title="Deploy">
-  <p>Firebase projects can be deployed with <c-b code="firebase deploy"></c-b>, however we know Angular needs to be built first so let's combine that into a single command.</p>
+<app-step title="Deploy">
+  <p>Firebase projects can be deployed with <app-c-b code="firebase deploy"></app-c-b>, however we know Angular needs to be built first so let's combine that into a single command.</p>
 
-  <p>Update <c-b code="package.json"></c-b> so that the <c-b code="scripts"></c-b> object has <c-b code="deploy"></c-b>.</p>
+  <p>Update <app-c-b code="package.json"></app-c-b> so that the <app-c-b code="scripts"></app-c-b> object has <app-c-b code="deploy"></app-c-b>.</p>
 
-  <code-block lang="bsh" code='{
+  <app-code-block lang="bsh" code='{
   "ng": "ng",
   "start": "ng serve",
   "start:prod": "ng build --prod && lite-server --baseDir dist/awesome-sauce",
@@ -201,17 +201,17 @@ no changes added to commit (use "git add" and/or "git commit -a")'></code-block>
   "test": "ng test",
   "lint": "ng lint",
   "e2e": "ng e2e"
-}'></code-block>
+}'></app-code-block>
 
   <p>This is another good place to commit changes.</p>
 
-  <code-block lang="bsh" command='git add .'></code-block>
+  <app-code-block lang="bsh" command='git add .'></app-code-block>
 
-  <code-block lang="bsh" command="git commit -m 'Add Firebase Hosting config'"></code-block>
+  <app-code-block lang="bsh" command="git commit -m 'Add Firebase Hosting config'"></app-code-block>
 
   <p>And the big moment! Let's share some Awesome™ with the world.</p>
 
-  <code-block lang="bsh"
+  <app-code-block lang="bsh"
             command="npm run deploy"
             code="...
 Date: 2018-05-03T21:18:51.509Z
@@ -231,11 +231,11 @@ i  hosting: preparing dist/awesome-sauce directory for upload...
 ✔  Deploy complete!
 
 Project Console: https://console.firebase.google.com/project/awesome-sauce-demo/overview
-Hosting URL: https://awesome-sauce-demo.firebaseapp.com"></code-block>
+Hosting URL: https://awesome-sauce-demo.firebaseapp.com"></app-code-block>
 
   <p>The app is now deployed to <a href="https://awesome-sauce-demo.firebaseapp.com">https://awesome-sauce-demo.firebaseapp.com</a>.<p>
 
-  <p class="notice">Of course <c-b code="awesome-sauce-demo.firebaseapp.com"></c-b> is controlled by me so your's will be at a different Firebase URL.</p>
+  <p class="notice">Of course <app-c-b code="awesome-sauce-demo.firebaseapp.com"></app-c-b> is controlled by me so your's will be at a different Firebase URL.</p>
 
   <p>If you open Chrome DevTools there is a registered service worker and you can again set the site to offline and have it still load.<p>
 
@@ -244,4 +244,4 @@ Hosting URL: https://awesome-sauce-demo.firebaseapp.com"></code-block>
   <p>Firebase also provides a nice dashboard of the most recent deploys to the project.</p>
 
   <img-2 [attr.width]="imgWidth" [attr.height]="imgHeight" src="/assets/images/hosting-deploys.png" alt="Firebase Hosting dashboard showing latest deploy"></img-2>
-</step>
+</app-step>
