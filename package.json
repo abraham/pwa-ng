@@ -28,7 +28,7 @@
     "@angular/platform-browser-dynamic": "9.0.0-rc.3",
     "@angular/router": "9.0.0-rc.3",
     "@angular/service-worker": "9.0.0-rc.3",
-    "@material/tabs": "0.44.1",
+    "@material/tabs": "2.3.0",
     "@webcomponents/webcomponentsjs": "2.4.0",
     "clipboard-polyfill": "2.8.6",
     "img-2": "github:abraham/img-2",
