@@ -16,19 +16,17 @@ declare global {
 export class ShareComponent {
   @ViewChild(MatMenuTrigger) menu: MatMenuTrigger;
 
-  public objectKeys = Object.keys;
   public nativeShare = 'share' in navigator;
-  public services = {
-    google: {
-      name: 'Google+',
-      url: () => `https://plus.google.com/share?url=${this.currentUrl}` },
-    twitter: {
+  public services = [
+    {
       name: 'Twitter',
-      url: () => `https://twitter.com/intent/tweet?text=${this.currentTitle} ${this.currentUrl}` },
-    facebook: {
+      url: () => `https://twitter.com/intent/tweet?text=${this.currentTitle} ${this.currentUrl}`,
+    },
+    {
       name: 'Facebook',
-      url: () => `https://www.facebook.com/sharer/sharer.php?u=${this.currentUrl}` },
-  };
+      url: () => `https://www.facebook.com/sharer/sharer.php?u=${this.currentUrl}`,
+    }
+  ];
 
   constructor(public snackBar: MatSnackBar) { }
 
@@ -48,8 +46,8 @@ export class ShareComponent {
     .catch(this.error);
   }
 
-  public shareTo(service: string) {
-    window.open(this.services[service].url());
+  public shareTo(url: () => string) {
+    window.open(url());
   }
 
   public error(message: string) {

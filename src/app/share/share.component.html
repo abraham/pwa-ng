@@ -5,7 +5,7 @@
   <i class="material-icons" title="Share Angular PWA">share</i>
 </button>
 <mat-menu #menu="matMenu">
-  <span *ngFor="let key of objectKeys(services)">
-    <button mat-menu-item (click)="shareTo(key)">{{services[key].name}}</button>
+  <span *ngFor="let service of services">
+    <button mat-menu-item (click)="shareTo(service.url)">{{service.name}}</button>
   </span>
 </mat-menu>
