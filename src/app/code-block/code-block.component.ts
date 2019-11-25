@@ -23,7 +23,7 @@ export class CodeBlockComponent {
   public copy() {
     clipboard.writeText(this.command)
       .then(() => this.openSnackBar('Copied to clipboard'))
-      .catch(error => this.openSnackBar('Clipboard not supported on this browser'));
+      .catch(_error => this.openSnackBar('Clipboard not supported on this browser'));
   }
 
   private openSnackBar(message: string) {

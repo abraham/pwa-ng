@@ -1,8 +1,5 @@
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
-import { MDCTab, MDCTabFoundation } from '@material/tabs';
-import { MDCTabBar, MDCTabBarFoundation } from '@material/tabs';
-import { MDCTabBarFoundationScroller, MDCTabBarScroller } from '@material/tabs';
-
+import { MDCTabBarScroller } from '@material/tabs';
 import { nav } from './app.routes';
 
 @Component({

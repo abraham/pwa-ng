@@ -7,8 +7,6 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class PwaInstallComponent implements OnInit {
   private imgRatio = 821 / 1392;
-  private defaultWidth = 960;
-  private defaultHeight = this.defaultWidth * this.imgRatio;
 
   @Input() imgWidth: number;
   @Input() imgHeight: number;
@@ -23,6 +21,6 @@ export class PwaInstallComponent implements OnInit {
   }
 
   private get containerWidth(): number {
-    return (document.querySelector('#container') as HTMLDivElement).offsetWidth;
+    return document.querySelector<HTMLDivElement>('#container').offsetWidth;
   }
 }

@@ -6,11 +6,14 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { RouterModule, Routes } from '@angular/router';
-
-import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterModule } from '@angular/router';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import WebFont from 'webfontloader';
+import { environment } from '../environments/environment';
+import { AppComponent } from './app.component';
+import { routes } from './app.routes';
 import { CBComponent } from './c-b/c-b.component';
 import { CodeBlockComponent } from './code-block/code-block.component';
 import { ComingSoonComponent } from './coming-soon.component';
@@ -18,11 +21,8 @@ import { FirebaseComponent } from './firebase/firebase.component';
 import { PwaInstallComponent } from './pwa-install/pwa-install.component';
 import { PwaManifestComponent } from './pwa-manifest/pwa-manifest.component';
 import { PwaStepComponent } from './pwa-step/pwa-step.component';
-import { ServiceWorkerModule } from '@angular/service-worker';
 import { ShareComponent } from './share/share.component';
-import WebFont from 'webfontloader';
-import { routes } from './app.routes';
-import { environment } from '../environments/environment';
+
 
 WebFont.load({
   google: {

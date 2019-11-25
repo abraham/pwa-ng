@@ -7,13 +7,9 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class PwaManifestComponent implements OnInit {
   private imgRatio = 1978 / 3104;
-  private defaultWidth = 960;
-  private defaultHeight = this.defaultWidth * this.imgRatio;
 
   @Input() imgWidth: number;
   @Input() imgHeight: number;
-
-  constructor() { }
 
   ngOnInit() {
     requestAnimationFrame(() => {
@@ -23,6 +19,6 @@ export class PwaManifestComponent implements OnInit {
   }
 
   private get containerWidth(): number {
-    return (document.querySelector('#container') as HTMLDivElement).offsetWidth;
+    return document.querySelector<HTMLDivElement>('#container').offsetWidth;
   }
 }
