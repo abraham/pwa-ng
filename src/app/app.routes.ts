@@ -9,12 +9,12 @@ export const routes: NamedRoute[] = [
     path: '',
     label: 'Install',
     pathMatch: 'full',
-    loadChildren: () => import('./pwa-install/pwa-install.module').then(m => m.PwaInstallModule)
+    loadChildren: () => import('./install/install.module').then(m => m.InstallModule)
   },
   {
     path: 'manifest',
     label: 'Manifest',
-    loadChildren: () => import('./pwa-manifest/pwa-manifest.module').then(m => m.PwaManifestModule)
+    loadChildren: () => import('./manifest/manifest.module').then(m => m.ManifestModule)
   },
   {
     path: 'firebase',

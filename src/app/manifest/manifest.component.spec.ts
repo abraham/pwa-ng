@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PwaStepComponent } from './pwa-step.component';
+import { ManifestComponent } from './manifest.component';
 
-describe('PwaStepComponent', () => {
-  let component: PwaStepComponent;
-  let fixture: ComponentFixture<PwaStepComponent>;
+describe('ManifestComponent', () => {
+  let component: ManifestComponent;
+  let fixture: ComponentFixture<ManifestComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PwaStepComponent ]
+      declarations: [ ManifestComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PwaStepComponent);
+    fixture = TestBed.createComponent(ManifestComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

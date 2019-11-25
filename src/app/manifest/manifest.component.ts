@@ -1,11 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'pwa-manifest',
-  templateUrl: './pwa-manifest.component.html',
-  styleUrls: ['./pwa-manifest.component.css']
+  selector: 'manifest',
+  templateUrl: './manifest.component.html',
+  styleUrls: ['./manifest.component.css']
 })
-export class PwaManifestComponent implements OnInit {
+export class ManifestComponent implements OnInit {
   private imgRatio = 1978 / 3104;
 
   @Input() imgWidth: number;

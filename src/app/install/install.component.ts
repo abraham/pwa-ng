@@ -1,11 +1,11 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: 'pwa-install',
-  templateUrl: './pwa-install.component.html',
-  styleUrls: ['./pwa-install.component.css']
+  selector: 'install',
+  templateUrl: './install.component.html',
+  styleUrls: ['./install.component.css']
 })
-export class PwaInstallComponent implements OnInit {
+export class InstallComponent implements OnInit {
   private imgRatio = 821 / 1392;
 
   @Input() imgWidth: number;

@@ -1,4 +1,4 @@
-<pwa-step title="Install">
+<step title="Install">
   <p>Install Angular CLI v6+:</p>
 
   <node-package name="@angular/cli" global></node-package>
@@ -36,9 +36,9 @@ Package                      Version
 @schematics/update           0.6.0
 rxjs                         6.1.0
 typescript                   2.7.2"></code-block>
-</pwa-step>
+</step>
 
-<pwa-step title="Generate">
+<step title="Generate">
   <p>Let's generate a new Angular app with the <c-b code="ng new"></c-b> command. The only argument we'll be needing right now is the name of the app.</p>
 
   <code-block lang="bsh"
@@ -80,9 +80,9 @@ added 1144 packages from 1269 contributors in 41.255s
   <p>That creates a new Angular app in the <c-b code="awesome-sauce"></c-b> directory from where we will do most of our work.</p>
 
   <code-block lang="bsh" command="cd awesome-sauce"></code-block>
-</pwa-step>
+</step>
 
-<pwa-step title="Add PWA">
+<step title="Add PWA">
   <p>Now that we've got a shiny new Angular app, let's add a service worker using Angular's fancy <c-b code="ng add"></c-b> command. This will use a Schematic to add the needed packages and modify our code.</p>
 
   <code-block lang="bsh"
@@ -296,9 +296,9 @@ index 75e1aff..7a03af0 100644
               code="icon-128x128.png  icon-144x144.png  icon-152x152.png  icon-192x192.png  icon-384x384.png  icon-512x512.png  icon-72x72.png  icon-96x96.png"></code-block>
 
   <p>Finally there is <c-b code="manifest.json"></c-b>. Check out the <a [routerLink]="['/manifest']">Manifest page</a> for details.</p>
-</pwa-step>
+</step>
 
-<pwa-step title="Commit">
+<step title="Commit">
   <p>It's a good idea to commit the changes to Git.</p>
 
   <code-block lang="bsh" command="git add ."></code-block>
@@ -317,9 +317,9 @@ index 75e1aff..7a03af0 100644
  create mode 100644 src/assets/icons/icon-72x72.png
  create mode 100644 src/assets/icons/icon-96x96.png
  create mode 100644 src/manifest.json"></code-block>
-</pwa-step>
+</step>
 
-<pwa-step title="Run it">
+<step title="Run it">
   <p>As we saw earlier from <c-b code="app.module.ts"></c-b> the service worker only get's registered if we build the app in production mode. Angular CLI's server however <a href="https://github.com/angular/angular-cli/issues/9869" target="_blank" rel="noopener">doesn't support</a> service workers with --prod, so we'll have to use a different server. Typically we'd do that with something like this to build and server the app:</p>
 
   <code-block lang="bsh" command="npx ng build --prod && lite-server --baseDir dist/awesome-sauce"></code-block>
@@ -404,4 +404,4 @@ Did not detect a `bs-config.json` or `bs-config.js` override file. Using lite-se
 
   <img-2 [attr.width]="imgWidth" [attr.height]="imgHeight" src="/assets/images/offline.png" alt="App working offline"></img-2>
 
-</pwa-step>
+</step>

@@ -4,7 +4,7 @@ import { MatListModule } from '@angular/material/list';
 import { RouterModule, Routes } from '@angular/router';
 import { CBComponent } from '../c-b/c-b.component';
 import { CodeBlockComponent } from '../code-block/code-block.component';
-import { PwaStepComponent } from '../pwa-step/pwa-step.component';
+import { StepComponent } from '../step/step.component';
 import { FirebaseComponent } from './firebase.component';
 
 const routes: Routes = [
@@ -17,7 +17,7 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     FirebaseComponent,
-    PwaStepComponent,
+    StepComponent,
     CBComponent,
     CodeBlockComponent
   ],

@@ -9,7 +9,7 @@ declare global {
 }
 
 @Component({
-  selector: 'pwa-share',
+  selector: 'share',
   templateUrl: './share.component.html',
   styleUrls: ['./share.component.css']
 })

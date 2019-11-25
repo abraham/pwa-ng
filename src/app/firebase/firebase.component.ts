@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'pwa-firebase',
+  selector: 'firebase',
   templateUrl: './firebase.component.html',
   styleUrls: ['./firebase.component.css']
 })
