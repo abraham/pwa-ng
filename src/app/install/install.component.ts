@@ -9,8 +9,8 @@ import { ContainerDirective } from '../container.directive';
 export class InstallComponent implements OnInit {
   private imgRatio = 821 / 1392;
 
-  @Input() imgWidth: number;
-  @Input() imgHeight: number;
+  @Input() imgWidth?: number;
+  @Input() imgHeight?: number;
 
   constructor(private container: ContainerDirective) { }
 

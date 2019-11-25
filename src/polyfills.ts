@@ -63,11 +63,5 @@ import 'zone.js/dist/zone';  // Included with Angular CLI.
  */
 import 'zone.js/dist/webapis-shadydom.js';
 
-const polyfills = [];
-if (!('IntersectionObserver' in window)) {
-  polyfills.push(import('intersection-observer'));
-}
-Promise.all(polyfills).then(() => {
-  import('node-package');
-  import('img-2');
-});
+import 'node-package';
+import 'img-2';

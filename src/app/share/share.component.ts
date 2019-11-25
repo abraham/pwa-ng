@@ -15,7 +15,7 @@ declare global {
   styleUrls: ['./share.component.css']
 })
 export class ShareComponent {
-  @ViewChild(MatMenuTrigger) menu: MatMenuTrigger;
+  @ViewChild(MatMenuTrigger) menu!: MatMenuTrigger;
 
   public nativeShare = 'share' in navigator;
   public services = [

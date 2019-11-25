@@ -8,10 +8,10 @@ import { routes } from './app.routes';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements AfterViewInit {
-  @ViewChild('nav', { static: true }) nav: ElementRef;
+  @ViewChild('nav', { static: true }) nav!: ElementRef;
 
   public appRoutes = routes;
-  private tabBarScroller: MDCTabBarScroller;
+  private tabBarScroller?: MDCTabBarScroller;
 
   constructor() { }
 

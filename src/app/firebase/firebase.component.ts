@@ -9,8 +9,8 @@ import { ContainerDirective } from '../container.directive';
 export class FirebaseComponent implements OnInit {
   private imgRatio = 1978 / 3104;
 
-  @Input() imgWidth: number;
-  @Input() imgHeight: number;
+  @Input() imgWidth?: number;
+  @Input() imgHeight?: number;
 
   constructor(private container: ContainerDirective) { }
 
