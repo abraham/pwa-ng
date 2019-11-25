@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ContainerDirective } from '../container.directive';
 
 @Component({
   selector: 'app-firebase',
@@ -11,14 +12,12 @@ export class FirebaseComponent implements OnInit {
   @Input() imgWidth: number;
   @Input() imgHeight: number;
 
+  constructor(private container: ContainerDirective) { }
+
   ngOnInit() {
     requestAnimationFrame(() => {
-      this.imgWidth = this.containerWidth - 16;
+      this.imgWidth = this.container.width - 16;
       this.imgHeight = this.imgWidth * this.imgRatio;
     });
-  }
-
-  private get containerWidth(): number {
-    return document.querySelector<HTMLDivElement>('#container').offsetWidth;
   }
 }

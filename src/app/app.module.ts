@@ -11,6 +11,7 @@ import WebFont from 'webfontloader';
 import { environment } from '../environments/environment';
 import { AppComponent } from './app.component';
 import { routes } from './app.routes';
+import { ContainerDirective } from './container.directive';
 import { ShareComponent } from './share/share.component';
 
 WebFont.load({
@@ -23,6 +24,7 @@ WebFont.load({
   declarations: [
     AppComponent,
     ShareComponent,
+    ContainerDirective,
   ],
   imports: [
     BrowserAnimationsModule,
