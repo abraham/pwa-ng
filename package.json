@@ -48,7 +48,7 @@
     "@angular/language-service": "9.0.0-rc.4",
     "@types/jasmine": "3.5.0",
     "@types/jasminewd2": "2.0.8",
-    "@types/node": "12.12.15",
+    "@types/node": "12.12.16",
     "@types/webfontloader": "1.6.29",
     "codelyzer": "5.2.0",
     "firebase-tools": "7.9.0",
