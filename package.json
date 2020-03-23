@@ -46,7 +46,7 @@
     "@angular/cli": "9.0.7",
     "@angular/compiler-cli": "9.0.0-rc.6",
     "@angular/language-service": "9.0.0-rc.6",
-    "@types/jasmine": "3.5.9",
+    "@types/jasmine": "3.5.10",
     "@types/jasminewd2": "2.0.8",
     "@types/node": "12.12.21",
     "@types/webfontloader": "1.6.29",
