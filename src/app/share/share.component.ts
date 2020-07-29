@@ -3,12 +3,6 @@ import { MatMenuTrigger } from '@angular/material/menu';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Title } from '@angular/platform-browser';
 
-declare global {
-  interface Navigator {
-    share: (data: { text: string, url: string }) => Promise<any>;
-  }
-}
-
 @Component({
   selector: 'app-share',
   templateUrl: './share.component.html',
