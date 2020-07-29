@@ -30,7 +30,7 @@
     "@angular/service-worker": "10.0.6",
     "@material/tabs": "2.3.0",
     "@webcomponents/webcomponentsjs": "2.4.4",
-    "clipboard-polyfill": "2.8.6",
+    "clipboard-polyfill": "3.0.1",
     "default-passive-events": "2.0.0",
     "firebase": "7.17.1",
     "img-2": "0.0.4",
