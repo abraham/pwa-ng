@@ -35,7 +35,7 @@
     "firebase": "7.17.1",
     "img-2": "0.0.4",
     "node-package": "1.4.0",
-    "rxjs": "6.6.0",
+    "rxjs": "6.6.2",
     "tslib": "2.0.0",
     "webfontloader": "1.6.28",
     "zone.js": "0.10.3"
