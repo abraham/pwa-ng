@@ -29,7 +29,7 @@ export class ShareComponent {
     return window.location.href;
   }
 
-  public share() {
+  public share(): void {
     navigator.share({
       text: this.title.getTitle(),
       url: this.currentUrl,
@@ -37,11 +37,11 @@ export class ShareComponent {
     .catch(this.error);
   }
 
-  public shareTo(url: () => string) {
+  public shareTo(url: () => string): void {
     window.open(url());
   }
 
-  public error(message: string) {
+  public error(message: string): void {
     this.snackBar.open(message, '', {
       duration: 2750,
       verticalPosition: 'bottom',
