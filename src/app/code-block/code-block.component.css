@@ -3,13 +3,13 @@
   padding: 16px;
   display: block;
   border-radius: 8px;
-  border: 1px solid #D32F2F;
+  border: 1px solid #d32f2f;
   word-wrap: break-word;
   white-space: pre-wrap;
 }
 
 .input {
-  background-color: #D32F2F;
+  background-color: #d32f2f;
   color: #fff;
   display: flex;
   justify-content: space-between;

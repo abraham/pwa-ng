@@ -8,9 +8,8 @@ describe('CodeBlockComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CodeBlockComponent ]
-    })
-    .compileComponents();
+      declarations: [CodeBlockComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

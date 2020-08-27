@@ -3,11 +3,7 @@
     {
       "target": "pwa-ng",
       "public": "dist/pwa-ng",
-      "ignore": [
-        "firebase.json",
-        "**/.*",
-        "**/node_modules/**"
-      ],
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
       "headers": [
         {
           "source": "**/*.@(jpg|jpeg|gif|png)",

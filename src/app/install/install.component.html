@@ -3,16 +3,19 @@
 
   <node-package name="@angular/cli" global></node-package>
 
-  <app-code-block lang="bsh"
-              code="...
+  <app-code-block
+    lang="bsh"
+    code="...
 + @angular/cli@6.0.0
-added 321 packages from 208 contributors in 13.595s"></app-code-block>
+added 321 packages from 208 contributors in 13.595s"
+  ></app-code-block>
 
   <p>You should now have the Angular CLI installed globally.</p>
 
-  <app-code-block lang="bsh"
-              command="ng --version"
-              code="
+  <app-code-block
+    lang="bsh"
+    command="ng --version"
+    code="
     _                      _                 ____ _     ___
    / \   _ __   __ _ _   _| | __ _ _ __     / ___| |   |_ _|
   / △ \ | '_ \ / _` | | | | |/ _` | '__|   | |   | |    | |
@@ -35,15 +38,21 @@ Package                      Version
 @schematics/angular          0.6.0
 @schematics/update           0.6.0
 rxjs                         6.1.0
-typescript                   2.7.2"></app-code-block>
+typescript                   2.7.2"
+  ></app-code-block>
 </app-step>
 
 <app-step title="Generate">
-  <p>Let's generate a new Angular app with the <app-c-b code="ng new"></app-c-b> command. The only argument we'll be needing right now is the name of the app.</p>
+  <p>
+    Let's generate a new Angular app with the
+    <app-c-b code="ng new"></app-c-b> command. The only argument we'll be
+    needing right now is the name of the app.
+  </p>
 
-  <app-code-block lang="bsh"
-              command="ng new awesome-sauce"
-              code="CREATE awesome-sauce/README.md (1029 bytes)
+  <app-code-block
+    lang="bsh"
+    command="ng new awesome-sauce"
+    code="CREATE awesome-sauce/README.md (1029 bytes)
 CREATE awesome-sauce/angular.json (3456 bytes)
 CREATE awesome-sauce/package.json (1317 bytes)
 CREATE awesome-sauce/tsconfig.json (384 bytes)
@@ -75,19 +84,29 @@ CREATE awesome-sauce/e2e/src/app.po.ts (208 bytes)
 CREATE awesome-sauce/e2e/tsconfig.e2e.json (213 bytes)
 ...
 added 1144 packages from 1269 contributors in 41.255s
-    Successfully initialized git."></app-code-block>
+    Successfully initialized git."
+  ></app-code-block>
 
-  <p>That creates a new Angular app in the <app-c-b code="awesome-sauce"></app-c-b> directory from where we will do most of our work.</p>
+  <p>
+    That creates a new Angular app in the
+    <app-c-b code="awesome-sauce"></app-c-b> directory from where we will do
+    most of our work.
+  </p>
 
   <app-code-block lang="bsh" command="cd awesome-sauce"></app-code-block>
 </app-step>
 
 <app-step title="Add PWA">
-  <p>Now that we've got a shiny new Angular app, let's add a service worker using Angular's fancy <app-c-b code="ng add"></app-c-b> command. This will use a Schematic to add the needed packages and modify our code.</p>
+  <p>
+    Now that we've got a shiny new Angular app, let's add a service worker using
+    Angular's fancy <app-c-b code="ng add"></app-c-b> command. This will use a
+    Schematic to add the needed packages and modify our code.
+  </p>
 
-  <app-code-block lang="bsh"
-              command="ng add @angular/pwa"
-              code="Installing packages for tooling via npm.
+  <app-code-block
+    lang="bsh"
+    command="ng add @angular/pwa"
+    code="Installing packages for tooling via npm.
 + @angular/pwa@0.6.0
 added 2 packages from 2 contributors in 8.88s
 Installed packages for tooling via npm.
@@ -105,15 +124,20 @@ UPDATE angular.json (3563 bytes)
 UPDATE package.json (1388 bytes)
 UPDATE src/app/app.module.ts (526 bytes)
 UPDATE src/index.html (390 bytes)
-added 1 package from 1 contributor in 9.511s"></app-code-block>
+added 1 package from 1 contributor in 9.511s"
+  ></app-code-block>
 
   <node-package name="@angular/pwa"></node-package>
 
-  <p>If you have a look at the version control you can see several new and modified files.</p>
+  <p>
+    If you have a look at the version control you can see several new and
+    modified files.
+  </p>
 
-  <app-code-block lang="bsh"
-              command="git status"
-              code='On branch master
+  <app-code-block
+    lang="bsh"
+    command="git status"
+    code='On branch master
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git checkout -- <file>..." to discard changes in working directory)
@@ -131,7 +155,8 @@ Untracked files:
         src/assets/icons/
         src/manifest.json
 
-no changes added to commit (use "git add" and/or "git commit -a")'>
+no changes added to commit (use "git add" and/or "git commit -a")'
+  >
   </app-code-block>
 
   <mat-list role="list">
@@ -151,9 +176,10 @@ no changes added to commit (use "git add" and/or "git commit -a")'>
 
   <p>Let's also take a look at the changes to the existing files.</p>
 
-  <app-code-block lang="bsh"
-              command="git diff angular.json"
-              code='diff --git a/angular.json b/angular.json
+  <app-code-block
+    lang="bsh"
+    command="git diff angular.json"
+    code='diff --git a/angular.json b/angular.json
 index 1711796..02fdbfd 100644
 --- a/angular.json
 +++ b/angular.json
@@ -186,13 +212,19 @@ index 1711796..02fdbfd 100644
 +              "src/manifest.json"
              ]
            }
-         },'></app-code-block>
+         },'
+  ></app-code-block>
 
-  <p><app-c-b code="angular.json"></app-c-b> is the file used to configure the Angular CLI. Here it is being told to build a service worker and that <app-c-b code="manifest.json"></app-c-b> should be treated like an asset.</p>
+  <p>
+    <app-c-b code="angular.json"></app-c-b> is the file used to configure the
+    Angular CLI. Here it is being told to build a service worker and that
+    <app-c-b code="manifest.json"></app-c-b> should be treated like an asset.
+  </p>
 
-  <app-code-block lang="bsh"
-             command="git diff package.json"
-             code='diff --git a/package.json b/package.json
+  <app-code-block
+    lang="bsh"
+    command="git diff package.json"
+    code='diff --git a/package.json b/package.json
 index 357afac..770aad5 100644
 --- a/package.json
 +++ b/package.json
@@ -209,13 +241,19 @@ index 357afac..770aad5 100644
 +    "@angular/service-worker": "^6.0.0"
    },
    "devDependencies": {
-     "@angular/compiler-cli": "^6.0.0",'></app-code-block>
+     "@angular/compiler-cli": "^6.0.0",'
+  ></app-code-block>
 
-  <p><app-c-b code="package.json"></app-c-b> is including new <app-c-b code="@angular/service-worker"></app-c-b> and <app-c-b code="@angular/pwa"></app-c-b> dependancies.</p>
+  <p>
+    <app-c-b code="package.json"></app-c-b> is including new
+    <app-c-b code="@angular/service-worker"></app-c-b> and
+    <app-c-b code="@angular/pwa"></app-c-b> dependancies.
+  </p>
 
-  <app-code-block lang="bsh"
-              command="git diff src/app/app.module.ts"
-              code="diff --git a/src/app/app.module.ts b/src/app/app.module.ts
+  <app-code-block
+    lang="bsh"
+    command="git diff src/app/app.module.ts"
+    code="diff --git a/src/app/app.module.ts b/src/app/app.module.ts
 index f657163..2f5db8d 100644
 --- a/src/app/app.module.ts
 +++ b/src/app/app.module.ts
@@ -236,13 +274,19 @@ index f657163..2f5db8d 100644
 +    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
    ],
    providers: [],
-   bootstrap: [AppComponent]"></app-code-block>
+   bootstrap: [AppComponent]"
+  ></app-code-block>
 
-  <p>Here we see a new <app-c-b code="ServiceWorkerModule"></app-c-b> that's imported and is being told to register a service worker if the app is being built for production.</p>
+  <p>
+    Here we see a new <app-c-b code="ServiceWorkerModule"></app-c-b> that's
+    imported and is being told to register a service worker if the app is being
+    built for production.
+  </p>
 
-  <app-code-block lang="bsh"
-              command="git diff src/index.html"
-              code='diff --git a/src/index.html b/src/index.html
+  <app-code-block
+    lang="bsh"
+    command="git diff src/index.html"
+    code='diff --git a/src/index.html b/src/index.html
 index 75e1aff..7a03af0 100644
 --- a/src/index.html
 +++ b/src/index.html
@@ -254,17 +298,30 @@ index 75e1aff..7a03af0 100644
 +  <meta name="theme-color" content="#1976d2">
  </head>
  <body>
-   <app-root></app-root>'></app-code-block>
+   <app-root></app-root>'
+  ></app-code-block>
 
-  <p>The last changed file we need to look it is <app-c-b code="index.html"></app-c-b>. With this change it tells browsers about the <app-c-b code="manifest.json"></app-c-b> file and sets a theme color.</p>
+  <p>
+    The last changed file we need to look it is
+    <app-c-b code="index.html"></app-c-b>. With this change it tells browsers
+    about the <app-c-b code="manifest.json"></app-c-b> file and sets a theme
+    color.
+  </p>
 
-  <p>There are also two new JSON files and a new icons directory.<p>
+  <p>There are also two new JSON files and a new icons directory.</p>
+  <p></p>
 
-  <p>Let's look at <app-c-b code="ngsw-config.json"></app-c-b> first. This is the main file where you will configure how and when the Servivce Worker handles assets. We'll cover this in more details on the <a [routerLink]="['/assets']">Assets page</a>.</p>
+  <p>
+    Let's look at <app-c-b code="ngsw-config.json"></app-c-b> first. This is the
+    main file where you will configure how and when the Servivce Worker handles
+    assets. We'll cover this in more details on the
+    <a [routerLink]="['/assets']">Assets page</a>.
+  </p>
 
-  <app-code-block lang="bsh"
-              command="cat ngsw-config.json"
-              code='{
+  <app-code-block
+    lang="bsh"
+    command="cat ngsw-config.json"
+    code='{
   "index": "/index.html",
   "assetGroups": [{
     "name": "app",
@@ -287,15 +344,24 @@ index 75e1aff..7a03af0 100644
       ]
     }
   }]
-}'></app-code-block>
+}'
+  ></app-code-block>
 
-  <p>There are also a number of icons added. Currently they are just the Angular logo but you should replace them with your logo/brand.</p>
+  <p>
+    There are also a number of icons added. Currently they are just the Angular
+    logo but you should replace them with your logo/brand.
+  </p>
 
-  <app-code-block lang="bsh"
-              command="ls src/assets/icons"
-              code="icon-128x128.png  icon-144x144.png  icon-152x152.png  icon-192x192.png  icon-384x384.png  icon-512x512.png  icon-72x72.png  icon-96x96.png"></app-code-block>
+  <app-code-block
+    lang="bsh"
+    command="ls src/assets/icons"
+    code="icon-128x128.png  icon-144x144.png  icon-152x152.png  icon-192x192.png  icon-384x384.png  icon-512x512.png  icon-72x72.png  icon-96x96.png"
+  ></app-code-block>
 
-  <p>Finally there is <app-c-b code="manifest.json"></app-c-b>. Check out the <a [routerLink]="['/manifest']">Manifest page</a> for details.</p>
+  <p>
+    Finally there is <app-c-b code="manifest.json"></app-c-b>. Check out the
+    <a [routerLink]="['/manifest']">Manifest page</a> for details.
+  </p>
 </app-step>
 
 <app-step title="Commit">
@@ -303,9 +369,10 @@ index 75e1aff..7a03af0 100644
 
   <app-code-block lang="bsh" command="git add ."></app-code-block>
 
-  <app-code-block lang="bsh"
-              command="git commit -m 'Make it so'"
-              code="[master 9a792f1] Make it so
+  <app-code-block
+    lang="bsh"
+    command="git commit -m 'Make it so'"
+    code="[master 9a792f1] Make it so
  15 files changed, 180 insertions(+), 287 deletions(-)
  create mode 100644 ngsw-config.json
  create mode 100644 src/assets/icons/icon-128x128.png
@@ -316,27 +383,57 @@ index 75e1aff..7a03af0 100644
  create mode 100644 src/assets/icons/icon-512x512.png
  create mode 100644 src/assets/icons/icon-72x72.png
  create mode 100644 src/assets/icons/icon-96x96.png
- create mode 100644 src/manifest.json"></app-code-block>
+ create mode 100644 src/manifest.json"
+  ></app-code-block>
 </app-step>
 
 <app-step title="Run it">
-  <p>As we saw earlier from <app-c-b code="app.module.ts"></app-c-b> the service worker only get's registered if we build the app in production mode. Angular CLI's server however <a href="https://github.com/angular/angular-cli/issues/9869" target="_blank" rel="noopener">doesn't support</a> service workers with --prod, so we'll have to use a different server. Typically we'd do that with something like this to build and server the app:</p>
+  <p>
+    As we saw earlier from <app-c-b code="app.module.ts"></app-c-b> the service
+    worker only get's registered if we build the app in production mode. Angular
+    CLI's server however
+    <a
+      href="https://github.com/angular/angular-cli/issues/9869"
+      target="_blank"
+      rel="noopener"
+      >doesn't support</a
+    >
+    service workers with --prod, so we'll have to use a different server.
+    Typically we'd do that with something like this to build and server the app:
+  </p>
 
-  <app-code-block lang="bsh" command="npx ng build --prod && lite-server --baseDir dist/awesome-sauce"></app-code-block>
+  <app-code-block
+    lang="bsh"
+    command="npx ng build --prod && lite-server --baseDir dist/awesome-sauce"
+  ></app-code-block>
 
-  <p>But when developing sites with service workers, you tend to run locally in production mode semi-frequently. So let's install <app-c-b code="lite-server"></app-c-b> as a devDependency and update the <app-c-b code="scripts"></app-c-b> value of <app-c-b code="package.json"></app-c-b> with helper script.</p>
+  <p>
+    But when developing sites with service workers, you tend to run locally in
+    production mode semi-frequently. So let's install
+    <app-c-b code="lite-server"></app-c-b> as a devDependency and update the
+    <app-c-b code="scripts"></app-c-b> value of
+    <app-c-b code="package.json"></app-c-b> with helper script.
+  </p>
 
-  <app-code-block lang="bsh"
-              command="npm install lite-server --save-dev"
-              code="...
+  <app-code-block
+    lang="bsh"
+    command="npm install lite-server --save-dev"
+    code="...
 + lite-server@2.3.0
-added 108 packages from 133 contributors in 29.716s"></app-code-block>
+added 108 packages from 133 contributors in 29.716s"
+  ></app-code-block>
 
   <node-package name="lite-server" global></node-package>
 
-  <p>Update <app-c-b code="package.json"></app-c-b> so that the <app-c-b code="scripts"></app-c-b> object has <app-c-b code="start:prod"></app-c-b>.</p>
+  <p>
+    Update <app-c-b code="package.json"></app-c-b> so that the
+    <app-c-b code="scripts"></app-c-b> object has
+    <app-c-b code="start:prod"></app-c-b>.
+  </p>
 
-  <app-code-block lang="bsh" code='{
+  <app-code-block
+    lang="bsh"
+    code='{
   "ng": "ng",
   "start": "ng serve",
   "start:prod": "ng build --prod && lite-server --baseDir dist/awesome-sauce",
@@ -344,23 +441,41 @@ added 108 packages from 133 contributors in 29.716s"></app-code-block>
   "test": "ng test",
   "lint": "ng lint",
   "e2e": "ng e2e"
-}'></app-code-block>
+}'
+  ></app-code-block>
 
-  <p>Now one command will rebuild the app in <app-c-b code="--prod"></app-c-b> mode and start the server.</p>
+  <p>
+    Now one command will rebuild the app in
+    <app-c-b code="--prod"></app-c-b> mode and start the server.
+  </p>
 
-  <p class="notice">Keep in mind when serving in <app-c-b code="lite-server"></app-c-b> mode, you'll have to stop and start for any code changes to take effect.</p>
+  <p class="notice">
+    Keep in mind when serving in <app-c-b code="lite-server"></app-c-b> mode,
+    you'll have to stop and start for any code changes to take effect.
+  </p>
 
-  <p><app-c-b code="--prod"></app-c-b> will tell the Angular CLI to build in production mode. This will perform additional optimizations to your CSS/JavaScript. But most importantly it will enable the service worker. <app-c-b code="--baseDir"></app-c-b> will tell <app-c-b code="lite-server"></app-c-b> where the built app should be served from.</p>
+  <p>
+    <app-c-b code="--prod"></app-c-b> will tell the Angular CLI to build in
+    production mode. This will perform additional optimizations to your
+    CSS/JavaScript. But most importantly it will enable the service worker.
+    <app-c-b code="--baseDir"></app-c-b> will tell
+    <app-c-b code="lite-server"></app-c-b> where the built app should be served
+    from.
+  </p>
 
   <p>Don't forget to commit again.</p>
 
   <app-code-block lang="bsh" command="git add ."></app-code-block>
 
-  <app-code-block lang="bsh" command="git commit -m 'Add lite-server and start:prod command'"></app-code-block>
+  <app-code-block
+    lang="bsh"
+    command="git commit -m 'Add lite-server and start:prod command'"
+  ></app-code-block>
 
-  <app-code-block lang="bsh"
-              command="npm run start:prod"
-              code="...
+  <app-code-block
+    lang="bsh"
+    command="npm run start:prod"
+    code="...
 Date: 2018-05-03T20:52:36.653Z
 Hash: 901654847701462d96dc
 Time: 18233ms
@@ -386,22 +501,46 @@ Did not detect a `bs-config.json` or `bs-config.js` override file. Using lite-se
  --------------------------------------
 [Browsersync] Serving files from: dist/awesome-sauce
 [Browsersync] Watching files...
-..."></app-code-block>
+..."
+  ></app-code-block>
 
   <p class="notice">
-    If you get an error here, try running  <app-c-b code="npm ci"></app-c-b> or <app-c-b code="npm install"></app-c-b>.
+    If you get an error here, try running <app-c-b code="npm ci"></app-c-b> or
+    <app-c-b code="npm install"></app-c-b>.
   </p>
 
-  <p><app-c-b code="http://localhost:3000"></app-c-b> should open in a browser automatically revealing this:</p>
+  <p>
+    <app-c-b code="http://localhost:3000"></app-c-b> should open in a browser
+    automatically revealing this:
+  </p>
 
-  <img-2 [attr.width]="imgWidth" [attr.height]="imgHeight" src="/assets/images/http-server.png" alt="App running in a browser"></img-2>
+  <img-2
+    [attr.width]="imgWidth"
+    [attr.height]="imgHeight"
+    src="/assets/images/http-server.png"
+    alt="App running in a browser"
+  ></img-2>
 
-  <p>Now open the Chrome DevTools to the Application tab and you should see a service worker installed from localhost.</p>
+  <p>
+    Now open the Chrome DevTools to the Application tab and you should see a
+    service worker installed from localhost.
+  </p>
 
-  <img-2 [attr.width]="imgWidth" [attr.height]="imgHeight" src="/assets/images/service-worker.png" alt="Installed service worker"></img-2>
+  <img-2
+    [attr.width]="imgWidth"
+    [attr.height]="imgHeight"
+    src="/assets/images/service-worker.png"
+    alt="Installed service worker"
+  ></img-2>
 
-  <p>Toggle the Network to "offline" and refesh. Everything will still render.</p>
+  <p>
+    Toggle the Network to "offline" and refesh. Everything will still render.
+  </p>
 
-  <img-2 [attr.width]="imgWidth" [attr.height]="imgHeight" src="/assets/images/offline.png" alt="App working offline"></img-2>
-
+  <img-2
+    [attr.width]="imgWidth"
+    [attr.height]="imgHeight"
+    src="/assets/images/offline.png"
+    alt="App working offline"
+  ></img-2>
 </app-step>

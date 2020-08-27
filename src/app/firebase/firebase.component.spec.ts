@@ -8,9 +8,8 @@ describe('FirebaseComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FirebaseComponent ]
-    })
-    .compileComponents();
+      declarations: [FirebaseComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

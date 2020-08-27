@@ -7,34 +7,55 @@
 </header>
 
 <content id="app-container">
-  <h1>
-    Progressive Web Apps made ridiculously easy with Angular
-  </h1>
+  <h1>Progressive Web Apps made ridiculously easy with Angular</h1>
 
   <div class="notice">
-    PWA support for Angular is still new and may have some rough edges. <a href="https://github.com/angular/angular/issues?q=is%3Aopen+is%3Aissue+label%3A%22comp%3A+service-worker%22" target="_blank" rel="noopener">View open issues</a>.
+    PWA support for Angular is still new and may have some rough edges.
+    <a
+      href="https://github.com/angular/angular/issues?q=is%3Aopen+is%3Aissue+label%3A%22comp%3A+service-worker%22"
+      target="_blank"
+      rel="noopener"
+      >View open issues</a
+    >.
   </div>
 
   <div #nav id="my-mdc-tab-bar-scroller" class="mdc-tab-bar-scroller">
-    <div class="mdc-tab-bar-scroller__indicator mdc-tab-bar-scroller__indicator--back">
-      <a class="mdc-tab-bar-scroller__indicator__inner material-icons" href="#" aria-label="scroll back button">
+    <div
+      class="mdc-tab-bar-scroller__indicator mdc-tab-bar-scroller__indicator--back"
+    >
+      <a
+        class="mdc-tab-bar-scroller__indicator__inner material-icons"
+        href="#"
+        aria-label="scroll back button"
+      >
         navigate_before
       </a>
     </div>
     <div class="mdc-tab-bar-scroller__scroll-frame">
-      <nav id="my-scrollable-tab-bar" class="mdc-tab-bar mdc-tab-bar-scroller__scroll-frame__tabs">
-        <a class="mdc-tab"
-           *ngFor="let link of appRoutes"
-           [routerLink]="link.path"
-           routerLinkActive="mdc-tab--active"
-           [routerLinkActiveOptions]="{ exact: true }">
-          {{link.label}}
+      <nav
+        id="my-scrollable-tab-bar"
+        class="mdc-tab-bar mdc-tab-bar-scroller__scroll-frame__tabs"
+      >
+        <a
+          class="mdc-tab"
+          *ngFor="let link of appRoutes"
+          [routerLink]="link.path"
+          routerLinkActive="mdc-tab--active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          {{ link.label }}
         </a>
         <span class="mdc-tab-bar__indicator"></span>
       </nav>
     </div>
-    <div class="mdc-tab-bar-scroller__indicator mdc-tab-bar-scroller__indicator--forward">
-      <a class="mdc-tab-bar-scroller__indicator__inner material-icons" href="#" aria-label="scroll forward button">
+    <div
+      class="mdc-tab-bar-scroller__indicator mdc-tab-bar-scroller__indicator--forward"
+    >
+      <a
+        class="mdc-tab-bar-scroller__indicator__inner material-icons"
+        href="#"
+        aria-label="scroll forward button"
+      >
         navigate_next
       </a>
     </div>
@@ -48,13 +69,63 @@
 <footer>
   <content>
     <div>
-      <a target="_blank" rel="noopener" href="https://github.com/abraham/pwa-ng">Angular PWA</a> is made by <a target="_blank" rel="noopener" href="https://twitter.com/abraham">@abraham</a> to show how easy it is to build a <a target="_blank" rel="noopener" href="https://developers.google.com/web/progressive-web-apps/">PWA</a> with <a target="_blank" rel="noopener" href="https://angular.io/">Angular</a>.
+      <a target="_blank" rel="noopener" href="https://github.com/abraham/pwa-ng"
+        >Angular PWA</a
+      >
+      is made by
+      <a target="_blank" rel="noopener" href="https://twitter.com/abraham"
+        >@abraham</a
+      >
+      to show how easy it is to build a
+      <a
+        target="_blank"
+        rel="noopener"
+        href="https://developers.google.com/web/progressive-web-apps/"
+        >PWA</a
+      >
+      with
+      <a target="_blank" rel="noopener" href="https://angular.io/">Angular</a>.
     </div>
     <div>
-      Have a more complex app you need help taking offline? <a target="_blank" rel="noopener" href="https://bendyworks.com/">Bendyworks</a> can help.
+      Have a more complex app you need help taking offline?
+      <a target="_blank" rel="noopener" href="https://bendyworks.com/"
+        >Bendyworks</a
+      >
+      can help.
     </div>
     <div>
-      Built with <a target="_blank" rel="noopener" href="https://angular.io/">Angular</a>, <a target="_blank" rel="noopener" href="https://firebase.google.com/products/hosting/">Firebase Hosting</a>, <a target="_blank" rel="noopener" href="https://material.io/components/web/">Material Components</a>, <a target="_blank" rel="noopener" href="https://www.npmjs.com/package/node-package">node-package</a>, <a target="_blank" rel="noopener" href="https://www.npmjs.com/package/img-2">img-2</a>, and <a target="_blank" rel="noopener" href="https://github.com/lgarron/clipboard-polyfill">clipboard-polyfill</a>.
+      Built with
+      <a target="_blank" rel="noopener" href="https://angular.io/">Angular</a>,
+      <a
+        target="_blank"
+        rel="noopener"
+        href="https://firebase.google.com/products/hosting/"
+        >Firebase Hosting</a
+      >,
+      <a
+        target="_blank"
+        rel="noopener"
+        href="https://material.io/components/web/"
+        >Material Components</a
+      >,
+      <a
+        target="_blank"
+        rel="noopener"
+        href="https://www.npmjs.com/package/node-package"
+        >node-package</a
+      >,
+      <a
+        target="_blank"
+        rel="noopener"
+        href="https://www.npmjs.com/package/img-2"
+        >img-2</a
+      >, and
+      <a
+        target="_blank"
+        rel="noopener"
+        href="https://github.com/lgarron/clipboard-polyfill"
+        >clipboard-polyfill</a
+      >.
     </div>
   </content>
 </footer>
