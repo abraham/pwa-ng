@@ -4,7 +4,7 @@ import { ContainerDirective } from '../container.directive';
 @Component({
   selector: 'app-install',
   templateUrl: './install.component.html',
-  styleUrls: ['./install.component.css'],
+  styleUrls: ['./install.component.scss'],
 })
 export class InstallComponent implements OnInit {
   private imgRatio = 821 / 1392;

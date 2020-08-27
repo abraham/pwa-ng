@@ -6,7 +6,7 @@ import { Title } from '@angular/platform-browser';
 @Component({
   selector: 'app-share',
   templateUrl: './share.component.html',
-  styleUrls: ['./share.component.css'],
+  styleUrls: ['./share.component.scss'],
 })
 export class ShareComponent {
   @ViewChild(MatMenuTrigger) menu!: MatMenuTrigger;

@@ -4,7 +4,7 @@ import { ContainerDirective } from '../container.directive';
 @Component({
   selector: 'app-manifest',
   templateUrl: './manifest.component.html',
-  styleUrls: ['./manifest.component.css'],
+  styleUrls: ['./manifest.component.scss'],
 })
 export class ManifestComponent implements OnInit {
   private imgRatio = 1978 / 3104;

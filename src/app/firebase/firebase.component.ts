@@ -4,7 +4,7 @@ import { ContainerDirective } from '../container.directive';
 @Component({
   selector: 'app-firebase',
   templateUrl: './firebase.component.html',
-  styleUrls: ['./firebase.component.css'],
+  styleUrls: ['./firebase.component.scss'],
 })
 export class FirebaseComponent implements OnInit {
   private imgRatio = 1978 / 3104;
