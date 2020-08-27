@@ -15,7 +15,7 @@ export class AppComponent implements AfterViewInit {
 
   constructor() { }
 
-  ngAfterViewInit() {
+  ngAfterViewInit(): void {
     this.tabBarScroller = new MDCTabBarScroller(this.nav.nativeElement);
   }
 }

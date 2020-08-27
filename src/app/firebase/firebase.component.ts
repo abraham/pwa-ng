@@ -14,7 +14,7 @@ export class FirebaseComponent implements OnInit {
 
   constructor(private container: ContainerDirective) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     requestAnimationFrame(() => {
       this.imgWidth = this.container.width - 16;
       this.imgHeight = this.imgWidth * this.imgRatio;

@@ -20,13 +20,13 @@ export class CodeBlockComponent {
     return `language-${this.lang}`;
   }
 
-  public copy() {
+  public copy(): void {
     clipboard.writeText(this.command)
       .then(() => this.openSnackBar('Copied to clipboard'))
-      .catch(_error => this.openSnackBar('Clipboard not supported on this browser'));
+      .catch(() => this.openSnackBar('Clipboard not supported on this browser'));
   }
 
-  private openSnackBar(message: string) {
+  private openSnackBar(message: string): void {
     this.snackBar.open(message, '', {
       duration: 2750,
       verticalPosition: 'bottom',
