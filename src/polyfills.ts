@@ -62,7 +62,7 @@ import 'zone.js/dist/zone';  // Included with Angular CLI.
  * APPLICATION IMPORTS
  */
 import 'default-passive-events';
-import 'zone.js/dist/webapis-shadydom.js';
+import 'zone.js/plugins/webapis-shadydom';
 
 import 'node-package';
 import 'img-2';
