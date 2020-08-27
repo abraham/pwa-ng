@@ -22,15 +22,6 @@
               "value": "max-age=604800"
             }
           ]
-        },
-        {
-          "source": "/@(ngsw-worker.js|ngsw.json)",
-          "headers": [
-            {
-              "key": "Cache-Control",
-              "value": "no-cache"
-            }
-          ]
         }
       ],
       "rewrites": [
