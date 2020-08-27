@@ -1,5 +1,9 @@
 @import '~@material/tabs/mdc-tabs';
 
+:host {
+  display: block;
+}
+
 mat-toolbar {
   background-color: #fff;
   color: #b71c1c;
