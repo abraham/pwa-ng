@@ -3,15 +3,16 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "start:prod": "ng build --prod && lite-server --baseDir dist/pwa-ng",
-    "build": "ng build",
     "build:prod": "ng build --prod",
+    "build": "ng build",
     "deploy": "ng run pwa-ng:deploy",
-    "test": "npm run build:prod",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "fix": "prettier --write .",
+    "lint": "ng lint && prettier --check .",
+    "ng": "ng",
+    "start:prod": "ng build --prod && lite-server --baseDir dist/pwa-ng",
+    "start": "ng serve",
+    "test": "npm run build:prod"
   },
   "private": true,
   "dependencies": {
@@ -63,6 +64,7 @@
     "karma-jasmine": "4.0.1",
     "karma-jasmine-html-reporter": "1.5.4",
     "lite-server": "2.5.4",
+    "prettier": "2.1.1",
     "protractor": "7.0.0",
     "ts-node": "9.0.0",
     "tslint": "6.1.3",

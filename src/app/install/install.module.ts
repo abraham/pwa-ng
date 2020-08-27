@@ -8,20 +8,18 @@ import { InstallComponent } from './install.component';
 const routes: Routes = [
   {
     path: '',
-    component: InstallComponent
+    component: InstallComponent,
   },
 ];
 
 @NgModule({
-  declarations: [
-    InstallComponent,
-  ],
+  declarations: [InstallComponent],
   imports: [
     CommonModule,
     MatListModule,
     RouterModule.forChild(routes),
     SharedModule,
   ],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class InstallModule { }
+export class InstallModule {}

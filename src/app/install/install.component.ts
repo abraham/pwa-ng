@@ -4,7 +4,7 @@ import { ContainerDirective } from '../container.directive';
 @Component({
   selector: 'app-install',
   templateUrl: './install.component.html',
-  styleUrls: ['./install.component.css']
+  styleUrls: ['./install.component.css'],
 })
 export class InstallComponent implements OnInit {
   private imgRatio = 821 / 1392;
@@ -12,7 +12,7 @@ export class InstallComponent implements OnInit {
   @Input() imgWidth?: number;
   @Input() imgHeight?: number;
 
-  constructor(private container: ContainerDirective) { }
+  constructor(private container: ContainerDirective) {}
 
   ngOnInit(): void {
     requestAnimationFrame(() => {

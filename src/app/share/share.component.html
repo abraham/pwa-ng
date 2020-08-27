@@ -1,11 +1,19 @@
 <button *ngIf="nativeShare" class="share" mat-fab (click)="share()">
   <i class="material-icons" title="Share Angular PWA">share</i>
 </button>
-<button *ngIf="!nativeShare" class="share" mat-fab [matMenuTriggerFor]="menu" #menuTrigger="matMenuTrigger">
+<button
+  *ngIf="!nativeShare"
+  class="share"
+  mat-fab
+  [matMenuTriggerFor]="menu"
+  #menuTrigger="matMenuTrigger"
+>
   <i class="material-icons" title="Share Angular PWA">share</i>
 </button>
 <mat-menu #menu="matMenu">
   <span *ngFor="let service of services">
-    <button mat-menu-item (click)="shareTo(service.url)">{{service.name}}</button>
+    <button mat-menu-item (click)="shareTo(service.url)">
+      {{ service.name }}
+    </button>
   </span>
 </mat-menu>

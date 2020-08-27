@@ -5,12 +5,7 @@
       "name": "app",
       "installMode": "prefetch",
       "resources": {
-        "files": [
-          "/*.css",
-          "/*.js",
-          "/favicon.ico",
-          "/index.html"
-        ]
+        "files": ["/*.css", "/*.js", "/favicon.ico", "/index.html"]
       }
     },
     {
@@ -18,9 +13,7 @@
       "installMode": "lazy",
       "updateMode": "prefetch",
       "resources": {
-        "files": [
-          "/assets/**"
-        ]
+        "files": ["/assets/**"]
       }
     }
   ]

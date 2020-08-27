@@ -7,19 +7,13 @@ import { ManifestComponent } from './manifest.component';
 const routes: Routes = [
   {
     path: '',
-    component: ManifestComponent
+    component: ManifestComponent,
   },
 ];
 
 @NgModule({
-  declarations: [
-    ManifestComponent,
-  ],
-  imports: [
-    CommonModule,
-    RouterModule.forChild(routes),
-    SharedModule,
-  ],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  declarations: [ManifestComponent],
+  imports: [CommonModule, RouterModule.forChild(routes), SharedModule],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class ManifestModule { }
+export class ManifestModule {}

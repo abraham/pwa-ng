@@ -1,8 +1,10 @@
-html, body {
+html,
+body {
   height: 100%;
   width: 100%;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial,
+    sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   background-color: #fff;
 }
 
@@ -17,16 +19,19 @@ app-root {
   flex-direction: column;
 }
 
-h1, h2 {
-  color: #D32F2F;
+h1,
+h2 {
+  color: #d32f2f;
 }
 
-h1, h2, p {
+h1,
+h2,
+p {
   margin: 8px;
 }
 
 a {
-  color: #1976D2;
+  color: #1976d2;
 }
 
 header {
@@ -49,7 +54,7 @@ footer {
   margin-top: 24px;
   flex-shrink: 0;
   height: 128px;
-  background-color: #D32F2F;
+  background-color: #d32f2f;
   color: #fff;
   width: 100%;
 }
@@ -85,12 +90,14 @@ node-package {
   display: block;
   width: calc(100% - 16px) !important; /* Hack for lack of shadowdom support */
   --node-package-background-color: #fff;
-  --node-package-color: #D32F2F;
-  --node-package-link-color: #B71C1C;
-  border: 1px solid #D32F2F;
+  --node-package-color: #d32f2f;
+  --node-package-link-color: #b71c1c;
+  border: 1px solid #d32f2f;
 }
 
-.fixedwidth, pre, code {
+.fixedwidth,
+pre,
+code {
   font-family: monospace;
 }
 
@@ -98,18 +105,18 @@ node-package {
   padding: 16px;
   margin: 16px 8px;
   border-radius: 8px;
-  background-color: #1976D2;
+  background-color: #1976d2;
   color: #fff;
 }
 
 .warning a {
-  color: #fff
+  color: #fff;
 }
 
 .notice {
   padding: 16px;
   margin: 16px 8px;
   border-radius: 8px;
-  border: 1px solid #1976D2;
-  color: #1976D2;
+  border: 1px solid #1976d2;
+  color: #1976d2;
 }

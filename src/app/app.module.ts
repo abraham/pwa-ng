@@ -21,11 +21,7 @@ WebFont.load({
 });
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ContainerDirective,
-    ShareComponent,
-  ],
+  declarations: [AppComponent, ContainerDirective, ShareComponent],
   imports: [
     BrowserAnimationsModule,
     BrowserModule,
@@ -34,10 +30,12 @@ WebFont.load({
     MatSnackBarModule,
     MatToolbarModule,
     RouterModule.forRoot(routes),
-    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
+    ServiceWorkerModule.register('/ngsw-worker.js', {
+      enabled: environment.production,
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class AppModule { }
+export class AppModule {}

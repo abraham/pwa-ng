@@ -8,20 +8,18 @@ import { FirebaseComponent } from './firebase.component';
 const routes: Routes = [
   {
     path: '',
-    component: FirebaseComponent
+    component: FirebaseComponent,
   },
 ];
 
 @NgModule({
-  declarations: [
-    FirebaseComponent,
-  ],
+  declarations: [FirebaseComponent],
   imports: [
     CommonModule,
     MatListModule,
     RouterModule.forChild(routes),
     SharedModule,
   ],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class FirebaseModule { }
+export class FirebaseModule {}

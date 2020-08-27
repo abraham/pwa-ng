@@ -6,24 +6,26 @@ import * as clipboard from 'clipboard-polyfill';
 @Component({
   selector: 'app-code-block',
   templateUrl: './code-block.component.html',
-  styleUrls: ['./code-block.component.css']
+  styleUrls: ['./code-block.component.css'],
 })
 export class CodeBlockComponent {
-
   @Input() command = '';
   @Input() lang = 'js';
   @Input() code = '';
 
-  constructor(public snackBar: MatSnackBar) { }
+  constructor(public snackBar: MatSnackBar) {}
 
   get language(): string {
     return `language-${this.lang}`;
   }
 
   public copy(): void {
-    clipboard.writeText(this.command)
+    clipboard
+      .writeText(this.command)
       .then(() => this.openSnackBar('Copied to clipboard'))
-      .catch(() => this.openSnackBar('Clipboard not supported on this browser'));
+      .catch(() =>
+        this.openSnackBar('Clipboard not supported on this browser'),
+      );
   }
 
   private openSnackBar(message: string): void {

@@ -5,15 +5,13 @@ import { routes } from './app.routes';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements AfterViewInit {
   @ViewChild('nav', { static: true }) nav!: ElementRef;
 
   public appRoutes = routes;
   private tabBarScroller?: MDCTabBarScroller;
-
-  constructor() { }
 
   ngAfterViewInit(): void {
     this.tabBarScroller = new MDCTabBarScroller(this.nav.nativeElement);
