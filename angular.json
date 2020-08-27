@@ -29,7 +29,7 @@
               "src/manifest.json"
             ],
             "styles": [
-              "src/styles.css",
+              "src/styles.scss",
               "src/theme.scss"
             ],
             "scripts": [],
@@ -101,7 +101,7 @@
               "src/manifest.json"
             ],
             "styles": [
-              "src/styles.css",
+              "src/styles.scss",
               "src/theme.scss"
             ],
             "scripts": []
@@ -142,5 +142,10 @@
   "defaultProject": "pwa-ng",
   "cli": {
     "analytics": "a84782df-bced-4f87-a4be-18aa968e58e0"
+  },
+  "schematics": {
+    "@schematics/angular:component": {
+      "style": "scss"
+    }
   }
 }

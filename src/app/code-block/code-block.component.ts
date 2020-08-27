@@ -6,7 +6,7 @@ import * as clipboard from 'clipboard-polyfill';
 @Component({
   selector: 'app-code-block',
   templateUrl: './code-block.component.html',
-  styleUrls: ['./code-block.component.css'],
+  styleUrls: ['./code-block.component.scss'],
 })
 export class CodeBlockComponent {
   @Input() command = '';
