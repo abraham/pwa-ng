@@ -1,6 +1,9 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserModule } from '@angular/platform-browser';
@@ -13,6 +16,7 @@ import { AppComponent } from './app.component';
 import { routes } from './app.routes';
 import { ContainerDirective } from './container.directive';
 import { ShareComponent } from './share/share.component';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
 
 WebFont.load({
   google: {
@@ -26,7 +30,11 @@ WebFont.load({
     BrowserAnimationsModule,
     BrowserModule,
     MatButtonModule,
+    MatIconModule,
+    MatListModule,
+    MatButtonToggleModule,
     MatMenuModule,
+    MatSidenavModule,
     MatSnackBarModule,
     MatToolbarModule,
     RouterModule.forRoot(routes),

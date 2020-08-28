@@ -1,69 +1,42 @@
 <header>
-  <mat-toolbar>
-    <mat-toolbar-row>
-      <span>Angular PWA <sup>beta</sup></span>
-    </mat-toolbar-row>
+  <mat-toolbar color="primary" class="example-toolbar">
+  <!-- <mat-toolbar> -->
+    <button mat-icon-button (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button>
+    <span>Angular PWA <sup>beta</sup></span>
   </mat-toolbar>
 </header>
 
-<content id="app-container">
-  <h1>Progressive Web Apps made ridiculously easy with Angular</h1>
-
-  <div class="notice">
-    PWA support for Angular is still new and may have some rough edges.
-    <a
-      href="https://github.com/angular/angular/issues?q=is%3Aopen+is%3Aissue+label%3A%22comp%3A+service-worker%22"
-      target="_blank"
-      rel="noopener"
-      >View open issues</a
-    >.
-  </div>
-
-  <div #nav id="my-mdc-tab-bar-scroller" class="mdc-tab-bar-scroller">
-    <div
-      class="mdc-tab-bar-scroller__indicator mdc-tab-bar-scroller__indicator--back"
-    >
-      <a
-        class="mdc-tab-bar-scroller__indicator__inner material-icons"
-        href="#"
-        aria-label="scroll back button"
-      >
-        navigate_before
-      </a>
-    </div>
-    <div class="mdc-tab-bar-scroller__scroll-frame">
-      <nav
-        id="my-scrollable-tab-bar"
-        class="mdc-tab-bar mdc-tab-bar-scroller__scroll-frame__tabs"
-      >
+<content id="app-container" class="mat-app-background basic-container">
+  <mat-sidenav-container class="example-container">
+    <mat-sidenav #sidenav mode="side" opened>
+      <mat-nav-list>
         <a
-          class="mdc-tab"
+          mat-list-item
           *ngFor="let link of appRoutes"
           [routerLink]="link.path"
-          routerLinkActive="mdc-tab--active"
+          routerLinkActive="xmdc-tab--active"
           [routerLinkActiveOptions]="{ exact: true }"
         >
           {{ link.label }}
         </a>
-        <span class="mdc-tab-bar__indicator"></span>
-      </nav>
-    </div>
-    <div
-      class="mdc-tab-bar-scroller__indicator mdc-tab-bar-scroller__indicator--forward"
-    >
-      <a
-        class="mdc-tab-bar-scroller__indicator__inner material-icons"
-        href="#"
-        aria-label="scroll forward button"
-      >
-        navigate_next
-      </a>
-    </div>
-  </div>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <h1>Progressive Web Apps made ridiculously easy with Angular</h1>
 
-  <router-outlet></router-outlet>
+      <div class="notice">
+        PWA support for Angular is still new and may have some rough edges.
+        <a
+          href="https://github.com/angular/angular/issues?q=is%3Aopen+is%3Aissue+label%3A%22comp%3A+service-worker%22"
+          target="_blank"
+          rel="noopener"
+          >View open issues</a
+        >.
+      </div>
 
-  <app-share></app-share>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
 </content>
 
 <footer>

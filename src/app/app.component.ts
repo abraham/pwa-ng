@@ -10,10 +10,11 @@ import { routes } from './app.routes';
 export class AppComponent implements AfterViewInit {
   @ViewChild('nav', { static: true }) nav!: ElementRef;
 
+  fillerNav = Array.from({length: 50}, (_, i) => `Nav Item ${i + 1}`);
   public appRoutes = routes;
   private tabBarScroller?: MDCTabBarScroller;
 
   ngAfterViewInit(): void {
-    this.tabBarScroller = new MDCTabBarScroller(this.nav.nativeElement);
+    // this.tabBarScroller = new MDCTabBarScroller(this.nav.nativeElement);
   }
 }
