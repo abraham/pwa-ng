@@ -33,7 +33,7 @@
     "@webcomponents/webcomponentsjs": "2.4.4",
     "clipboard-polyfill": "3.0.1",
     "default-passive-events": "2.0.0",
-    "firebase": "7.20.0",
+    "firebase": "7.21.0",
     "img-2": "0.0.4",
     "node-package": "1.4.0",
     "rxjs": "6.6.3",
