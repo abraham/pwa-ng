@@ -31,7 +31,7 @@
     "@angular/service-worker": "11.0.0",
     "@material/tabs": "2.3.0",
     "@webcomponents/webcomponentsjs": "2.5.0",
-    "clipboard-polyfill": "3.0.2",
+    "clipboard-polyfill": "3.0.3",
     "default-passive-events": "2.0.0",
     "firebase": "8.3.2",
     "img-2": "0.0.4",
