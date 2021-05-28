@@ -26,7 +26,7 @@
     "@angular/forms": "12.0.1",
     "@angular/material": "12.0.1",
     "@angular/platform-browser": "12.0.1",
-    "@angular/platform-browser-dynamic": "12.0.1",
+    "@angular/platform-browser-dynamic": "12.0.2",
     "@angular/router": "12.0.1",
     "@angular/service-worker": "12.0.1",
     "@material/tabs": "2.3.0",
