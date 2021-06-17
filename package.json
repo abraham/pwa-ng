@@ -17,11 +17,11 @@
   "private": true,
   "dependencies": {
     "@abraham/reflection": "0.8.0",
-    "@angular/animations": "12.0.4",
+    "@angular/animations": "12.0.5",
     "@angular/cdk": "12.0.3",
     "@angular/common": "12.0.4",
     "@angular/compiler": "12.0.0",
-    "@angular/core": "12.0.4",
+    "@angular/core": "12.0.5",
     "@angular/fire": "6.1.5",
     "@angular/forms": "12.0.4",
     "@angular/material": "12.0.3",
