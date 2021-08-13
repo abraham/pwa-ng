@@ -19,7 +19,7 @@
     "@abraham/reflection": "0.8.0",
     "@angular/animations": "12.1.2",
     "@angular/cdk": "12.2.1",
-    "@angular/common": "12.1.1",
+    "@angular/common": "12.2.1",
     "@angular/compiler": "12.0.0",
     "@angular/core": "12.1.2",
     "@angular/fire": "6.1.5",
