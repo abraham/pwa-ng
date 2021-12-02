@@ -27,7 +27,7 @@
     "@angular/material": "12.2.10",
     "@angular/platform-browser": "13.0.3",
     "@angular/platform-browser-dynamic": "13.0.3",
-    "@angular/router": "12.2.10",
+    "@angular/router": "13.0.3",
     "@angular/service-worker": "12.2.10",
     "@material/tabs": "2.3.0",
     "@webcomponents/webcomponentsjs": "2.6.0",
