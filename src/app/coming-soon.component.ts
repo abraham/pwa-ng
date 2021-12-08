@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'coming-soon',
+  selector: 'app-coming-soon',
   template: '<div class="notice">Coming soon...</div>',
   styles: [],
 })
