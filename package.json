@@ -53,7 +53,7 @@
     "@angular/compiler-cli": "13.1.1",
     "@angular/language-service": "13.1.1",
     "@types/jasmine": "~3.10.2",
-    "@types/node": "^16.11.14",
+    "@types/node": "^16.11.15",
     "@types/webfontloader": "1.6.33",
     "@typescript-eslint/eslint-plugin": "5.7.0",
     "@typescript-eslint/parser": "5.7.0",
