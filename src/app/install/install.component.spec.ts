@@ -6,13 +6,11 @@ describe('InstallComponent', () => {
   let component: InstallComponent;
   let fixture: ComponentFixture<InstallComponent>;
 
-  beforeEach(
-    waitForAsync(() => {
-      TestBed.configureTestingModule({
-        declarations: [InstallComponent],
-      }).compileComponents();
-    }),
-  );
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      declarations: [InstallComponent],
+    }).compileComponents();
+  }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(InstallComponent);
