@@ -16,7 +16,6 @@
   },
   "private": true,
   "dependencies": {
-    "@abraham/reflection": "0.10.0",
     "@angular/animations": "13.2.3",
     "@angular/cdk": "13.2.3",
     "@angular/common": "13.2.3",
