@@ -55,7 +55,7 @@
     "@types/node": "^16.11.28",
     "@types/webfontloader": "1.6.34",
     "@typescript-eslint/eslint-plugin": "5.19.0",
-    "@typescript-eslint/parser": "5.19.0",
+    "@typescript-eslint/parser": "5.20.0",
     "eslint": "^8.13.0",
     "firebase-tools": "10.6.0",
     "jasmine-core": "~4.1.0",
