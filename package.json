@@ -3,14 +3,14 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "build:prod": "ng build --prod",
+    "build:prod": "ng build",
     "build": "ng build",
     "deploy": "ng run pwa-ng:deploy",
     "e2e": "ng e2e",
     "fix": "prettier --write .",
     "lint": "ng lint && prettier --check .",
     "ng": "ng",
-    "start:prod": "ng build --prod && lite-server --baseDir dist/pwa-ng",
+    "start:prod": "ng build && lite-server --baseDir dist/pwa-ng",
     "start": "ng serve",
     "test": "npm run build:prod"
   },
