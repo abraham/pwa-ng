@@ -50,7 +50,7 @@
     "@angular-eslint/template-parser": "13.5.0",
     "@angular/cli": "14.0.1",
     "@angular/compiler-cli": "14.0.1",
-    "@angular/language-service": "14.0.1",
+    "@angular/language-service": "14.0.2",
     "@types/jasmine": "~4.0.3",
     "@types/node": "^16.11.38",
     "@types/webfontloader": "1.6.34",
