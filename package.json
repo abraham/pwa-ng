@@ -38,7 +38,7 @@
     "rxjs": "7.5.5",
     "tslib": "^2.4.0",
     "webfontloader": "1.6.28",
-    "zone.js": "~0.11.6"
+    "zone.js": "~0.11.7"
   },
   "devDependencies": {
     "@angular-devkit/architect": "0.1400.4",
