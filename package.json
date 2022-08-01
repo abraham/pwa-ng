@@ -56,7 +56,7 @@
     "@types/webfontloader": "1.6.34",
     "@typescript-eslint/eslint-plugin": "5.30.7",
     "@typescript-eslint/parser": "5.30.4",
-    "eslint": "^8.19.0",
+    "eslint": "^8.20.0",
     "firebase-tools": "11.3.0",
     "jasmine-core": "~4.2.0",
     "karma": "6.4.0",
