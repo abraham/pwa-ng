@@ -8,9 +8,15 @@ $my-app-accent: mat.define-palette(mat.$pink-palette, 500, 900, A100);
 $my-app-warn: mat.define-palette(mat.$deep-orange-palette);
 
 $my-app-theme: mat.define-light-theme(
-  $my-app-primary,
-  $my-app-accent,
-  $my-app-warn
+  (
+    color: (
+      primary: $my-app-primary,
+      accent: $my-app-accent,
+      warn: $my-app-warn,
+    ),
+    typography: mat.define-typography-config(),
+    density: 0,
+  )
 );
 
 @include mat.all-component-themes($my-app-theme);
