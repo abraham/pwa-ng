@@ -29,7 +29,7 @@ WebFont.load({
     MatMenuModule,
     MatSnackBarModule,
     MatToolbarModule,
-    RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' }),
+    RouterModule.forRoot(routes, {}),
     ServiceWorkerModule.register('/ngsw-worker.js', {
       enabled: environment.production,
     }),
