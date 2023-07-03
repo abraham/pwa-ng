@@ -35,7 +35,7 @@
     "img-2": "0.0.4",
     "node-package": "1.4.0",
     "rxjs": "7.8.0",
-    "tslib": "^2.5.0",
+    "tslib": "^2.6.0",
     "webfontloader": "1.6.28",
     "zone.js": "~0.12.0"
   },
