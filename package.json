@@ -52,7 +52,7 @@
     "@angular/language-service": "15.2.7",
     "@types/jasmine": "~5.1.4",
     "@types/node": "^20.12.7",
-    "@types/webfontloader": "1.6.35",
+    "@types/webfontloader": "1.6.38",
     "@typescript-eslint/eslint-plugin": "^7.7.1",
     "@typescript-eslint/parser": "^7.7.1",
     "eslint": "^8.50.0",
