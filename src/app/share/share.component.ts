@@ -27,7 +27,10 @@ export class ShareComponent {
     },
   ];
 
-  constructor(private snackBar: MatSnackBar, private title: Title) {}
+  constructor(
+    private snackBar: MatSnackBar,
+    private title: Title,
+  ) {}
 
   private get currentUrl(): string {
     return window.location.href;
